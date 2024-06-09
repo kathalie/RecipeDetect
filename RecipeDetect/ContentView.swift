@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "onboardingShown")
 
-    var body: some View {
+    var body: some View {        
         ARCameraView()
             .sheet(isPresented: $showOnboarding) {
                 OnboardingView(showOnboarding: $showOnboarding)
