@@ -14,30 +14,30 @@ struct ARCameraView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                GeometryReader { geometry in
-                    ARSceneViewControllerWrapper(viewModel: viewModel)
-                        .drawCaptureBox(screenCenter(geometry.size))
-//                    SpacialScannerViewControllerWrapper()
-                }
+//                GeometryReader { geometry in
+//                    ARSceneViewControllerWrapper(viewModel: viewModel)
+//                        .drawCaptureBox(screenCenter(geometry.size))
+//                }
+                SpacialScannerViewControllerWrapper()
                 
-                switch viewModel.state {
-                case .initial:
-                    EmptyView()
-                case let .data(detections, image, size):
-                    NextButton(destination: ImageCaptureView(detections: detections, image: image, size: size))
-                case let .error(error):
-                    VStack {
-                        HStack {
-                            Image("error")
-                                .resizable()
-                                .frame(width: 32, height: 32)
-                            Text(error.description)
-                        }
-                        .padding(.horizontal)
-                        .background { Color.white.opacity(0.5) }
-                        Spacer()
-                    }
-                }
+//                switch viewModel.state {
+//                case .initial:
+//                    EmptyView()
+//                case let .data(detections, image, size):
+//                    NextButton(destination: ImageCaptureView(detections: detections, image: image, size: size))
+//                case let .error(error):
+//                    VStack {
+//                        HStack {
+//                            Image("error")
+//                                .resizable()
+//                                .frame(width: 32, height: 32)
+//                            Text(error.description)
+//                        }
+//                        .padding(.horizontal)
+//                        .background { Color.white.opacity(0.5) }
+//                        Spacer()
+//                    }
+//                }
             }
             .navigationBarTitle("")
             .navigationBarBackButtonHidden(true)

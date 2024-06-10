@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29B4D3FBF5EF747282ABB414 /* Pods-SpacialObjectsScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacialObjectsScanner.release.xcconfig"; path = "Target Support Files/Pods-SpacialObjectsScanner/Pods-SpacialObjectsScanner.release.xcconfig"; sourceTree = "<group>"; };
 		8C253B142C161F930065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C253B172C161F930065B0FF /* SpacialObjectsScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpacialObjectsScanner.h; sourceTree = "<group>"; };
 		8C253B1E2C161F9E0065B0FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +80,9 @@
 		8C253B6A2C1620130065B0FF /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
 		8C253B6B2C1620130065B0FF /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		8C253B702C1620250065B0FF /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
+		8C253B822C17387F0065B0FF /* Anchorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Anchorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C253B882C17394C0065B0FF /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B382C6C403AD7EA3E111E538 /* Pods-SpacialObjectsScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacialObjectsScanner.debug.xcconfig"; path = "Target Support Files/Pods-SpacialObjectsScanner/Pods-SpacialObjectsScanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,11 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12F713B9CF51BE6DDE746505 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B382C6C403AD7EA3E111E538 /* Pods-SpacialObjectsScanner.debug.xcconfig */,
+				29B4D3FBF5EF747282ABB414 /* Pods-SpacialObjectsScanner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8C253B0A2C161F930065B0FF = {
 			isa = PBXGroup;
 			children = (
 				8C253B162C161F930065B0FF /* SpacialObjectsScanner */,
 				8C253B152C161F930065B0FF /* Products */,
+				8C253B812C17387F0065B0FF /* Frameworks */,
+				12F713B9CF51BE6DDE746505 /* Pods */,
+				8C253B8B2C173A7B0065B0FF /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +213,22 @@
 			path = Wrapper;
 			sourceTree = "<group>";
 		};
+		8C253B812C17387F0065B0FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C253B822C17387F0065B0FF /* Anchorage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C253B8B2C173A7B0065B0FF /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				8C253B882C17394C0065B0FF /* Pods_RecipeDetect.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -215,6 +247,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C253B1B2C161F930065B0FF /* Build configuration list for PBXNativeTarget "SpacialObjectsScanner" */;
 			buildPhases = (
+				23F8BE19A298D103EFC05065 /* [CP] Check Pods Manifest.lock */,
 				8C253B0F2C161F930065B0FF /* Headers */,
 				8C253B102C161F930065B0FF /* Sources */,
 				8C253B112C161F930065B0FF /* Frameworks */,
@@ -272,6 +305,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23F8BE19A298D103EFC05065 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpacialObjectsScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C253B102C161F930065B0FF /* Sources */ = {
@@ -442,6 +500,7 @@
 		};
 		8C253B1C2C161F930065B0FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B382C6C403AD7EA3E111E538 /* Pods-SpacialObjectsScanner.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -473,6 +532,7 @@
 		};
 		8C253B1D2C161F930065B0FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B4D3FBF5EF747282ABB414 /* Pods-SpacialObjectsScanner.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

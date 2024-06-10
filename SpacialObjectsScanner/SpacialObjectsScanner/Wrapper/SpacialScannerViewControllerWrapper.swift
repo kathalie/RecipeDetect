@@ -9,9 +9,7 @@ import SwiftUI
 import UIKit
 
 public struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable {
-    public init() {
-        
-    }
+    public init() {}
     
     public typealias UIViewControllerType = ViewController
 
@@ -23,3 +21,4 @@ public struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable
         // Update the view controller
     }
 }
+

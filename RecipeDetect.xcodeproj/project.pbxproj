@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C253B732C1620570065B0FF /* SpacialObjectsScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B722C1620570065B0FF /* SpacialObjectsScanner.framework */; };
-		8C253B742C1620570065B0FF /* SpacialObjectsScanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B722C1620570065B0FF /* SpacialObjectsScanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C253B8D2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */; };
+		8C253B8E2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB04454BFAE554B399DCB6ED /* Pods_RecipeDetect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */; };
 		EB23D29029FC0A1600F940FB /* View+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D28F29FC0A1600F940FB /* View+Overlay.swift */; };
 		EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D29229FC0A4400F940FB /* BoundingBoxView.swift */; };
@@ -57,7 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8C253B742C1620570065B0FF /* SpacialObjectsScanner.framework in Embed Frameworks */,
+				8C253B8E2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,15 +66,7 @@
 
 /* Begin PBXFileReference section */
 		3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C2539602C15F0780065B0FF /* libFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C2539762C15F64E0065B0FF /* _D_Scanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = _D_Scanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C2539B92C15F7940065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253A362C1619410065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B022C161DB10065B0FF /* SpacialObjectsScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SpacialObjectsScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B042C161DC60065B0FF /* SpacialObjectsScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SpacialObjectsScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B062C161E7C0065B0FF /* SpacialObjectsScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SpacialObjectsScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B082C161E9E0065B0FF /* SpacialObjectsScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SpacialObjectsScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B722C1620570065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDBB2CADA569F2123432001 /* Pods-RecipeDetect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.release.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.release.xcconfig"; sourceTree = "<group>"; };
 		BFDC3752655503819FF6FB19 /* Pods-RecipeDetect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.debug.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.debug.xcconfig"; sourceTree = "<group>"; };
 		EB23D28F29FC0A1600F940FB /* View+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Overlay.swift"; sourceTree = "<group>"; };
@@ -123,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C253B732C1620570065B0FF /* SpacialObjectsScanner.framework in Frameworks */,
+				8C253B8D2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Frameworks */,
 				EB04454BFAE554B399DCB6ED /* Pods_RecipeDetect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,15 +350,7 @@
 		F0784AFF1E074E2E073A6D50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C253B722C1620570065B0FF /* SpacialObjectsScanner.framework */,
-				8C253B082C161E9E0065B0FF /* SpacialObjectsScanner.app */,
-				8C253B062C161E7C0065B0FF /* SpacialObjectsScanner.app */,
-				8C253B042C161DC60065B0FF /* SpacialObjectsScanner.app */,
-				8C253B022C161DB10065B0FF /* SpacialObjectsScanner.app */,
-				8C253A362C1619410065B0FF /* SpacialObjectsScanner.framework */,
-				8C2539B92C15F7940065B0FF /* SpacialObjectsScanner.framework */,
-				8C2539762C15F64E0065B0FF /* _D_Scanner.framework */,
-				8C2539602C15F0780065B0FF /* libFeature.a */,
+				8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */,
 				3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */,
 			);
 			name = Frameworks;

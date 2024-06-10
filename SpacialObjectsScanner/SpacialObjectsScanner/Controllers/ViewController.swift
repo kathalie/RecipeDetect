@@ -6,6 +6,7 @@ Main view controller for the object scanning UI.
 */
 
 import UIKit
+import Anchorage
 import SceneKit
 import ARKit
 
@@ -16,7 +17,8 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     
     static var instance: ViewController?
     
-    var sceneView = ARSCNView()
+    let sceneView = ARSCNView()
+    var lidarSupported = false
     
 //    @IBOutlet weak var sceneView: ARSCNView!
 //    @IBOutlet weak var blurView: UIVisualEffectView!
@@ -75,16 +77,37 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
         ViewController.instance = self
     }
     
+    
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
     }
     
+    private func setupUI() {
+        view.addSubview(sceneView)
+        
+        sceneView.topAnchor == view.topAnchor
+        sceneView.leadingAnchor == view.leadingAnchor
+        sceneView.bottomAnchor == view.bottomAnchor
+        sceneView.trailingAnchor == view.trailingAnchor
+    }
+    
+    private func setupSceneView() {
+        sceneView.delegate = self
+        let scene = SCNScene()
+        sceneView.scene = scene
+        sceneView.autoenablesDefaultLighting = true
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        sceneView.delegate = self
-        sceneView.session.delegate = self
+        if #available(iOS 13.4, *) {
+            lidarSupported = ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
+        }
+        
+        setupUI()
+        setupSceneView()
         
         // Prevent the screen from being dimmed after a while.
         UIApplication.shared.isIdleTimerDisabled = true
