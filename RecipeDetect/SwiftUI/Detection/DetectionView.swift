@@ -11,7 +11,7 @@ struct DetectionView: View {
     let detections: [DistanceDetection]
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 List(detections) { detection in
                     Text("\(detection.description)")

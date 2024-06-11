@@ -12,7 +12,7 @@ struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
 //                GeometryReader { geometry in
 //                    ARSceneViewControllerWrapper(viewModel: viewModel)
