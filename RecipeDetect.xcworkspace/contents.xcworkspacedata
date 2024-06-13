@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ObjectRecognition/ObjectRecognition.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SpacialObjectsScanner/SpacialObjectsScanner.xcodeproj">
    </FileRef>
    <FileRef
