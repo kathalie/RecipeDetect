@@ -68,7 +68,6 @@ extension ViewController {
             case .startARSession:
                 print("State: Starting ARSession")
                 scan = nil
-                testRun = nil
                 modelURL = nil
 //                self.setNavigationBarTitle("")
 //                instructionsVisible = false
@@ -88,7 +87,6 @@ extension ViewController {
             case .notReady:
                 print("State: Not ready to scan")
                 scan = nil
-                testRun = nil
 //                self.setNavigationBarTitle("")
 //                loadModelButton.isHidden = true
 //                flashlightButton.isHidden = true
@@ -103,7 +101,6 @@ extension ViewController {
                     self.scan = Scan(sceneView)
                     self.scan?.state = .ready
                 }
-                testRun = nil
                 
                 startMaxScanTimeTimer()
             case .testing:
@@ -115,7 +112,6 @@ extension ViewController {
 //                nextButton.isEnabled = true
 //                nextButton.setTitle("Share", for: [])
                 
-                testRun = TestRun(sceneView: sceneView)
                 testObjectDetection()
                 cancelMaxScanTimeTimer()
             }
