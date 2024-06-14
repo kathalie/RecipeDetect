@@ -63,7 +63,7 @@ class DetectedObject: SCNNode {
         addChildNode(pointCloudVisualization)
         isHidden = true
         
-        set3DModel(ViewController.instance?.modelURL)
+//        set3DModel(ViewController.instance?.modelURL)
     }
     
     required init?(coder aDecoder: NSCoder) {
