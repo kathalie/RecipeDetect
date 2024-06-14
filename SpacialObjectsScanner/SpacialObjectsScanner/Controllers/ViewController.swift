@@ -36,7 +36,7 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     
     var referenceObjectToMerge: ARReferenceObject?
     var referenceObjectToTest: ARReferenceObject?
-        
+
     internal var messageExpirationTimer: Timer?
     internal var startTimeOfLastMessage: TimeInterval?
     internal var expirationTimeOfLastMessage: TimeInterval?
@@ -143,38 +143,92 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
         }
     }
     
-    @IBAction func previousButtonTapped(_ sender: Any) {
-        switchToPreviousState()
-    }
-    
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        guard !nextButton.isHidden && nextButton.isEnabled else { return }
-        switchToNextState()
-    }
 
-    @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
-        // A tap in the extended hit area on the lower left should cause a tap
-        //  on the button that is currently visible at that location.
-        if !flashlightButton.isHidden {
-            toggleFlashlightButtonTapped(self)
+//    @IBAction func previousButtonTapped(_ sender: Any) {
+//        switchToPreviousState()
+//    }
+//    
+//    @IBAction func nextButtonTapped(_ sender: Any) {
+//        guard !nextButton.isHidden && nextButton.isEnabled else { return }
+//        switchToNextState()
+//    }
+    
+    
+//    @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
+//        // A tap in the extended hit area on the lower left should cause a tap
+//        //  on the button that is currently visible at that location.
+//        if !loadModelButton.isHidden {
+//            loadModelButtonTapped(self)
+//        } else if !flashlightButton.isHidden {
+//            toggleFlashlightButtonTapped(self)
+//        }
+//    }
+    
+//    @IBAction func toggleFlashlightButtonTapped(_ sender: Any) {
+//        guard !flashlightButton.isHidden && flashlightButton.isEnabled else { return }
+//        flashlightButton.toggledOn = !flashlightButton.toggledOn
+//    }
+    
+//    @IBAction func toggleInstructionsButtonTapped(_ sender: Any) {
+//        guard !toggleInstructionsButton.isHidden && toggleInstructionsButton.isEnabled else { return }
+//        instructionsVisible.toggle()
+//    }
+    
+//    func displayInstruction(_ message: Message) {
+//        instructionLabel.display(message)
+//        instructionsVisible = true
+//    }
+    
+    
+    func testObjectDetection() {
+        // In case an object for testing has been received, use it right away...
+        if let object = referenceObjectToTest {
+            referenceObjectToTest = nil
+            return
+        }
+        
+        // ...otherwise attempt to create a reference object from the current scan.
+        guard let scan = scan, scan.boundingBoxExists else {
+            print("Error: Bounding box not yet created.")
+            return
+        }
+        
+        scan.createReferenceObject { scannedObject in
+            if let object = scannedObject {
+                return
+            }
+            
+            let title = "Scan failed"
+            let message = "Saving the scan failed."
+            let buttonTitle = "Restart Scan"
+            self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: false) { _ in
+                self.state = .startARSession
+            }
         }
     }
     
-    @IBAction func toggleFlashlightButtonTapped(_ sender: Any) {
-        guard !flashlightButton.isHidden && flashlightButton.isEnabled else { return }
-        flashlightButton.toggledOn = !flashlightButton.toggledOn
-    }
-    
-    @IBAction func toggleInstructionsButtonTapped(_ sender: Any) {
-        guard !toggleInstructionsButton.isHidden && toggleInstructionsButton.isEnabled else { return }
-        instructionsVisible.toggle()
-    }
-    
-    func displayInstruction(_ message: Message) {
-        instructionLabel.display(message)
-        instructionsVisible = true
-    }
-
+//    func createAndShareReferenceObject() {
+//        guard let testRun = self.testRun, let object = testRun.referenceObject, let name = object.name else {
+//            print("Error: Missing scanned object.")
+//            return
+//        }
+//        
+//        let documentURL = FileManager.default.temporaryDirectory.appendingPathComponent(name + ".arobject")
+//        
+//        DispatchQueue.global().async {
+//            do {
+//                try object.export(to: documentURL, previewImage: testRun.previewImage)
+//            } catch {
+//                fatalError("Failed to save the file to \(documentURL)")
+//            }
+//            
+//            // Initiate a share sheet for the scanned object
+//            let airdropShareSheet = ShareScanViewController(sourceView: self.nextButton, sharedObject: documentURL)
+//            DispatchQueue.main.async {
+//                self.present(airdropShareSheet, animated: true, completion: nil)
+//            }
+//        }
+//    }
     
     var limitedTrackingTimer: Timer?
     
@@ -279,10 +333,12 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     
     public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let frame = sceneView.session.currentFrame else { return }
-        scan?.updateOnEveryFrame(frame)    }
+
+        scan?.updateOnEveryFrame(frame)
+    }
     
     public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let _ = anchor as? ARObjectAnchor {
+        if let objectAnchor = anchor as? ARObjectAnchor {
             return
         }
         

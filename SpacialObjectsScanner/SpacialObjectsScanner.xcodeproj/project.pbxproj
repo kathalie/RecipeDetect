@@ -29,7 +29,6 @@
 		8C253B562C161FDE0065B0FF /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */; };
 		8C253B572C161FDE0065B0FF /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */; };
 		8C253B582C161FDE0065B0FF /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4F2C161FDE0065B0FF /* ViewController+NavigationBar.swift */; };
-		8C253B592C161FDE0065B0FF /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B502C161FDE0065B0FF /* TestRun.swift */; };
 		8C253B5A2C161FDE0065B0FF /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B512C161FDE0065B0FF /* Scan.swift */; };
 		8C253B5B2C161FDE0065B0FF /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */; };
 		8C253B602C161FEF0065B0FF /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B5D2C161FEE0065B0FF /* ThresholdPanGestureRecognizer.swift */; };
@@ -41,6 +40,7 @@
 		8C253B6D2C1620130065B0FF /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B6A2C1620130065B0FF /* FlashlightButton.swift */; };
 		8C253B6E2C1620130065B0FF /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B6B2C1620130065B0FF /* MessageLabel.swift */; };
 		8C253B712C1620250065B0FF /* SpacialScannerViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B702C1620250065B0FF /* SpacialScannerViewControllerWrapper.swift */; };
+		8C74DEE62C1CC40A007D79A7 /* ViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
 		8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
 		8C253B4F2C161FDE0065B0FF /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
-		8C253B502C161FDE0065B0FF /* TestRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRun.swift; sourceTree = "<group>"; };
 		8C253B512C161FDE0065B0FF /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
 		8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
 		8C253B5D2C161FEE0065B0FF /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		8C253B702C1620250065B0FF /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
 		8C253B822C17387F0065B0FF /* Anchorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Anchorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C253B882C17394C0065B0FF /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		B382C6C403AD7EA3E111E538 /* Pods-SpacialObjectsScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacialObjectsScanner.debug.xcconfig"; path = "Target Support Files/Pods-SpacialObjectsScanner/Pods-SpacialObjectsScanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +166,12 @@
 				8C253B4A2C161FDD0065B0FF /* AppDelegate.swift */,
 				8C253B512C161FDE0065B0FF /* Scan.swift */,
 				8C253B4C2C161FDD0065B0FF /* ShareScanViewController.swift */,
-				8C253B502C161FDE0065B0FF /* TestRun.swift */,
 				8C253B4B2C161FDD0065B0FF /* ViewController.swift */,
 				8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */,
 				8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */,
 				8C253B4F2C161FDE0065B0FF /* ViewController+NavigationBar.swift */,
 				8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */,
+				8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 				8C253B462C161FAC0065B0FF /* Wireframe.swift in Sources */,
 				8C253B432C161FAC0065B0FF /* BoundingBox.swift in Sources */,
 				8C253B402C161FAC0065B0FF /* ObjectOrigin.swift in Sources */,
+				8C74DEE62C1CC40A007D79A7 /* ViewController+ShowAlert.swift in Sources */,
 				8C253B612C161FEF0065B0FF /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				8C253B3F2C161FAC0065B0FF /* DetectedPointCloud.swift in Sources */,
 				8C253B6D2C1620130065B0FF /* FlashlightButton.swift in Sources */,
@@ -362,7 +363,6 @@
 				8C253B712C1620250065B0FF /* SpacialScannerViewControllerWrapper.swift in Sources */,
 				8C253B412C161FAC0065B0FF /* PointCloud+CreateVisualization.swift in Sources */,
 				8C253B582C161FDE0065B0FF /* ViewController+NavigationBar.swift in Sources */,
-				8C253B592C161FDE0065B0FF /* TestRun.swift in Sources */,
 				8C253B672C1620000065B0FF /* ARCameraTrackingState.swift in Sources */,
 				8C253B622C161FEF0065B0FF /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				8C253B562C161FDE0065B0FF /* ViewController+ApplicationState.swift in Sources */,

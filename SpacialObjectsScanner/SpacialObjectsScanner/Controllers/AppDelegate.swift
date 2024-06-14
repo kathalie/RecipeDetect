@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            return false
 //        }
 //    }
-    
+
     func applicationWillEnterForeground(_ application: UIApplication) {
         if let viewController = self.window?.rootViewController as? ViewController {
             viewController.backFromBackground()
