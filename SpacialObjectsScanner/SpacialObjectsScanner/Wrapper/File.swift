@@ -1,8 +1,8 @@
 //
-//  ARSceneViewControllerViewModel.swift
-//  RecipeDetect
+//  File.swift
+//  SpacialObjectsScanner
 //
-//  Created by Iryna Zubrytska.
+//  Created by Olesya Petrova on 13.06.2024.
 //
 
 import UIKit
@@ -59,3 +59,4 @@ final class ARSceneViewControllerViewModel: ObservableObject {
         state = .initial
     }
 }
+

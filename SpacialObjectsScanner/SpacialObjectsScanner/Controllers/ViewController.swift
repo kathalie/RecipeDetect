@@ -48,7 +48,9 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
-    
+    //private let detector = ObjectDetector()
+
+
     var modelURL: URL? {
         didSet {
             if let url = modelURL {

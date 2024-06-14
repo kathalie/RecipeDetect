@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C253B8D2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */; };
 		8C253B8E2C173C2B0065B0FF /* SpacialObjectsScanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97C2B9802C1BAA6200C2BD92 /* ProductsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */; };
 		EB04454BFAE554B399DCB6ED /* Pods_RecipeDetect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */; };
 		EB23D29029FC0A1600F940FB /* View+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D28F29FC0A1600F940FB /* View+Overlay.swift */; };
 		EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D29229FC0A4400F940FB /* BoundingBoxView.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ProductsClassifier.mlmodel; sourceTree = "<group>"; };
 		BFDBB2CADA569F2123432001 /* Pods-RecipeDetect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.release.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.release.xcconfig"; sourceTree = "<group>"; };
 		BFDC3752655503819FF6FB19 /* Pods-RecipeDetect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.debug.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.debug.xcconfig"; sourceTree = "<group>"; };
 		EB23D28F29FC0A1600F940FB /* View+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Overlay.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				EB2D551E29E9F60B001657B4 /* RecipeDetectApp.swift */,
 				EB2D552029E9F60B001657B4 /* ContentView.swift */,
 				EB2D552229E9F60C001657B4 /* Assets.xcassets */,
+				97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */,
 				EBC28DA029EA00F20056A9F5 /* FruitDetector.mlmodel */,
 				EB2D552429E9F60C001657B4 /* Preview Content */,
 			);
@@ -507,6 +510,7 @@
 				EBC28DA129EA00F20056A9F5 /* FruitDetector.mlmodel in Sources */,
 				EB23D2A629FC6AEE00F940FB /* AppError.swift in Sources */,
 				EBC28DB329EA03670056A9F5 /* Ingredient.swift in Sources */,
+				97C2B9802C1BAA6200C2BD92 /* ProductsClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
