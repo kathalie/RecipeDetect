@@ -11,8 +11,8 @@ import UIKit
 extension ViewController {
     
     func setupNavigationBar() {
-        backButton = UIBarButtonItem(title: "Back", style: .plain, target: self,
-                                     action: #selector(previousButtonTapped(_:)))
+//        backButton = UIBarButtonItem(title: "Back", style: .plain, target: self,
+//                                     action: #selector(previousButtonTapped(_:)))
 
         let startOverButton = UIBarButtonItem(title: "Restart", style: .plain, target: self,
                                               action: #selector(restartButtonTapped(_:)))
