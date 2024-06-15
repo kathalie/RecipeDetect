@@ -11,7 +11,7 @@ import ARKit
 import SpacialObjectsScanner
 
 class SpacialObjectScannerViewModel: ObservableObject, SpacialObjectDetectionDelegate {
-    func setState(newState: SpacialObjectsScanner.SpacialObjectDetectionState) {
+    func setState(newState: SpacialObjectDetectionState) {
         state = newState
     }
     

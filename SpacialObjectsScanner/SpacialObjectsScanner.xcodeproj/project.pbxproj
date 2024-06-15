@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C253B182C161F930065B0FF /* SpacialObjectsScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C253B172C161F930065B0FF /* SpacialObjectsScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C253B262C161F9E0065B0FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C253B1E2C161F9E0065B0FF /* Assets.xcassets */; };
 		8C253B272C161F9E0065B0FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C253B1F2C161F9E0065B0FF /* art.scnassets */; };
 		8C253B3C2C161FAC0065B0FF /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B2F2C161FAB0065B0FF /* ScannedObject.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		29B4D3FBF5EF747282ABB414 /* Pods-SpacialObjectsScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacialObjectsScanner.release.xcconfig"; path = "Target Support Files/Pods-SpacialObjectsScanner/Pods-SpacialObjectsScanner.release.xcconfig"; sourceTree = "<group>"; };
 		8C253B142C161F930065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C253B172C161F930065B0FF /* SpacialObjectsScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpacialObjectsScanner.h; sourceTree = "<group>"; };
 		8C253B1E2C161F9E0065B0FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C253B1F2C161F9E0065B0FF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8C253B2F2C161FAB0065B0FF /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				8C253B2E2C161FA40065B0FF /* 3D UI and Visualizations */,
 				8C253B1F2C161F9E0065B0FF /* art.scnassets */,
 				8C253B1E2C161F9E0065B0FF /* Assets.xcassets */,
-				8C253B172C161F930065B0FF /* SpacialObjectsScanner.h */,
 			);
 			path = SpacialObjectsScanner;
 			sourceTree = "<group>";
@@ -205,7 +202,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C253B182C161F930065B0FF /* SpacialObjectsScanner.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
