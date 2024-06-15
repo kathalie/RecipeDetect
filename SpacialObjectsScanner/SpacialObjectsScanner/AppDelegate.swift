@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        if let viewController = self.window?.rootViewController as? ViewController {
+        if let viewController = self.window?.rootViewController as? SpacialObjectDetectionViewController {
             viewController.backFromBackground()
         }
     }

@@ -49,7 +49,7 @@ class Scan {
                 Do you want to go back and adjust the bounding box of the scanned object?
                 """
                 let previousState = stateValue
-                ViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
+                SpacialObjectDetectionViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
                     self.state = previousState
                 }
             case .scanning:
@@ -63,7 +63,7 @@ class Scan {
                 It is unlikely that a good reference object can be generated.
                 Do you want to go back and continue the scan?
                 """
-                ViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
+                SpacialObjectDetectionViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
                     self.state = .scanning
                 }
             case .adjustingOrigin where stateValue == .scanning:
@@ -74,7 +74,7 @@ class Scan {
                     It is likely that it won't detect from all angles.
                     Do you want to go back and continue the scan?
                     """
-                    ViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
+                    SpacialObjectDetectionViewController.instance?.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
                         self.state = .scanning
                     }
                 }
@@ -115,9 +115,9 @@ class Scan {
     
     private var hasWarnedAboutLowLight = false
     
-    private var isFirstScan: Bool {
-        return ViewController.instance?.referenceObjectToMerge == nil
-    }
+//    private var isFirstScan: Bool {
+//        return SpacialObjectDetectionViewController.instance?.referenceObjectToMerge == nil
+//    }
     
     static let minFeatureCount = 100
     
@@ -129,7 +129,7 @@ class Scan {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.applicationStateChanged(_:)),
-                                               name: ViewController.appStateChangedNotification,
+                                               name: SpacialObjectDetectionViewController.appStateChangedNotification,
                                                object: nil)
         
         self.sceneView.scene.rootNode.addChildNode(self.scannedObject)
@@ -143,7 +143,7 @@ class Scan {
     
     @objc
     private func applicationStateChanged(_ notification: Notification) {
-        guard let appState = notification.userInfo?[ViewController.appStateUserInfoKey] as? ViewController.State else { return }
+        guard let appState = notification.userInfo?[SpacialObjectDetectionViewController.appStateUserInfoKey] as? SpacialObjectDetectionViewController.State else { return }
         switch appState {
         case .scanning:
             scannedObject.isHidden = false
@@ -344,12 +344,12 @@ class Scan {
         
         if state == .ready || state == .defineBoundingBox || state == .scanning {
             
-            if let lightEstimate = frame.lightEstimate, lightEstimate.ambientIntensity < 500, !hasWarnedAboutLowLight, isFirstScan {
-                hasWarnedAboutLowLight = true
-                let title = "Too dark for scanning"
-                let message = "Consider moving to an environment with more light."
-                ViewController.instance?.showAlert(title: title, message: message)
-            }
+//            if let lightEstimate = frame.lightEstimate, lightEstimate.ambientIntensity < 500, !hasWarnedAboutLowLight, isFirstScan {
+//                hasWarnedAboutLowLight = true
+//                let title = "Too dark for scanning"
+//                let message = "Consider moving to an environment with more light."
+//                SpacialObjectDetectionViewController.instance?.showAlert(title: title, message: message)
+//            }
             
             // Try a preliminary creation of the reference object based off the current
             // bounding box & update the point cloud visualization based on that.
@@ -424,66 +424,66 @@ class Scan {
     }
     
     /// - Tag: ExtractReferenceObject
-    func createReferenceObject(completionHandler creationFinished: @escaping (ARReferenceObject?) -> Void) {
-        guard let boundingBox = scannedObject.boundingBox, let origin = scannedObject.origin else {
-            print("Error: No bounding box or object origin present.")
-            creationFinished(nil)
-            return
-        }
-        
-        // Extract the reference object based on the position & orientation of the bounding box.
-        sceneView.session.createReferenceObject(
-            transform: boundingBox.simdWorldTransform,
-            center: SIMD3<Float>(), extent: boundingBox.extent,
-            completionHandler: { object, error in
-                if let referenceObject = object {
-                    // Adjust the object's origin with the user-provided transform.
-                    self.scannedReferenceObject = referenceObject.applyingTransform(origin.simdTransform)
-                    self.scannedReferenceObject!.name = self.scannedObject.scanName
-                    
-                    if let referenceObjectToMerge = ViewController.instance?.referenceObjectToMerge {
-                        ViewController.instance?.referenceObjectToMerge = nil
-                        
-                        // Show activity indicator during the merge.
-                        ViewController.instance?.showAlert(title: "", message: "Merging previous scan into this scan...", buttonTitle: nil)
-                        
-                        // Try to merge the object which was just scanned with the existing one.
-                        self.scannedReferenceObject?.mergeInBackground(with: referenceObjectToMerge, completion: { (mergedObject, error) in
-
-                            if let mergedObject = mergedObject {
-                                self.scannedReferenceObject = mergedObject
-                                ViewController.instance?.showAlert(title: "Merge successful",
-                                                                   message: "The previous scan has been merged into this scan.", buttonTitle: "OK")
-                                creationFinished(self.scannedReferenceObject)
-
-                            } else {
-                                print("Error: Failed to merge scans. \(error?.localizedDescription ?? "")")
-                                let message = """
-                                        Merging the previous scan into this scan failed. Please make sure that
-                                        there is sufficient overlap between both scans and that the lighting
-                                        environment hasn't changed drastically.
-                                        Which scan do you want to use for testing?
-                                        """
-                                let thisScan = UIAlertAction(title: "Use This Scan", style: .default) { _ in
-                                    creationFinished(self.scannedReferenceObject)
-                                }
-                                let previousScan = UIAlertAction(title: "Use Previous Scan", style: .default) { _ in
-                                    self.scannedReferenceObject = referenceObjectToMerge
-                                    creationFinished(self.scannedReferenceObject)
-                                }
-                                ViewController.instance?.showAlert(title: "Merge failed", message: message, actions: [thisScan, previousScan])
-                            }
-                        })
-                    } else {
-                        creationFinished(self.scannedReferenceObject)
-                    }
-                } else {
-                    print("Error: Failed to create reference object. \(error!.localizedDescription)")
-                    creationFinished(nil)
-                }
-            })
-    }
-    
+//    func createReferenceObject(completionHandler creationFinished: @escaping (ARReferenceObject?) -> Void) {
+//        guard let boundingBox = scannedObject.boundingBox, let origin = scannedObject.origin else {
+//            print("Error: No bounding box or object origin present.")
+//            creationFinished(nil)
+//            return
+//        }
+//        
+//        // Extract the reference object based on the position & orientation of the bounding box.
+//        sceneView.session.createReferenceObject(
+//            transform: boundingBox.simdWorldTransform,
+//            center: SIMD3<Float>(), extent: boundingBox.extent,
+//            completionHandler: { object, error in
+//                if let referenceObject = object {
+//                    // Adjust the object's origin with the user-provided transform.
+//                    self.scannedReferenceObject = referenceObject.applyingTransform(origin.simdTransform)
+//                    self.scannedReferenceObject!.name = self.scannedObject.scanName
+//                    
+//                    if let referenceObjectToMerge = SpacialObjectDetectionViewController.instance?.referenceObjectToMerge {
+//                        SpacialObjectDetectionViewController.instance?.referenceObjectToMerge = nil
+//                        
+//                        // Show activity indicator during the merge.
+//                        SpacialObjectDetectionViewController.instance?.showAlert(title: "", message: "Merging previous scan into this scan...", buttonTitle: nil)
+//                        
+//                        // Try to merge the object which was just scanned with the existing one.
+//                        self.scannedReferenceObject?.mergeInBackground(with: referenceObjectToMerge, completion: { (mergedObject, error) in
+//
+//                            if let mergedObject = mergedObject {
+//                                self.scannedReferenceObject = mergedObject
+//                                SpacialObjectDetectionViewController.instance?.showAlert(title: "Merge successful",
+//                                                                   message: "The previous scan has been merged into this scan.", buttonTitle: "OK")
+//                                creationFinished(self.scannedReferenceObject)
+//
+//                            } else {
+//                                print("Error: Failed to merge scans. \(error?.localizedDescription ?? "")")
+//                                let message = """
+//                                        Merging the previous scan into this scan failed. Please make sure that
+//                                        there is sufficient overlap between both scans and that the lighting
+//                                        environment hasn't changed drastically.
+//                                        Which scan do you want to use for testing?
+//                                        """
+//                                let thisScan = UIAlertAction(title: "Use This Scan", style: .default) { _ in
+//                                    creationFinished(self.scannedReferenceObject)
+//                                }
+//                                let previousScan = UIAlertAction(title: "Use Previous Scan", style: .default) { _ in
+//                                    self.scannedReferenceObject = referenceObjectToMerge
+//                                    creationFinished(self.scannedReferenceObject)
+//                                }
+//                                SpacialObjectDetectionViewController.instance?.showAlert(title: "Merge failed", message: message, actions: [thisScan, previousScan])
+//                            }
+//                        })
+//                    } else {
+//                        creationFinished(self.scannedReferenceObject)
+//                    }
+//                } else {
+//                    print("Error: Failed to create reference object. \(error!.localizedDescription)")
+//                    creationFinished(nil)
+//                }
+//            })
+//    }
+//    
     private func createScreenshot() {
         guard let frame = self.sceneView.session.currentFrame else {
             print("Error: Failed to create a screenshot - no current ARFrame exists.")

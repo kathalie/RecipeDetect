@@ -41,7 +41,7 @@ class ThresholdPanGestureRecognizer: UIPanGestureRecognizer {
         
         initialLocation = location(in: view)
         
-        if let viewController = ViewController.instance, let object = viewController.scan?.objectToManipulate {
+        if let viewController = SpacialObjectDetectionViewController.instance, let object = viewController.scan?.objectToManipulate {
             let objectPos = viewController.sceneView.projectPoint(object.worldPosition)
             offsetToObject.x = CGFloat(objectPos.x) - initialLocation.x
             offsetToObject.y = CGFloat(objectPos.y) - initialLocation.y

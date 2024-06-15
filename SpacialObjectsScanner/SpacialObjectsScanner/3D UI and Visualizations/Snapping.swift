@@ -15,7 +15,7 @@ extension BoundingBox {
         var isWithinSnapThreshold = false
         let bottomY = simdWorldPosition.y - extent.y / 2
         
-        guard let currentFrame = ViewController.instance!.sceneView.session.currentFrame else { return }
+        guard let currentFrame = SpacialObjectDetectionViewController.instance!.sceneView.session.currentFrame else { return }
         
         for anchor in currentFrame.anchors where anchor is ARPlaneAnchor {
             let distanceFromHorizontalPlane = abs(bottomY - anchor.transform.position.y)

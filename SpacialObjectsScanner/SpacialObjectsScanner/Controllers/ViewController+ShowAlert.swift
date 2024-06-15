@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ViewController {
+extension SpacialObjectDetectionViewController {
     func showAlert(title: String, message: String, buttonTitle: String? = "OK", showCancel: Bool = false, buttonHandler: ((UIAlertAction) -> Void)? = nil) {
         print(title + "\n" + message)
         

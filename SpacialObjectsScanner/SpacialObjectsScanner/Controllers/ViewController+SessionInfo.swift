@@ -8,7 +8,7 @@ Managemenent of session information communication to the user.
 import UIKit
 import ARKit
 
-extension ViewController {
+extension SpacialObjectDetectionViewController {
     
     func updateSessionInfoLabel(for trackingState: ARCamera.TrackingState) {
         // Update the UI to provide feedback on the state of the AR experience.

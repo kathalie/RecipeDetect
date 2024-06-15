@@ -14,11 +14,11 @@ struct ARCameraView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                GeometryReader { geometry in
-                    ARSceneViewControllerWrapper(viewModel: viewModel)
-                        .drawCaptureBox(screenCenter(geometry.size))
-                }
-                //SpacialScannerViewControllerWrapper()
+//                GeometryReader { geometry in
+//                    ARSceneViewControllerWrapper(viewModel: viewModel)
+//                        .drawCaptureBox(screenCenter(geometry.size))
+//                }
+                SpacialObjectScanner(arSceneViewModel: viewModel)
                 
                 switch viewModel.state {
                     case .initial:

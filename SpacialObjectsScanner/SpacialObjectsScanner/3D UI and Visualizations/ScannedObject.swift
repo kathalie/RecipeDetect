@@ -93,7 +93,7 @@ class ScannedObject: SCNNode {
         // hasn't adjusted it yet.
         guard let boundingBox = self.boundingBox, !boundingBox.hasBeenAdjustedByUser else { return }
         
-        let hitTestResults = sceneView.hitTest(ViewController.instance!.screenCenter, types: .featurePoint)
+        let hitTestResults = sceneView.hitTest(SpacialObjectDetectionViewController.instance!.screenCenter, types: .featurePoint)
         guard !hitTestResults.isEmpty else { return }
         
         let userFocusPoint = hitTestResults[0].worldTransform.position
@@ -137,7 +137,7 @@ class ScannedObject: SCNNode {
     
     private func updateOrCreateGhostBoundingBox() {
         // Perform a hit test against the feature point cloud.
-        guard let result = sceneView.smartHitTest(ViewController.instance!.screenCenter) else {
+        guard let result = sceneView.smartHitTest(SpacialObjectDetectionViewController.instance!.screenCenter) else {
             if let ghostBoundingBox = ghostBoundingBox {
                 ghostBoundingBox.removeFromParentNode()
                 self.ghostBoundingBox = nil

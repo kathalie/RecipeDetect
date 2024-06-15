@@ -80,7 +80,7 @@ class ObjectOrigin: SCNNode {
         customModel = nil
         
         if let url = url, let model = load3DModel(from: url) {
-            ViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
+            SpacialObjectDetectionViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
                 self.addChildNode(model)
             })
             customModel = model

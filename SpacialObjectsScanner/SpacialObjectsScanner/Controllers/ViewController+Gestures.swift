@@ -8,7 +8,7 @@ Gesture interaction methods for the main view controller.
 import UIKit
 import SceneKit
 
-extension ViewController: UIGestureRecognizerDelegate {
+extension SpacialObjectDetectionViewController: UIGestureRecognizerDelegate {
         
     @IBAction func didTap(_ gesture: UITapGestureRecognizer) {
         if state == .scanning {

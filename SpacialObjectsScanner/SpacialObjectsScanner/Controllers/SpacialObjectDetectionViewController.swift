@@ -8,34 +8,35 @@ Main view controller for the object scanning UI.
 import UIKit
 import SceneKit
 import ARKit
+import Anchorage
 
-public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPickerDelegate {
+public enum SpacialObjectDetectionState {
+    case tapObject
+    case boundObject
+    case scan(progress: Int = 0)
+    case info(arReferenceObject: ARReferenceObject?)
+}
+
+public protocol SpacialObjectDetectionDelegate {
+    func nextState() -> SpacialObjectDetectionState
+}
+
+public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPickerDelegate {
     
     static let appStateChangedNotification = Notification.Name("ApplicationStateChanged")
     static let appStateUserInfoKey = "AppState"
     
-    static var instance: ViewController?
+    static var instance: SpacialObjectDetectionViewController?
     
     var lidarSupported = false
     
-    @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var nextButton: RoundedButton!
-    var backButton: UIBarButtonItem!
-    @IBOutlet weak var instructionView: UIVisualEffectView!
-    @IBOutlet weak var instructionLabel: MessageLabel!
-    @IBOutlet weak var flashlightButton: FlashlightButton!
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var sessionInfoView: UIVisualEffectView!
-    @IBOutlet weak var sessionInfoLabel: UILabel!
-    @IBOutlet weak var toggleInstructionsButton: RoundedButton!
+    var sceneView: ARSCNView = ARSCNView()
     
     internal var internalState: State = .startARSession
     
     internal var scan: Scan?
     
-    var referenceObjectToMerge: ARReferenceObject?
-    var referenceObjectToTest: ARReferenceObject?
+//    var referenceObjectToTest: ARReferenceObject?
 
     internal var messageExpirationTimer: Timer?
     internal var startTimeOfLastMessage: TimeInterval?
@@ -43,18 +44,22 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     
     internal var screenCenter = CGPoint()
     
-    var instructionsVisible: Bool = true {
-        didSet {
-            instructionView.isHidden = !instructionsVisible
-            toggleInstructionsButton.toggledOn = instructionsVisible
-        }
+    var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
+    
+    public init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate) {
+        self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Application Lifecycle
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ViewController.instance = self
+        SpacialObjectDetectionViewController.instance = self
     }
     
     
@@ -63,13 +68,6 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
         sceneView.session.pause()
     }
     
-    private func setupSceneView() {
-        sceneView.delegate = self
-        
-        let scene = SCNScene()
-        sceneView.scene = scene
-        sceneView.autoenablesDefaultLighting = true
-    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,28 +78,7 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
         
         // Prevent the screen from being dimmed after a while.
         UIApplication.shared.isIdleTimerDisabled = true
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(scanningStateChanged), name: Scan.stateChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ghostBoundingBoxWasCreated),
-                                       name: ScannedObject.ghostBoundingBoxCreatedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ghostBoundingBoxWasRemoved),
-                                       name: ScannedObject.ghostBoundingBoxRemovedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxWasCreated),
-                                       name: ScannedObject.boundingBoxCreatedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(scanPercentageChanged),
-                                       name: BoundingBox.scanPercentageChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
-                                       name: BoundingBox.extentChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
-                                       name: BoundingBox.positionChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(objectOriginPositionChanged(_:)),
-                                       name: ObjectOrigin.positionChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(displayWarningIfInLowPowerMode),
-                                       name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
-        
-        setupNavigationBar()
-        
+                
         displayWarningIfInLowPowerMode()
         
         // Make sure the application launches in .startARSession state.
@@ -109,29 +86,58 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
         state = .startARSession
     }
     
+    private func setupSceneView() {
+        sceneView.delegate = self
+        
+        let scene = SCNScene()
+        sceneView.scene = scene
+        sceneView.autoenablesDefaultLighting = true
+    }
+    
+    @objc
+    func nextState() {
+        print("TAPPED!")
+        let state = self.spacialObjectDetectionDelegate.nextState()
+        
+        print(state)
+    }
+    
+    private func setupUI() {
+        view.addSubview(sceneView)
+        
+        sceneView.topAnchor == view.topAnchor
+        sceneView.leadingAnchor == view.leadingAnchor
+        sceneView.bottomAnchor == view.bottomAnchor
+        sceneView.trailingAnchor == view.trailingAnchor
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(nextState))
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        setupUI()
         setupSceneView()
         screenCenter = sceneView.center
     }
     
     // MARK: - UI Event Handling
     
-    @IBAction func restartButtonTapped(_ sender: Any) {
-        if let scan = scan, scan.boundingBoxExists {
-            let title = "Start over?"
-            let message = "Discard the current scan and start over?"
-            self.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
-                self.state = .startARSession
-            }
-            
-            return
-        }
-        
-        self.state = .startARSession
-    }
-    
+//    @IBAction func restartButtonTapped(_ sender: Any) {
+//        if let scan = scan, scan.boundingBoxExists {
+//            let title = "Start over?"
+//            let message = "Discard the current scan and start over?"
+//            self.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
+//                self.state = .startARSession
+//            }
+//            
+//            return
+//        }
+//        
+//        self.state = .startARSession
+//    }
+//    
     func backFromBackground() {
         if state == .scanning {
             let title = "Warning: Scan may be broken"
@@ -179,56 +185,6 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
 //        instructionsVisible = true
 //    }
     
-    
-    func testObjectDetection() {
-        // In case an object for testing has been received, use it right away...
-        if let object = referenceObjectToTest {
-            referenceObjectToTest = nil
-            return
-        }
-        
-        // ...otherwise attempt to create a reference object from the current scan.
-        guard let scan = scan, scan.boundingBoxExists else {
-            print("Error: Bounding box not yet created.")
-            return
-        }
-        
-        scan.createReferenceObject { scannedObject in
-            if let object = scannedObject {
-                return
-            }
-            
-            let title = "Scan failed"
-            let message = "Saving the scan failed."
-            let buttonTitle = "Restart Scan"
-            self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: false) { _ in
-                self.state = .startARSession
-            }
-        }
-    }
-    
-//    func createAndShareReferenceObject() {
-//        guard let testRun = self.testRun, let object = testRun.referenceObject, let name = object.name else {
-//            print("Error: Missing scanned object.")
-//            return
-//        }
-//        
-//        let documentURL = FileManager.default.temporaryDirectory.appendingPathComponent(name + ".arobject")
-//        
-//        DispatchQueue.global().async {
-//            do {
-//                try object.export(to: documentURL, previewImage: testRun.previewImage)
-//            } catch {
-//                fatalError("Failed to save the file to \(documentURL)")
-//            }
-//            
-//            // Initiate a share sheet for the scanned object
-//            let airdropShareSheet = ShareScanViewController(sourceView: self.nextButton, sharedObject: documentURL)
-//            DispatchQueue.main.async {
-//                self.present(airdropShareSheet, animated: true, completion: nil)
-//            }
-//        }
-//    }
     
     var limitedTrackingTimer: Timer?
     
@@ -281,7 +237,7 @@ public class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDeleg
     
     public func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         
-        updateSessionInfoLabel(for: camera.trackingState)
+//        updateSessionInfoLabel(for: camera.trackingState)
         
         switch camera.trackingState {
         case .notAvailable:

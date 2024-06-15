@@ -476,7 +476,7 @@ class BoundingBox: SCNNode {
     }
     
     func tryToAlignWithPlanes(_ anchors: [ARAnchor]) {
-        guard !hasBeenAdjustedByUser, ViewController.instance?.scan?.state == .defineBoundingBox else { return }
+        guard !hasBeenAdjustedByUser, SpacialObjectDetectionViewController.instance?.scan?.state == .defineBoundingBox else { return }
         
         let bottomCenter = SIMD3<Float>(simdPosition.x, simdPosition.y - extent.y / 2, simdPosition.z)
 

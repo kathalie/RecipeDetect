@@ -24,25 +24,25 @@ class DetectedObject: SCNNode {
     
     private let referenceObject: ARReferenceObject
     
-    func set3DModel(_ url: URL?) {
-        if let url = url, let model = load3DModel(from: url) {
-            customModel?.removeFromParentNode()
-            customModel = nil
-            originVis.removeFromParentNode()
-            ViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
-                self.addChildNode(model)
-            })
-            customModel = model
-            pointCloudVisualization.isHidden = true
-            boundingBox?.isHidden = true
-        } else {
-            customModel?.removeFromParentNode()
-            customModel = nil
-            addChildNode(originVis)
-            pointCloudVisualization.isHidden = false
-            boundingBox?.isHidden = false
-        }
-    }
+//    func set3DModel(_ url: URL?) {
+//        if let url = url, let model = load3DModel(from: url) {
+//            customModel?.removeFromParentNode()
+//            customModel = nil
+//            originVis.removeFromParentNode()
+//            SpacialObjectDetectionViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
+//                self.addChildNode(model)
+//            })
+//            customModel = model
+//            pointCloudVisualization.isHidden = true
+//            boundingBox?.isHidden = true
+//        } else {
+//            customModel?.removeFromParentNode()
+//            customModel = nil
+//            addChildNode(originVis)
+//            pointCloudVisualization.isHidden = false
+//            boundingBox?.isHidden = false
+//        }
+//    }
     
     init(referenceObject: ARReferenceObject) {
         self.referenceObject = referenceObject
