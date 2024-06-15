@@ -11,6 +11,7 @@ import Kingfisher
 struct RecipeDetailsView: View {
     let recipe: Recipe
     
+   
     var body: some View {
         VStack() {
             HStack {
@@ -46,7 +47,7 @@ struct RecipeDetailsView: View {
                         Text("\(String(format: "%.1f", $0.amount))\($0.unit) \($0.name)")
                     }
                     .listStyle(.plain)
-                    .scrollDisabled(true)
+                    //.scrollDisabled(true)
                     Spacer()
                     Text("Details:")
                         .font(.title3)

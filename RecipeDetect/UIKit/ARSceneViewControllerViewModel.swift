@@ -25,18 +25,23 @@ final class ARSceneViewControllerViewModel: ObservableObject {
         state = .initial
         self.snapshot = snapshot
 
-        detector.detect(image: snapshot) { result in
+        detector.classify(image: snapshot) { result in
             DispatchQueue.main.async {
                 switch result {
-                case let .success(detections):
-                    if detections.isEmpty {
-                        self.state = .error(.noDetectedObjects)
-                    } else {
-                        self.onDetectionSuccess?(detections)
+                    case .success(let classification):
+                        print("Detected: \(classification.label) with confidence: \(classification.confidence)")
+                    case .failure(let error):
+                        print("Error: \(error)")
                     }
-                case .failure:
-                    self.state = .error(.detectionFailed)
-                }
+//                case let .success(detections):
+//                    if detections.isEmpty {
+//                        self.state = .error(.noDetectedObjects)
+//                    } else {
+//                        self.onDetectionSuccess?(detections)
+//                    }
+//                case .failure:
+//                    self.state = .error(.detectionFailed)
+//                }
             }
         }
     }

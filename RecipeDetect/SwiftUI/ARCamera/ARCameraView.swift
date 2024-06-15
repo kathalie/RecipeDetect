@@ -6,36 +6,39 @@
 //
 
 import SwiftUI
+import SpacialObjectsScanner
 
 struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
-                GeometryReader { geometry in
-                    ARSceneViewControllerWrapper(viewModel: viewModel)
-                        .drawCaptureBox(screenCenter(geometry.size))
-                }
+//                GeometryReader { geometry in
+//                    ARSceneViewControllerWrapper(viewModel: viewModel)
+//                        .drawCaptureBox(screenCenter(geometry.size))
+//                }
+                SpacialObjectScanner(arSceneViewModel: viewModel)
+                
                 switch viewModel.state {
-                case .initial:
-                    EmptyView()
-                case let .data(detections, image, size):
-                    NextButton(destination: ImageCaptureView(detections: detections, image: image, size: size))
-                case let .error(error):
-                    VStack {
-                        HStack {
-                            Image("error")
-                                .resizable()
-                                .frame(width: 32, height: 32)
-                            Text(error.description)
+                    case .initial:
+                        EmptyView()
+                    case let .data(detections, image, size):
+                        NextButton(destination: ImageCaptureView(detections: detections, image: image, size: size))
+                    case let .error(error):
+                        VStack {
+                            HStack {
+                                Image("error")
+                                    .resizable()
+                                    .frame(width: 32, height: 32)
+                                Text(error.description)
+                            }
+                            .padding(.horizontal)
+                            .background { Color.white.opacity(0.5) }
+                            Spacer()
                         }
-                        .padding(.horizontal)
-                        .background { Color.white.opacity(0.5) }
-                        Spacer()
                     }
                 }
-            }
             .navigationBarTitle("")
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)

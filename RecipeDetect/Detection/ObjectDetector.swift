@@ -9,57 +9,72 @@ import Foundation
 import UIKit
 import Vision
 
-/// Class that is responsible for making request to ML model, processing the results and returning object detections
 final class ObjectDetector {
 
-    typealias DetectionResult = Result<[Detection], Error>
-    private var completion: ((DetectionResult) -> Void)?
+    typealias ClassificationResult = Result<Classification, Error>
+    private var completion: ((ClassificationResult) -> Void)?
 
     private lazy var model: VNCoreMLModel = {
         let config = MLModelConfiguration()
-        let baseModel = try! FruitDetector(configuration: config)
+        let baseModel = try! ProductsClassifier(configuration: config)
         return try! VNCoreMLModel(for: baseModel.model)
     }()
 
-    private lazy var detectorRequest: VNImageBasedRequest = {
+    private lazy var classificationRequest: VNCoreMLRequest = {
         let request = VNCoreMLRequest(model: model, completionHandler: requestCompletionHandler(_:error:))
         request.imageCropAndScaleOption = .centerCrop
         return request
     }()
 
-    func detect(image: UIImage, completion: @escaping ((DetectionResult) -> Void)) {
+    func classify(image: UIImage, completion: @escaping ((ClassificationResult) -> Void)) {
         self.completion = completion
 
+        guard let cgImage = image.cgImage else {
+            completion(.failure(ObjectDetectorError.invalidImage))
+            return
+        }
+
         let handler = VNImageRequestHandler(
-            cgImage: image.cgImage!,
+            cgImage: cgImage,
             orientation: CGImagePropertyOrientation(image.imageOrientation)
         )
 
         do {
-            try handler.perform([detectorRequest])
+            try handler.perform([classificationRequest])
         } catch {
-            print(error)
+            completion(.failure(error))
         }
     }
-    
+
     private func requestCompletionHandler(_ request: VNRequest, error: Error?) {
-        guard let observations = request.results as? [VNRecognizedObjectObservation] else {
+        if let error = error {
+            completion?(.failure(error))
             return
         }
-        completion?(.success(observations.sorted(by: { $0.confidence > $1.confidence }).compactMap { obs in
-            if let label = obs.labels.first?.identifier {
-                // model returns upside down results where origin is left bottom corner
-                // so it's necessary to flip Y coordinate and height
-                let flippedBox: CGRect = .init(
-                    x: obs.boundingBox.origin.x,
-                    y: 1 - obs.boundingBox.origin.y,
-                    width: obs.boundingBox.width,
-                    height: -obs.boundingBox.height)
-                return Detection(label: label, boundingBox: flippedBox, confidence: obs.confidence)
-            }
-            else {
-                return nil
-            }
-        }))
+
+        guard let observations = request.results as? [VNClassificationObservation] else {
+            completion?(.failure(ObjectDetectorError.noObservations))
+            return
+        }
+
+        guard let topClassification = observations.max(by: { $0.confidence < $1.confidence }) else {
+            completion?(.failure(ObjectDetectorError.noObservations))
+            return
+        }
+
+        let classification = Classification(label: topClassification.identifier, confidence: topClassification.confidence)
+        completion?(.success(classification))
     }
+}
+
+// Define a custom error type
+enum ObjectDetectorError: Error {
+    case invalidImage
+    case noObservations
+}
+
+// Classification structure definition, if not already defined
+struct Classification {
+    let label: String
+    let confidence: VNConfidence
 }
