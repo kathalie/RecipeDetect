@@ -25,16 +25,17 @@
 		8C253B482C161FAC0065B0FF /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B3B2C161FAC0065B0FF /* BoundingBoxSide.swift */; };
 		8C253B532C161FDE0065B0FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4A2C161FDD0065B0FF /* AppDelegate.swift */; };
 		8C253B542C161FDE0065B0FF /* SpacialObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4B2C161FDD0065B0FF /* SpacialObjectDetectionViewController.swift */; };
-		8C253B562C161FDE0065B0FF /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */; };
-		8C253B572C161FDE0065B0FF /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */; };
+		8C253B562C161FDE0065B0FF /* SpacialObjectDetectionViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4D2C161FDE0065B0FF /* SpacialObjectDetectionViewController+ApplicationState.swift */; };
+		8C253B572C161FDE0065B0FF /* SpacialObjectDetectionViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B4E2C161FDE0065B0FF /* SpacialObjectDetectionViewController+Gestures.swift */; };
 		8C253B5A2C161FDE0065B0FF /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B512C161FDE0065B0FF /* Scan.swift */; };
-		8C253B5B2C161FDE0065B0FF /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */; };
 		8C253B602C161FEF0065B0FF /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B5D2C161FEE0065B0FF /* ThresholdPanGestureRecognizer.swift */; };
 		8C253B612C161FEF0065B0FF /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B5E2C161FEF0065B0FF /* ThresholdPinchGestureRecognizer.swift */; };
 		8C253B622C161FEF0065B0FF /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B5F2C161FEF0065B0FF /* ThresholdRotationGestureRecognizer.swift */; };
 		8C253B662C1620000065B0FF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B642C161FFF0065B0FF /* Utilities.swift */; };
 		8C253B672C1620000065B0FF /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C253B652C1620000065B0FF /* ARCameraTrackingState.swift */; };
-		8C74DEE62C1CC40A007D79A7 /* ViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */; };
+		8C74DEE62C1CC40A007D79A7 /* SpacialObjectDetectionViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74DEE52C1CC40A007D79A7 /* SpacialObjectDetectionViewController+ShowAlert.swift */; };
+		8CB7974D2C1DD3C40090E40E /* SpacialObjectDetectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7974C2C1DD3C40090E40E /* SpacialObjectDetectionDelegate.swift */; };
+		8CB7974F2C1DD6820090E40E /* SpacialObjectDetectionViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7974E2C1DD6820090E40E /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,18 +59,19 @@
 		8C253B3B2C161FAC0065B0FF /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
 		8C253B4A2C161FDD0065B0FF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C253B4B2C161FDD0065B0FF /* SpacialObjectDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacialObjectDetectionViewController.swift; sourceTree = "<group>"; };
-		8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
-		8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
+		8C253B4D2C161FDE0065B0FF /* SpacialObjectDetectionViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpacialObjectDetectionViewController+ApplicationState.swift"; sourceTree = "<group>"; };
+		8C253B4E2C161FDE0065B0FF /* SpacialObjectDetectionViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpacialObjectDetectionViewController+Gestures.swift"; sourceTree = "<group>"; };
 		8C253B512C161FDE0065B0FF /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
-		8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
 		8C253B5D2C161FEE0065B0FF /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		8C253B5E2C161FEF0065B0FF /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
 		8C253B5F2C161FEF0065B0FF /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
 		8C253B642C161FFF0065B0FF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8C253B652C1620000065B0FF /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		8C253B882C17394C0065B0FF /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ShowAlert.swift"; sourceTree = "<group>"; };
+		8C74DEE52C1CC40A007D79A7 /* SpacialObjectDetectionViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacialObjectDetectionViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		8CB797482C1DB7DB0090E40E /* Anchorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Anchorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB7974C2C1DD3C40090E40E /* SpacialObjectDetectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectDetectionDelegate.swift; sourceTree = "<group>"; };
+		8CB7974E2C1DD6820090E40E /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacialObjectDetectionViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		B382C6C403AD7EA3E111E538 /* Pods-SpacialObjectsScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacialObjectsScanner.debug.xcconfig"; path = "Target Support Files/Pods-SpacialObjectsScanner/Pods-SpacialObjectsScanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,10 +154,11 @@
 			children = (
 				8C253B512C161FDE0065B0FF /* Scan.swift */,
 				8C253B4B2C161FDD0065B0FF /* SpacialObjectDetectionViewController.swift */,
-				8C253B4D2C161FDE0065B0FF /* ViewController+ApplicationState.swift */,
-				8C253B4E2C161FDE0065B0FF /* ViewController+Gestures.swift */,
-				8C253B522C161FDE0065B0FF /* ViewController+SessionInfo.swift */,
-				8C74DEE52C1CC40A007D79A7 /* ViewController+ShowAlert.swift */,
+				8CB7974E2C1DD6820090E40E /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */,
+				8C253B4D2C161FDE0065B0FF /* SpacialObjectDetectionViewController+ApplicationState.swift */,
+				8C253B4E2C161FDE0065B0FF /* SpacialObjectDetectionViewController+Gestures.swift */,
+				8C74DEE52C1CC40A007D79A7 /* SpacialObjectDetectionViewController+ShowAlert.swift */,
+				8CB7974C2C1DD3C40090E40E /* SpacialObjectDetectionDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,8 +311,8 @@
 				8C253B3C2C161FAC0065B0FF /* ScannedObject.swift in Sources */,
 				8C253B662C1620000065B0FF /* Utilities.swift in Sources */,
 				8C253B602C161FEF0065B0FF /* ThresholdPanGestureRecognizer.swift in Sources */,
-				8C253B5B2C161FDE0065B0FF /* ViewController+SessionInfo.swift in Sources */,
-				8C253B572C161FDE0065B0FF /* ViewController+Gestures.swift in Sources */,
+				8CB7974D2C1DD3C40090E40E /* SpacialObjectDetectionDelegate.swift in Sources */,
+				8C253B572C161FDE0065B0FF /* SpacialObjectDetectionViewController+Gestures.swift in Sources */,
 				8C253B5A2C161FDE0065B0FF /* Scan.swift in Sources */,
 				8C253B452C161FAC0065B0FF /* ScannedPointCloud.swift in Sources */,
 				8C253B532C161FDE0065B0FF /* AppDelegate.swift in Sources */,
@@ -317,16 +320,17 @@
 				8C253B462C161FAC0065B0FF /* Wireframe.swift in Sources */,
 				8C253B432C161FAC0065B0FF /* BoundingBox.swift in Sources */,
 				8C253B402C161FAC0065B0FF /* ObjectOrigin.swift in Sources */,
-				8C74DEE62C1CC40A007D79A7 /* ViewController+ShowAlert.swift in Sources */,
+				8C74DEE62C1CC40A007D79A7 /* SpacialObjectDetectionViewController+ShowAlert.swift in Sources */,
 				8C253B612C161FEF0065B0FF /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				8C253B3F2C161FAC0065B0FF /* DetectedPointCloud.swift in Sources */,
 				8C253B472C161FAC0065B0FF /* Snapping.swift in Sources */,
 				8C253B482C161FAC0065B0FF /* BoundingBoxSide.swift in Sources */,
 				8C253B3D2C161FAC0065B0FF /* DetectedBoundingBox.swift in Sources */,
 				8C253B412C161FAC0065B0FF /* PointCloud+CreateVisualization.swift in Sources */,
+				8CB7974F2C1DD6820090E40E /* SpacialObjectDetectionViewController+ARSessionDelegate.swift in Sources */,
 				8C253B672C1620000065B0FF /* ARCameraTrackingState.swift in Sources */,
 				8C253B622C161FEF0065B0FF /* ThresholdRotationGestureRecognizer.swift in Sources */,
-				8C253B562C161FDE0065B0FF /* ViewController+ApplicationState.swift in Sources */,
+				8C253B562C161FDE0065B0FF /* SpacialObjectDetectionViewController+ApplicationState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

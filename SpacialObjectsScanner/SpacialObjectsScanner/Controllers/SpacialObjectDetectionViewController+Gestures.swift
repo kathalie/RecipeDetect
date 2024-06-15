@@ -9,53 +9,73 @@ import UIKit
 import SceneKit
 
 extension SpacialObjectDetectionViewController: UIGestureRecognizerDelegate {
-        
-    @IBAction func didTap(_ gesture: UITapGestureRecognizer) {
+    func setupGestureRecognisers() {
+        sceneView.addGestureRecognizer(UITapGestureRecognizer(
+            target: self,
+            action: #selector(didTap(_:)))
+        )
+        sceneView.addGestureRecognizer(UIPanGestureRecognizer(
+            target: self,
+            action: #selector(didTap(_:)))
+        )
+        sceneView.addGestureRecognizer(ThresholdPanGestureRecognizer(
+            target: self,
+            action: #selector(didTwoFingerPan(_:)))
+        )
+        sceneView.addGestureRecognizer(ThresholdRotationGestureRecognizer(
+            target: self,
+            action: #selector(didRotate(_:)))
+        )
+        sceneView.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(didLongPress(_:)))
+        )
+        sceneView.addGestureRecognizer(ThresholdPinchGestureRecognizer(
+            target: self,
+            action: #selector(didPinch(_:)))
+        )
+    }
+    
+    @objc
+    func didTap(_ gesture: UITapGestureRecognizer) {
         if state == .scanning {
             scan?.didTap(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
-    @IBAction func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
+    @objc
+    func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
         if state == .scanning {
             scan?.didOneFingerPan(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
-    @IBAction func didTwoFingerPan(_ gesture: ThresholdPanGestureRecognizer) {
+    @objc
+    func didTwoFingerPan(_ gesture: ThresholdPanGestureRecognizer) {
         if state == .scanning {
             scan?.didTwoFingerPan(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
-    @IBAction func didRotate(_ gesture: ThresholdRotationGestureRecognizer) {
+    @objc
+    func didRotate(_ gesture: ThresholdRotationGestureRecognizer) {
         if state == .scanning {
             scan?.didRotate(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
-    @IBAction func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+    @objc
+    func didLongPress(_ gesture: UILongPressGestureRecognizer) {
         if state == .scanning {
             scan?.didLongPress(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
-    @IBAction func didPinch(_ gesture: ThresholdPinchGestureRecognizer) {
+    @objc
+    func didPinch(_ gesture: ThresholdPinchGestureRecognizer) {
         if state == .scanning {
             scan?.didPinch(gesture)
         }
-        
-//        instructionsVisible = false
     }
     
     public func gestureRecognizer(_ first: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith second: UIGestureRecognizer) -> Bool {

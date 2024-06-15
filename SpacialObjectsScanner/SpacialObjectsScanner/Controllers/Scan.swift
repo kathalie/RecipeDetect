@@ -127,10 +127,10 @@ class Scan {
         scannedObject = ScannedObject(sceneView)
         pointCloud = ScannedPointCloud()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.applicationStateChanged(_:)),
-                                               name: SpacialObjectDetectionViewController.appStateChangedNotification,
-                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(self.applicationStateChanged(_:)),
+//                                               name: SpacialObjectDetectionViewController.appStateChangedNotification,
+//                                               object: nil)
         
         self.sceneView.scene.rootNode.addChildNode(self.scannedObject)
         self.sceneView.scene.rootNode.addChildNode(self.pointCloud)
@@ -141,18 +141,18 @@ class Scan {
         self.pointCloud.removeFromParentNode()
     }
     
-    @objc
-    private func applicationStateChanged(_ notification: Notification) {
-        guard let appState = notification.userInfo?[SpacialObjectDetectionViewController.appStateUserInfoKey] as? SpacialObjectDetectionViewController.State else { return }
-        switch appState {
-        case .scanning:
-            scannedObject.isHidden = false
-            pointCloud.isHidden = false
-        default:
-            scannedObject.isHidden = true
-            pointCloud.isHidden = true
-        }
-    }
+//    @objc
+//    private func applicationStateChanged(_ notification: Notification) {
+//        guard let appState = notification.userInfo?[SpacialObjectDetectionViewController.appStateUserInfoKey] as? SpacialObjectDetectionViewController.ARSessionState else { return }
+//        switch appState {
+//        case .scanning:
+//            scannedObject.isHidden = false
+//            pointCloud.isHidden = false
+//        default:
+//            scannedObject.isHidden = true
+//            pointCloud.isHidden = true
+//        }
+//    }
     
     func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
         if state == .ready {

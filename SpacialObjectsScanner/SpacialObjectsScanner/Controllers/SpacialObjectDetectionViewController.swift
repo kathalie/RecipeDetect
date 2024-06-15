@@ -10,37 +10,19 @@ import SceneKit
 import ARKit
 import Anchorage
 
-public enum SpacialObjectDetectionState {
-    case tapObject
-    case boundObject
-    case scan(progress: Int = 0)
-    case info(arReferenceObject: ARReferenceObject?)
-}
-
-public protocol SpacialObjectDetectionDelegate {
-    func nextState() -> SpacialObjectDetectionState
-}
-
-public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPickerDelegate {
-    
-    static let appStateChangedNotification = Notification.Name("ApplicationStateChanged")
-    static let appStateUserInfoKey = "AppState"
-    
+public class SpacialObjectDetectionViewController: UIViewController {
     static var instance: SpacialObjectDetectionViewController?
     
     var lidarSupported = false
     
     var sceneView: ARSCNView = ARSCNView()
     
-    internal var internalState: State = .startARSession
+    var arSessionState: ARSessionState = .startARSession
     
     internal var scan: Scan?
-    
-//    var referenceObjectToTest: ARReferenceObject?
-
-    internal var messageExpirationTimer: Timer?
-    internal var startTimeOfLastMessage: TimeInterval?
-    internal var expirationTimeOfLastMessage: TimeInterval?
+//    internal var messageExpirationTimer: Timer?
+//    internal var startTimeOfLastMessage: TimeInterval?
+//    internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
     
@@ -94,14 +76,6 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
         sceneView.autoenablesDefaultLighting = true
     }
     
-    @objc
-    func nextState() {
-        print("TAPPED!")
-        let state = self.spacialObjectDetectionDelegate.nextState()
-        
-        print(state)
-    }
-    
     private func setupUI() {
         view.addSubview(sceneView)
         
@@ -109,9 +83,6 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
         sceneView.leadingAnchor == view.leadingAnchor
         sceneView.bottomAnchor == view.bottomAnchor
         sceneView.trailingAnchor == view.trailingAnchor
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(nextState))
-        sceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     public override func viewDidLayoutSubviews() {
@@ -119,25 +90,11 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
 
         setupUI()
         setupSceneView()
+        setupGestureRecognisers()
         screenCenter = sceneView.center
     }
     
-    // MARK: - UI Event Handling
-    
-//    @IBAction func restartButtonTapped(_ sender: Any) {
-//        if let scan = scan, scan.boundingBoxExists {
-//            let title = "Start over?"
-//            let message = "Discard the current scan and start over?"
-//            self.showAlert(title: title, message: message, buttonTitle: "Yes", showCancel: true) { _ in
-//                self.state = .startARSession
-//            }
-//            
-//            return
-//        }
-//        
-//        self.state = .startARSession
-//    }
-//    
+  
     func backFromBackground() {
         if state == .scanning {
             let title = "Warning: Scan may be broken"
@@ -149,199 +106,76 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
         }
     }
     
-
-//    @IBAction func previousButtonTapped(_ sender: Any) {
-//        switchToPreviousState()
-//    }
-//    
-//    @IBAction func nextButtonTapped(_ sender: Any) {
-//        guard !nextButton.isHidden && nextButton.isEnabled else { return }
-//        switchToNextState()
-//    }
+//    var limitedTrackingTimer: Timer?
     
-    
-//    @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
-//        // A tap in the extended hit area on the lower left should cause a tap
-//        //  on the button that is currently visible at that location.
-//        if !loadModelButton.isHidden {
-//            loadModelButtonTapped(self)
-//        } else if !flashlightButton.isHidden {
-//            toggleFlashlightButtonTapped(self)
+//    func startLimitedTrackingTimer() {
+//        guard limitedTrackingTimer == nil else { return }
+//        
+//        limitedTrackingTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
+//            self.cancelLimitedTrackingTimer()
+//            guard let scan = self.scan else { return }
+//            if scan.state == .defineBoundingBox || scan.state == .scanning || scan.state == .adjustingOrigin {
+//                let title = "Limited Tracking"
+//                let message = "Low tracking quality - it is unlikely that a good reference object can be generated from this scan."
+//                let buttonTitle = "Restart Scan"
+//                
+//                self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: true) { _ in
+//                    self.state = .startARSession
+//                }
+//            }
 //        }
 //    }
-    
-//    @IBAction func toggleFlashlightButtonTapped(_ sender: Any) {
-//        guard !flashlightButton.isHidden && flashlightButton.isEnabled else { return }
-//        flashlightButton.toggledOn = !flashlightButton.toggledOn
+//    
+//    func cancelLimitedTrackingTimer() {
+//        limitedTrackingTimer?.invalidate()
+//        limitedTrackingTimer = nil
+//    }
+//    
+//    var maxScanTimeTimer: Timer?
+//    
+//    func startMaxScanTimeTimer() {
+//        guard maxScanTimeTimer == nil else { return }
+//        
+//        let timeout: TimeInterval = 60.0 * 5
+//        
+//        maxScanTimeTimer = Timer.scheduledTimer(withTimeInterval: timeout, repeats: false) { _ in
+//            self.cancelMaxScanTimeTimer()
+//            guard self.state == .scanning else { return }
+//            let title = "Scan is taking too long"
+//            let message = "Scanning consumes a lot of resources. This scan has been running for \(Int(timeout)) s. Consider closing the app and letting the device rest for a few minutes."
+//            let buttonTitle = "OK"
+//            self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: true)
+//        }
+//    }
+//    
+//    func cancelMaxScanTimeTimer() {
+//        maxScanTimeTimer?.invalidate()
+//        maxScanTimeTimer = nil
 //    }
     
-//    @IBAction func toggleInstructionsButtonTapped(_ sender: Any) {
-//        guard !toggleInstructionsButton.isHidden && toggleInstructionsButton.isEnabled else { return }
-//        instructionsVisible.toggle()
-//    }
-    
-//    func displayInstruction(_ message: Message) {
-//        instructionLabel.display(message)
-//        instructionsVisible = true
-//    }
-    
-    
-    var limitedTrackingTimer: Timer?
-    
-    func startLimitedTrackingTimer() {
-        guard limitedTrackingTimer == nil else { return }
-        
-        limitedTrackingTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
-            self.cancelLimitedTrackingTimer()
-            guard let scan = self.scan else { return }
-            if scan.state == .defineBoundingBox || scan.state == .scanning || scan.state == .adjustingOrigin {
-                let title = "Limited Tracking"
-                let message = "Low tracking quality - it is unlikely that a good reference object can be generated from this scan."
-                let buttonTitle = "Restart Scan"
-                
-                self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: true) { _ in
-                    self.state = .startARSession
-                }
-            }
-        }
-    }
-    
-    func cancelLimitedTrackingTimer() {
-        limitedTrackingTimer?.invalidate()
-        limitedTrackingTimer = nil
-    }
-    
-    var maxScanTimeTimer: Timer?
-    
-    func startMaxScanTimeTimer() {
-        guard maxScanTimeTimer == nil else { return }
-        
-        let timeout: TimeInterval = 60.0 * 5
-        
-        maxScanTimeTimer = Timer.scheduledTimer(withTimeInterval: timeout, repeats: false) { _ in
-            self.cancelMaxScanTimeTimer()
-            guard self.state == .scanning else { return }
-            let title = "Scan is taking too long"
-            let message = "Scanning consumes a lot of resources. This scan has been running for \(Int(timeout)) s. Consider closing the app and letting the device rest for a few minutes."
-            let buttonTitle = "OK"
-            self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: true)
-        }
-    }
-    
-    func cancelMaxScanTimeTimer() {
-        maxScanTimeTimer?.invalidate()
-        maxScanTimeTimer = nil
-    }
-    
-    // MARK: - ARSessionDelegate
-    
-    public func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        
-//        updateSessionInfoLabel(for: camera.trackingState)
-        
-        switch camera.trackingState {
-        case .notAvailable:
-            state = .notReady
-        case .limited(let reason):
-            switch state {
-            case .startARSession:
-                state = .notReady
-            case .notReady, .testing:
-                break
-            case .scanning:
-                if let scan = scan {
-                    switch scan.state {
-                    case .ready:
-                        state = .notReady
-                    case .defineBoundingBox, .scanning, .adjustingOrigin:
-                        if reason == .relocalizing {
-                            // If ARKit is relocalizing we should abort the current scan
-                            // as this can cause unpredictable distortions of the map.
-                            print("Warning: ARKit is relocalizing")
-                            
-                            let title = "Warning: Scan may be broken"
-                            let message = "A gap in tracking has occurred. It is recommended to restart the scan."
-                            let buttonTitle = "Restart Scan"
-                            self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: true) { _ in
-                                self.state = .notReady
-                            }
-                            
-                        } else {
-                            // Suggest the user to restart tracking after a while.
-                            startLimitedTrackingTimer()
-                        }
-                    }
-                }
-            }
-        case .normal:
-            if limitedTrackingTimer != nil {
-                cancelLimitedTrackingTimer()
-            }
-            
-            switch state {
-            case .startARSession, .notReady:
-                state = .scanning
-            case .scanning, .testing:
-                break
-            }
-        }
-    }
-    
-    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        guard let frame = sceneView.session.currentFrame else { return }
 
-        scan?.updateOnEveryFrame(frame)
-    }
     
-    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let objectAnchor = anchor as? ARObjectAnchor {
-            return
-        }
-        
-        if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
-            scan?.scannedObject.tryToAlignWithPlanes([planeAnchor])
-            
-            // After a plane was found, disable plane detection for performance reasons.
-            sceneView.stopPlaneDetection()
-        }
-    }
-    
-    @objc
-    func scanPercentageChanged(_ notification: Notification) {
-        guard let percentage = notification.userInfo?[BoundingBox.scanPercentageUserInfoKey] as? Int else { return }
-        
-        // Switch to the next state if the scan is complete.
-        if percentage >= 100 {
-//            switchToNextState()
-            return
-        }
-        DispatchQueue.main.async {
-//            self.setNavigationBarTitle("Scan (\(percentage)%)")
-        }
-    }
-    
-    @objc
-    func boundingBoxPositionOrExtentChanged(_ notification: Notification) {
-        guard let box = notification.object as? BoundingBox,
-            let cameraPos = sceneView.pointOfView?.simdWorldPosition else { return }
-        
-        let xString = String(format: "width: %.2f", box.extent.x)
-        let yString = String(format: "height: %.2f", box.extent.y)
-        let zString = String(format: "length: %.2f", box.extent.z)
-        let distanceFromCamera = String(format: "%.2f m", distance(box.simdWorldPosition, cameraPos))
-        displayMessage("Current bounding box: \(distanceFromCamera) away\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
-    }
-    
-    @objc
-    func objectOriginPositionChanged(_ notification: Notification) {
-        guard let node = notification.object as? ObjectOrigin else { return }
-        
-        // Display origin position w.r.t. bounding box
-        let xString = String(format: "x: %.2f", node.position.x)
-        let yString = String(format: "y: %.2f", node.position.y)
-        let zString = String(format: "z: %.2f", node.position.z)
-        displayMessage("Current local origin position in meters:\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
-    }
+//    @objc
+//    func boundingBoxPositionOrExtentChanged(_ notification: Notification) {
+//        guard let box = notification.object as? BoundingBox,
+//            let cameraPos = sceneView.pointOfView?.simdWorldPosition else { return }
+//        
+//        let xString = String(format: "width: %.2f", box.extent.x)
+//        let yString = String(format: "height: %.2f", box.extent.y)
+//        let zString = String(format: "length: %.2f", box.extent.z)
+//        let distanceFromCamera = String(format: "%.2f m", distance(box.simdWorldPosition, cameraPos))
+//    }
+//    
+//    @objc
+//    func objectOriginPositionChanged(_ notification: Notification) {
+//        guard let node = notification.object as? ObjectOrigin else { return }
+//        
+//        // Display origin position w.r.t. bounding box
+//        let xString = String(format: "x: %.2f", node.position.x)
+//        let yString = String(format: "y: %.2f", node.position.y)
+//        let zString = String(format: "z: %.2f", node.position.z)
+//        displayMessage("Current local origin position in meters:\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
+//    }
     
     @objc
     func displayWarningIfInLowPowerMode() {
@@ -349,6 +183,7 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
             let title = "Low Power Mode is enabled"
             let message = "Performance may be impacted. For best scanning results, disable Low Power Mode in Settings > Battery, and restart the scan."
             let buttonTitle = "OK"
+            
             self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: false)
         }
     }
@@ -358,6 +193,7 @@ public class SpacialObjectDetectionViewController: UIViewController, ARSCNViewDe
         if let scan = scan, scan.state != .ready {
             return false
         }
+        
         return true
     }
 }

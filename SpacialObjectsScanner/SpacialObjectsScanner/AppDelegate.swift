@@ -29,30 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-//        if let viewController = self.window?.rootViewController as? ViewController {
-//            viewController.readFile(url)
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-
     func applicationWillEnterForeground(_ application: UIApplication) {
         if let viewController = self.window?.rootViewController as? SpacialObjectDetectionViewController {
             viewController.backFromBackground()
         }
     }
-    
-//    func applicationWillResignActive(_ application: UIApplication) {
-//        if let viewController = self.window?.rootViewController as? ViewController {
-//            viewController.blurView?.isHidden = false
-//        }
-//    }
-    
-//    func applicationDidBecomeActive(_ application: UIApplication) {
-//        if let viewController = self.window?.rootViewController as? ViewController {
-//            viewController.blurView?.isHidden = true
-//        }
-//    }
 }
