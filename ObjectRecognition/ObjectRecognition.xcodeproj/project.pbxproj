@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C74DECC2C1B8B78007D79A7 /* ObjectRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C74DECB2C1B8B78007D79A7 /* ObjectRecognition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		978C2E302C1F84060068D0D1 /* ObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E2F2C1F84060068D0D1 /* ObjectDetector.swift */; };
+		978C2E342C1F8A150068D0D1 /* ProductsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E332C1F8A150068D0D1 /* ProductsClassifier.mlmodel */; };
+		978C2E362C1F8C670068D0D1 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E352C1F8C670068D0D1 /* CGImagePropertyOrientation.swift */; };
+		978C2E382C1F8F210068D0D1 /* ARSceneViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E372C1F8F210068D0D1 /* ARSceneViewControllerViewModel.swift */; };
+		978C2E3F2C1F905B0068D0D1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E3E2C1F905B0068D0D1 /* AppError.swift */; };
+		978C2E412C1F92240068D0D1 /* Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E402C1F92240068D0D1 /* Detection.swift */; };
+		978C2E432C1F925A0068D0D1 /* DistanceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C2E422C1F925A0068D0D1 /* DistanceDetection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8C74DEC82C1B8B78007D79A7 /* ObjectRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C74DECB2C1B8B78007D79A7 /* ObjectRecognition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectRecognition.h; sourceTree = "<group>"; };
+		978C2E2F2C1F84060068D0D1 /* ObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ObjectDetector.swift; path = ../ObjectDetector.swift; sourceTree = "<group>"; };
+		978C2E332C1F8A150068D0D1 /* ProductsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ProductsClassifier.mlmodel; sourceTree = "<group>"; };
+		978C2E352C1F8C670068D0D1 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		978C2E372C1F8F210068D0D1 /* ARSceneViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewControllerViewModel.swift; sourceTree = "<group>"; };
+		978C2E3E2C1F905B0068D0D1 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		978C2E402C1F92240068D0D1 /* Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Detection.swift; path = ../UIKit/Detection.swift; sourceTree = "<group>"; };
+		978C2E422C1F925A0068D0D1 /* DistanceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceDetection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,9 +57,31 @@
 		8C74DECA2C1B8B78007D79A7 /* ObjectRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				8C74DECB2C1B8B78007D79A7 /* ObjectRecognition.h */,
+				978C2E3E2C1F905B0068D0D1 /* AppError.swift */,
+				978C2E3D2C1F8FD60068D0D1 /* UIKit */,
+				978C2E3C2C1F8F950068D0D1 /* Detection */,
+				978C2E332C1F8A150068D0D1 /* ProductsClassifier.mlmodel */,
+				978C2E352C1F8C670068D0D1 /* CGImagePropertyOrientation.swift */,
 			);
 			path = ObjectRecognition;
+			sourceTree = "<group>";
+		};
+		978C2E3C2C1F8F950068D0D1 /* Detection */ = {
+			isa = PBXGroup;
+			children = (
+				978C2E402C1F92240068D0D1 /* Detection.swift */,
+				978C2E2F2C1F84060068D0D1 /* ObjectDetector.swift */,
+				978C2E422C1F925A0068D0D1 /* DistanceDetection.swift */,
+			);
+			path = Detection;
+			sourceTree = "<group>";
+		};
+		978C2E3D2C1F8FD60068D0D1 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				978C2E372C1F8F210068D0D1 /* ARSceneViewControllerViewModel.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -57,7 +91,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C74DECC2C1B8B78007D79A7 /* ObjectRecognition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +126,7 @@
 				TargetAttributes = {
 					8C74DEC72C1B8B78007D79A7 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -129,6 +163,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978C2E432C1F925A0068D0D1 /* DistanceDetection.swift in Sources */,
+				978C2E302C1F84060068D0D1 /* ObjectDetector.swift in Sources */,
+				978C2E412C1F92240068D0D1 /* Detection.swift in Sources */,
+				978C2E362C1F8C670068D0D1 /* CGImagePropertyOrientation.swift in Sources */,
+				978C2E3F2C1F905B0068D0D1 /* AppError.swift in Sources */,
+				978C2E342C1F8A150068D0D1 /* ProductsClassifier.mlmodel in Sources */,
+				978C2E382C1F8F210068D0D1 /* ARSceneViewControllerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +304,7 @@
 		8C74DED02C1B8B78007D79A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -286,6 +328,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -294,6 +337,7 @@
 		8C74DED12C1B8B78007D79A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

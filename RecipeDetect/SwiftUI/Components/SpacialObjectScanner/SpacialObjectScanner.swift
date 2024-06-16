@@ -40,6 +40,7 @@ struct SpacialObjectScanner: View {
     
     init(arSceneViewModel: ARSceneViewControllerViewModel) {
         self.arSceneViewModel = arSceneViewModel
+        
     }
     
     var body: some View {
