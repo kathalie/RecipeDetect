@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SpacialObjectsScanner
+//import SpacialObjectsScanner
 
 struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()
@@ -19,6 +19,7 @@ struct ARCameraView: View {
 //                        .drawCaptureBox(screenCenter(geometry.size))
 //                }
                 SpacialObjectScanner(arSceneViewModel: viewModel)
+                
                 
                 switch viewModel.state {
                     case .initial:

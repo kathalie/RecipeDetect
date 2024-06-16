@@ -10,6 +10,8 @@ import Firebase
 
 @main
 struct RecipeDetectApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     init() {
         FirebaseApp.configure()
     }

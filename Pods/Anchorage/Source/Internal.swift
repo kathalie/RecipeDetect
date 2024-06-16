@@ -30,7 +30,7 @@
     import Cocoa
 
     internal typealias View = NSView
-    internal typealias ViewController = NSViewController
+    internal typealias SpacialObjectViewController = NSViewController
     internal typealias LayoutGuide = NSLayoutGuide
 
     #if swift(>=4.0)
@@ -48,7 +48,7 @@
     import UIKit
 
     internal typealias View = UIView
-    internal typealias ViewController = UIViewController
+    internal typealias SpacialObjectViewController = UIViewController
     internal typealias LayoutGuide = UILayoutGuide
 
     #if swift(>=4.0)

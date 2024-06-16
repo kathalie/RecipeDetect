@@ -69,7 +69,7 @@ extension View: AnchorGroupProvider {
 
 }
 
-extension ViewController: AnchorGroupProvider {
+extension SpacialObjectViewController: AnchorGroupProvider {
 
     @available(*, deprecated, message: "Do not set constraints directly on a UIViewController; set them on its root UIView.")
     public var horizontalAnchors: AnchorPair<NSLayoutXAxisAnchor, NSLayoutXAxisAnchor> {

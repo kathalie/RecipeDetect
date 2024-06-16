@@ -7,32 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C1D61A02C1E5350006BDECE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D619D2C1E5350006BDECE /* Utilities.swift */; };
-		8C1D61A12C1E5350006BDECE /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D619E2C1E5350006BDECE /* ARCameraTrackingState.swift */; };
-		8C1D61A62C1E535D006BDECE /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61A32C1E535D006BDECE /* ThresholdPanGestureRecognizer.swift */; };
-		8C1D61A72C1E535D006BDECE /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61A42C1E535D006BDECE /* ThresholdPinchGestureRecognizer.swift */; };
-		8C1D61A82C1E535D006BDECE /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61A52C1E535D006BDECE /* ThresholdRotationGestureRecognizer.swift */; };
-		8C1D61B02C1E536C006BDECE /* SpacialObjectDetectionViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61A92C1E536C006BDECE /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */; };
-		8C1D61B12C1E536C006BDECE /* SpacialObjectDetectionViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AA2C1E536C006BDECE /* SpacialObjectDetectionViewController+ShowAlert.swift */; };
-		8C1D61B22C1E536C006BDECE /* SpacialObjectDetectionViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AB2C1E536C006BDECE /* SpacialObjectDetectionViewController+ApplicationState.swift */; };
-		8C1D61B32C1E536C006BDECE /* SpacialObjectDetectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AC2C1E536C006BDECE /* SpacialObjectDetectionDelegate.swift */; };
-		8C1D61B42C1E536C006BDECE /* SpacialObjectDetectionViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AD2C1E536C006BDECE /* SpacialObjectDetectionViewController+Gestures.swift */; };
-		8C1D61B52C1E536C006BDECE /* SpacialObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AE2C1E536C006BDECE /* SpacialObjectDetectionViewController.swift */; };
-		8C1D61B62C1E536C006BDECE /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61AF2C1E536C006BDECE /* Scan.swift */; };
-		8C1D61C42C1E5377006BDECE /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61B72C1E5377006BDECE /* Snapping.swift */; };
-		8C1D61C52C1E5377006BDECE /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61B82C1E5377006BDECE /* ScannedObject.swift */; };
-		8C1D61C62C1E5377006BDECE /* DetectedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61B92C1E5377006BDECE /* DetectedBoundingBox.swift */; };
-		8C1D61C72C1E5377006BDECE /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BA2C1E5377006BDECE /* DetectedObject.swift */; };
-		8C1D61C82C1E5377006BDECE /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BB2C1E5377006BDECE /* BoundingBox.swift */; };
-		8C1D61C92C1E5377006BDECE /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BC2C1E5377006BDECE /* ObjectOriginAxis.swift */; };
-		8C1D61CA2C1E5377006BDECE /* PointCloud+CreateVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BD2C1E5377006BDECE /* PointCloud+CreateVisualization.swift */; };
-		8C1D61CB2C1E5377006BDECE /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BE2C1E5377006BDECE /* BoundingBoxSide.swift */; };
-		8C1D61CC2C1E5377006BDECE /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61BF2C1E5377006BDECE /* ObjectOrigin.swift */; };
-		8C1D61CD2C1E5377006BDECE /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61C02C1E5377006BDECE /* DetectedPointCloud.swift */; };
-		8C1D61CE2C1E5377006BDECE /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61C12C1E5377006BDECE /* Wireframe.swift */; };
-		8C1D61CF2C1E5377006BDECE /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61C22C1E5377006BDECE /* ScannedPointCloud.swift */; };
-		8C1D61D02C1E5377006BDECE /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D61C32C1E5377006BDECE /* Tile.swift */; };
 		8C1D61D22C1E558C006BDECE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D61D12C1E558C006BDECE /* art.scnassets */; };
+		8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */; };
+		8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D362C1F2A8B0011D532 /* MessageLabel.swift */; };
+		8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */; };
+		8C564D3D2C1F2AA70011D532 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D3B2C1F2AA70011D532 /* Utilities.swift */; };
+		8C564D3E2C1F2AA70011D532 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D3C2C1F2AA70011D532 /* ARCameraTrackingState.swift */; };
+		8C564D422C1F2AB40011D532 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D3F2C1F2AB40011D532 /* ThresholdPinchGestureRecognizer.swift */; };
+		8C564D432C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D402C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift */; };
+		8C564D442C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D412C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift */; };
+		8C564D4E2C1F2ABE0011D532 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D452C1F2ABE0011D532 /* Scan.swift */; };
+		8C564D4F2C1F2ABE0011D532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D462C1F2ABE0011D532 /* AppDelegate.swift */; };
+		8C564D502C1F2ABE0011D532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D472C1F2ABE0011D532 /* ViewController.swift */; };
+		8C564D512C1F2ABE0011D532 /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */; };
+		8C564D522C1F2ABE0011D532 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */; };
+		8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */; };
+		8C564D542C1F2ABE0011D532 /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4B2C1F2ABE0011D532 /* TestRun.swift */; };
+		8C564D552C1F2ABE0011D532 /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */; };
+		8C564D562C1F2ABE0011D532 /* ShareScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */; };
+		8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */; };
+		8C564D652C1F2AF00011D532 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D582C1F2AEF0011D532 /* Snapping.swift */; };
+		8C564D662C1F2AF00011D532 /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D592C1F2AEF0011D532 /* ScannedObject.swift */; };
+		8C564D672C1F2AF00011D532 /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5A2C1F2AEF0011D532 /* ObjectOriginAxis.swift */; };
+		8C564D682C1F2AF00011D532 /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5B2C1F2AEF0011D532 /* DetectedObject.swift */; };
+		8C564D692C1F2AF00011D532 /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5C2C1F2AEF0011D532 /* DetectedPointCloud.swift */; };
+		8C564D6A2C1F2AF00011D532 /* PointCloud+CreateVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5D2C1F2AEF0011D532 /* PointCloud+CreateVisualization.swift */; };
+		8C564D6B2C1F2AF00011D532 /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5E2C1F2AEF0011D532 /* ObjectOrigin.swift */; };
+		8C564D6C2C1F2AF00011D532 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D5F2C1F2AEF0011D532 /* Tile.swift */; };
+		8C564D6D2C1F2AF00011D532 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D602C1F2AF00011D532 /* BoundingBox.swift */; };
+		8C564D6E2C1F2AF00011D532 /* DetectedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D612C1F2AF00011D532 /* DetectedBoundingBox.swift */; };
+		8C564D6F2C1F2AF00011D532 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D622C1F2AF00011D532 /* Wireframe.swift */; };
+		8C564D702C1F2AF00011D532 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */; };
+		8C564D722C1F2AFF0011D532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C564D712C1F2AFF0011D532 /* Main.storyboard */; };
 		8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */; };
 		8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797442C1DACAA0090E40E /* TopBar.swift */; };
 		8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */; };
@@ -80,33 +86,39 @@
 
 /* Begin PBXFileReference section */
 		3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C1D619D2C1E5350006BDECE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/Utility Extensions/Utilities.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D619E2C1E5350006BDECE /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARCameraTrackingState.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/Utility Extensions/ARCameraTrackingState.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61A32C1E535D006BDECE /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThresholdPanGestureRecognizer.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/Gesture Recognizers/ThresholdPanGestureRecognizer.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61A42C1E535D006BDECE /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThresholdPinchGestureRecognizer.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/Gesture Recognizers/ThresholdPinchGestureRecognizer.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61A52C1E535D006BDECE /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThresholdRotationGestureRecognizer.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/Gesture Recognizers/ThresholdRotationGestureRecognizer.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61A92C1E536C006BDECE /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpacialObjectDetectionViewController+ARSessionDelegate.swift"; path = "SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionViewController+ARSessionDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61AA2C1E536C006BDECE /* SpacialObjectDetectionViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpacialObjectDetectionViewController+ShowAlert.swift"; path = "SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionViewController+ShowAlert.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61AB2C1E536C006BDECE /* SpacialObjectDetectionViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpacialObjectDetectionViewController+ApplicationState.swift"; path = "SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionViewController+ApplicationState.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61AC2C1E536C006BDECE /* SpacialObjectDetectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacialObjectDetectionDelegate.swift; path = SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionDelegate.swift; sourceTree = SOURCE_ROOT; };
-		8C1D61AD2C1E536C006BDECE /* SpacialObjectDetectionViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpacialObjectDetectionViewController+Gestures.swift"; path = "SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionViewController+Gestures.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61AE2C1E536C006BDECE /* SpacialObjectDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacialObjectDetectionViewController.swift; path = SpacialObjectsScanner/SpacialObjectsScanner/Controllers/SpacialObjectDetectionViewController.swift; sourceTree = SOURCE_ROOT; };
-		8C1D61AF2C1E536C006BDECE /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = SpacialObjectsScanner/SpacialObjectsScanner/Controllers/Scan.swift; sourceTree = SOURCE_ROOT; };
-		8C1D61B72C1E5377006BDECE /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Snapping.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/Snapping.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61B82C1E5377006BDECE /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannedObject.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/ScannedObject.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61B92C1E5377006BDECE /* DetectedBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectedBoundingBox.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/DetectedBoundingBox.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BA2C1E5377006BDECE /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectedObject.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/DetectedObject.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BB2C1E5377006BDECE /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBox.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/BoundingBox.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BC2C1E5377006BDECE /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectOriginAxis.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/ObjectOriginAxis.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BD2C1E5377006BDECE /* PointCloud+CreateVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PointCloud+CreateVisualization.swift"; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/PointCloud+CreateVisualization.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BE2C1E5377006BDECE /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBoxSide.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/BoundingBoxSide.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61BF2C1E5377006BDECE /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectOrigin.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/ObjectOrigin.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61C02C1E5377006BDECE /* DetectedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectedPointCloud.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/DetectedPointCloud.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61C12C1E5377006BDECE /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wireframe.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/Wireframe.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61C22C1E5377006BDECE /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannedPointCloud.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/ScannedPointCloud.swift"; sourceTree = SOURCE_ROOT; };
-		8C1D61C32C1E5377006BDECE /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "SpacialObjectsScanner/SpacialObjectsScanner/3D UI and Visualizations/Tile.swift"; sourceTree = SOURCE_ROOT; };
 		8C1D61D12C1E558C006BDECE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleRoundedButton.swift; sourceTree = "<group>"; };
+		8C564D362C1F2A8B0011D532 /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
+		8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
+		8C564D3B2C1F2AA70011D532 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8C564D3C2C1F2AA70011D532 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
+		8C564D3F2C1F2AB40011D532 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
+		8C564D402C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		8C564D412C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		8C564D452C1F2ABE0011D532 /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		8C564D462C1F2ABE0011D532 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C564D472C1F2ABE0011D532 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
+		8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
+		8C564D4B2C1F2ABE0011D532 /* TestRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRun.swift; sourceTree = "<group>"; };
+		8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
+		8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareScanViewController.swift; sourceTree = "<group>"; };
+		8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
+		8C564D582C1F2AEF0011D532 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
+		8C564D592C1F2AEF0011D532 /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
+		8C564D5A2C1F2AEF0011D532 /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
+		8C564D5B2C1F2AEF0011D532 /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
+		8C564D5C2C1F2AEF0011D532 /* DetectedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
+		8C564D5D2C1F2AEF0011D532 /* PointCloud+CreateVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PointCloud+CreateVisualization.swift"; sourceTree = "<group>"; };
+		8C564D5E2C1F2AEF0011D532 /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOrigin.swift; sourceTree = "<group>"; };
+		8C564D5F2C1F2AEF0011D532 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		8C564D602C1F2AF00011D532 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		8C564D612C1F2AF00011D532 /* DetectedBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBoundingBox.swift; sourceTree = "<group>"; };
+		8C564D622C1F2AF00011D532 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
+		8C564D712C1F2AFF0011D532 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectScanner.swift; sourceTree = "<group>"; };
 		8CB797442C1DACAA0090E40E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
@@ -178,65 +190,78 @@
 		8C1D61982C1E531A006BDECE /* SpacialObjectsScanner */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D619C2C1E5345006BDECE /* Utility Extensions */,
-				8C1D619B2C1E533A006BDECE /* Gesture Recognizers */,
-				8C1D619A2C1E5331006BDECE /* Controllers */,
-				8C1D61992C1E5328006BDECE /* 3D UI and Visualizations */,
+				8C564CEF2C1F1F1C0011D532 /* 3D UI and Visualizations  */,
+				8C564CF02C1F1F260011D532 /* Controllers */,
+				8C564CF32C1F1F7D0011D532 /* Views */,
+				8C564CF12C1F1F390011D532 /* Gesture Recognizers */,
+				8C564CF22C1F1F610011D532 /* Utility Extensions */,
 			);
 			path = SpacialObjectsScanner;
 			sourceTree = "<group>";
 		};
-		8C1D61992C1E5328006BDECE /* 3D UI and Visualizations */ = {
+		8C564CEF2C1F1F1C0011D532 /* 3D UI and Visualizations  */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D61BB2C1E5377006BDECE /* BoundingBox.swift */,
-				8C1D61BE2C1E5377006BDECE /* BoundingBoxSide.swift */,
-				8C1D61B92C1E5377006BDECE /* DetectedBoundingBox.swift */,
-				8C1D61BA2C1E5377006BDECE /* DetectedObject.swift */,
-				8C1D61C02C1E5377006BDECE /* DetectedPointCloud.swift */,
-				8C1D61BF2C1E5377006BDECE /* ObjectOrigin.swift */,
-				8C1D61BC2C1E5377006BDECE /* ObjectOriginAxis.swift */,
-				8C1D61BD2C1E5377006BDECE /* PointCloud+CreateVisualization.swift */,
-				8C1D61B82C1E5377006BDECE /* ScannedObject.swift */,
-				8C1D61C22C1E5377006BDECE /* ScannedPointCloud.swift */,
-				8C1D61B72C1E5377006BDECE /* Snapping.swift */,
-				8C1D61C32C1E5377006BDECE /* Tile.swift */,
-				8C1D61C12C1E5377006BDECE /* Wireframe.swift */,
+				8C564D602C1F2AF00011D532 /* BoundingBox.swift */,
+				8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */,
+				8C564D612C1F2AF00011D532 /* DetectedBoundingBox.swift */,
+				8C564D5B2C1F2AEF0011D532 /* DetectedObject.swift */,
+				8C564D5C2C1F2AEF0011D532 /* DetectedPointCloud.swift */,
+				8C564D5E2C1F2AEF0011D532 /* ObjectOrigin.swift */,
+				8C564D5A2C1F2AEF0011D532 /* ObjectOriginAxis.swift */,
+				8C564D5D2C1F2AEF0011D532 /* PointCloud+CreateVisualization.swift */,
+				8C564D592C1F2AEF0011D532 /* ScannedObject.swift */,
+				8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */,
+				8C564D582C1F2AEF0011D532 /* Snapping.swift */,
+				8C564D5F2C1F2AEF0011D532 /* Tile.swift */,
+				8C564D622C1F2AF00011D532 /* Wireframe.swift */,
 			);
-			path = "3D UI and Visualizations";
+			path = "3D UI and Visualizations ";
 			sourceTree = "<group>";
 		};
-		8C1D619A2C1E5331006BDECE /* Controllers */ = {
+		8C564CF02C1F1F260011D532 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D61AF2C1E536C006BDECE /* Scan.swift */,
-				8C1D61AC2C1E536C006BDECE /* SpacialObjectDetectionDelegate.swift */,
-				8C1D61AE2C1E536C006BDECE /* SpacialObjectDetectionViewController.swift */,
-				8C1D61AB2C1E536C006BDECE /* SpacialObjectDetectionViewController+ApplicationState.swift */,
-				8C1D61A92C1E536C006BDECE /* SpacialObjectDetectionViewController+ARSessionDelegate.swift */,
-				8C1D61AD2C1E536C006BDECE /* SpacialObjectDetectionViewController+Gestures.swift */,
-				8C1D61AA2C1E536C006BDECE /* SpacialObjectDetectionViewController+ShowAlert.swift */,
+				8C564D462C1F2ABE0011D532 /* AppDelegate.swift */,
+				8C564D452C1F2ABE0011D532 /* Scan.swift */,
+				8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */,
+				8C564D4B2C1F2ABE0011D532 /* TestRun.swift */,
+				8C564D472C1F2ABE0011D532 /* ViewController.swift */,
+				8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */,
+				8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */,
+				8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */,
+				8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		8C1D619B2C1E533A006BDECE /* Gesture Recognizers */ = {
+		8C564CF12C1F1F390011D532 /* Gesture Recognizers */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D61A32C1E535D006BDECE /* ThresholdPanGestureRecognizer.swift */,
-				8C1D61A42C1E535D006BDECE /* ThresholdPinchGestureRecognizer.swift */,
-				8C1D61A52C1E535D006BDECE /* ThresholdRotationGestureRecognizer.swift */,
+				8C564D412C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift */,
+				8C564D3F2C1F2AB40011D532 /* ThresholdPinchGestureRecognizer.swift */,
+				8C564D402C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift */,
 			);
 			path = "Gesture Recognizers";
 			sourceTree = "<group>";
 		};
-		8C1D619C2C1E5345006BDECE /* Utility Extensions */ = {
+		8C564CF22C1F1F610011D532 /* Utility Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D619E2C1E5350006BDECE /* ARCameraTrackingState.swift */,
-				8C1D619D2C1E5350006BDECE /* Utilities.swift */,
+				8C564D3C2C1F2AA70011D532 /* ARCameraTrackingState.swift */,
+				8C564D3B2C1F2AA70011D532 /* Utilities.swift */,
 			);
 			path = "Utility Extensions";
+			sourceTree = "<group>";
+		};
+		8C564CF32C1F1F7D0011D532 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */,
+				8C564D362C1F2A8B0011D532 /* MessageLabel.swift */,
+				8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CB797432C1DAC810090E40E /* SpacialObjectScanner */ = {
@@ -343,6 +368,7 @@
 				97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */,
 				EBC28DA029EA00F20056A9F5 /* FruitDetector.mlmodel */,
 				EB2D552429E9F60C001657B4 /* Preview Content */,
+				8C564D712C1F2AFF0011D532 /* Main.storyboard */,
 			);
 			path = RecipeDetect;
 			sourceTree = "<group>";
@@ -538,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC28DB729EA1EA80056A9F5 /* GoogleService-Info.plist in Resources */,
+				8C564D722C1F2AFF0011D532 /* Main.storyboard in Resources */,
 				8C1D61D22C1E558C006BDECE /* art.scnassets in Resources */,
 				EB2D552629E9F60C001657B4 /* Preview Assets.xcassets in Resources */,
 				EB2D552329E9F60C001657B4 /* Assets.xcassets in Resources */,
@@ -593,70 +620,75 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C564D6F2C1F2AF00011D532 /* Wireframe.swift in Sources */,
+				8C564D502C1F2ABE0011D532 /* ViewController.swift in Sources */,
 				EB2D552129E9F60B001657B4 /* ContentView.swift in Sources */,
+				8C564D682C1F2AF00011D532 /* DetectedObject.swift in Sources */,
+				8C564D6D2C1F2AF00011D532 /* BoundingBox.swift in Sources */,
 				EBC28D9F29EA00D50056A9F5 /* Detection.swift in Sources */,
+				8C564D652C1F2AF00011D532 /* Snapping.swift in Sources */,
 				EBC28D9D29EA00C60056A9F5 /* ObjectDetector.swift in Sources */,
 				EBC28DCB29EADC3C0056A9F5 /* DetectionView.swift in Sources */,
-				8C1D61A62C1E535D006BDECE /* ThresholdPanGestureRecognizer.swift in Sources */,
 				EB7A75FE2A01587D0048D12B /* CaptureFramePageView.swift in Sources */,
 				EBD001F82A00F0D600B74C8E /* ARCameraView.swift in Sources */,
 				EBC28DBA29EA249B0056A9F5 /* SessionDataStore.swift in Sources */,
-				8C1D61C62C1E5377006BDECE /* DetectedBoundingBox.swift in Sources */,
 				EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */,
-				8C1D61C52C1E5377006BDECE /* ScannedObject.swift in Sources */,
 				EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */,
+				8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */,
+				8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */,
+				8C564D442C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift in Sources */,
+				8C564D4F2C1F2ABE0011D532 /* AppDelegate.swift in Sources */,
 				EB7A75F32A013F380048D12B /* CaptureBoxView.swift in Sources */,
+				8C564D562C1F2ABE0011D532 /* ShareScanViewController.swift in Sources */,
+				8C564D702C1F2AF00011D532 /* ScannedPointCloud.swift in Sources */,
 				EBC28DD029EAE7270056A9F5 /* Float+Format.swift in Sources */,
-				8C1D61B02C1E536C006BDECE /* SpacialObjectDetectionViewController+ARSessionDelegate.swift in Sources */,
+				8C564D512C1F2ABE0011D532 /* ViewController+ApplicationState.swift in Sources */,
+				8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */,
+				8C564D432C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				EBC28D9A29E9FB4A0056A9F5 /* FirebaseService.swift in Sources */,
 				EBD001D929FD07D900B74C8E /* TimeText.swift in Sources */,
-				8C1D61CA2C1E5377006BDECE /* PointCloud+CreateVisualization.swift in Sources */,
 				EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */,
 				EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */,
-				8C1D61CB2C1E5377006BDECE /* BoundingBoxSide.swift in Sources */,
+				8C564D542C1F2ABE0011D532 /* TestRun.swift in Sources */,
 				8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */,
-				8C1D61A82C1E535D006BDECE /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */,
 				EB23D2A129FC647C00F940FB /* CGRect+Hashable.swift in Sources */,
+				8C564D662C1F2AF00011D532 /* ScannedObject.swift in Sources */,
+				8C564D6E2C1F2AF00011D532 /* DetectedBoundingBox.swift in Sources */,
 				EB23D29F29FC62E000F940FB /* ImageCaptureView.swift in Sources */,
 				EBC28DC729EA97B50056A9F5 /* ARSceneViewController.swift in Sources */,
 				EBC28DC929EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift in Sources */,
 				EB23D29029FC0A1600F940FB /* View+Overlay.swift in Sources */,
+				8C564D4E2C1F2ABE0011D532 /* Scan.swift in Sources */,
 				EB23D2AD29FC7BE200F940FB /* NextButton.swift in Sources */,
-				8C1D61A12C1E5350006BDECE /* ARCameraTrackingState.swift in Sources */,
 				EBC28DAB29EA02560056A9F5 /* Recipe.swift in Sources */,
 				EB7A75FA2A0154F20048D12B /* OnboardingView.swift in Sources */,
-				8C1D61C42C1E5377006BDECE /* Snapping.swift in Sources */,
-				8C1D61C72C1E5377006BDECE /* DetectedObject.swift in Sources */,
-				8C1D61C92C1E5377006BDECE /* ObjectOriginAxis.swift in Sources */,
+				8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */,
 				EBD001EA2A0082FB00B74C8E /* Calculator.swift in Sources */,
+				8C564D6A2C1F2AF00011D532 /* PointCloud+CreateVisualization.swift in Sources */,
 				EBD001E82A00805400B74C8E /* IngredientCase.swift in Sources */,
+				8C564D522C1F2ABE0011D532 /* ViewController+NavigationBar.swift in Sources */,
+				8C564D6B2C1F2AF00011D532 /* ObjectOrigin.swift in Sources */,
 				EBC28DC229EA267C0056A9F5 /* RecipeListView.swift in Sources */,
 				EBC28DA829EA01490056A9F5 /* OrientationExtension.swift in Sources */,
-				8C1D61B12C1E536C006BDECE /* SpacialObjectDetectionViewController+ShowAlert.swift in Sources */,
-				8C1D61B32C1E536C006BDECE /* SpacialObjectDetectionDelegate.swift in Sources */,
 				EBC28DD229EAE9F90056A9F5 /* ARSceneViewControllerViewModel.swift in Sources */,
 				EB7A75FC2A0158490048D12B /* MoveIphonePageView.swift in Sources */,
+				8C564D552C1F2ABE0011D532 /* ViewController+Gestures.swift in Sources */,
+				8C564D692C1F2AF00011D532 /* DetectedPointCloud.swift in Sources */,
+				8C564D3D2C1F2AA70011D532 /* Utilities.swift in Sources */,
 				EBC28DBE29EA266B0056A9F5 /* RecipeListItemView.swift in Sources */,
-				8C1D61C82C1E5377006BDECE /* BoundingBox.swift in Sources */,
-				8C1D61CC2C1E5377006BDECE /* ObjectOrigin.swift in Sources */,
-				8C1D61CF2C1E5377006BDECE /* ScannedPointCloud.swift in Sources */,
-				8C1D61B52C1E536C006BDECE /* SpacialObjectDetectionViewController.swift in Sources */,
-				8C1D61CD2C1E5377006BDECE /* DetectedPointCloud.swift in Sources */,
 				EBC28DC029EA26740056A9F5 /* RecipeDetailsView.swift in Sources */,
-				8C1D61CE2C1E5377006BDECE /* Wireframe.swift in Sources */,
 				EB23D2A329FC674100F940FB /* RoundedButton.swift in Sources */,
 				EBC28DA129EA00F20056A9F5 /* FruitDetector.mlmodel in Sources */,
-				8C1D61B62C1E536C006BDECE /* Scan.swift in Sources */,
-				8C1D61B22C1E536C006BDECE /* SpacialObjectDetectionViewController+ApplicationState.swift in Sources */,
 				8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */,
-				8C1D61D02C1E5377006BDECE /* Tile.swift in Sources */,
-				8C1D61A72C1E535D006BDECE /* ThresholdPinchGestureRecognizer.swift in Sources */,
+				8C564D6C2C1F2AF00011D532 /* Tile.swift in Sources */,
 				EB23D2A629FC6AEE00F940FB /* AppError.swift in Sources */,
 				EBC28DB329EA03670056A9F5 /* Ingredient.swift in Sources */,
-				8C1D61B42C1E536C006BDECE /* SpacialObjectDetectionViewController+Gestures.swift in Sources */,
-				8C1D61A02C1E5350006BDECE /* Utilities.swift in Sources */,
+				8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */,
+				8C564D3E2C1F2AA70011D532 /* ARCameraTrackingState.swift in Sources */,
+				8C564D672C1F2AF00011D532 /* ObjectOriginAxis.swift in Sources */,
 				97C2B9802C1BAA6200C2BD92 /* ProductsClassifier.mlmodel in Sources */,
+				8C564D422C1F2AB40011D532 /* ThresholdPinchGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

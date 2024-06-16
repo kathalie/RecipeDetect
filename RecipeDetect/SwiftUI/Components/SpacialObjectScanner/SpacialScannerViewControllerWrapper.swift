@@ -7,17 +7,25 @@
 
 import SwiftUI
 import UIKit
-import SpacialObjectsScanner
+//import SpacialObjectsScanner
 
 struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable {
-    typealias UIViewControllerType = SpacialObjectDetectionViewController
-    var viewModel: SpacialObjectScannerViewModel
+    typealias UIViewControllerType = ViewController
+//    var viewModel: SpacialObjectScannerViewModel
     
-    func makeUIViewController(context: Context) -> SpacialObjectDetectionViewController {
-        SpacialObjectDetectionViewController(spacialObjectDetectionDelegate: viewModel)
+    func makeUIViewController(context: Context) -> ViewController {
+//        SpacialObjectScanner(spacialObjectDetectionDelegate: viewModel)
+//        ViewController()
+        let storyboard = UIStoryboard(
+            name: "Main",
+            bundle: Bundle.main
+        )
+        let vc = storyboard.instantiateViewController(identifier: "ViewController") as! ViewController
+        
+        return vc
     }
 
-    func updateUIViewController(_ uiViewController: SpacialObjectDetectionViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         // Update the view controller
     }
 }
