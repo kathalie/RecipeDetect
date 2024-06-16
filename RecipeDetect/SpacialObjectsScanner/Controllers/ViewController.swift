@@ -44,6 +44,30 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
+    var arSceneViewModel : ARSceneViewControllerViewModel
+
+//    init(arSceneViewModel : ARSceneViewControllerViewModel
+//    ) {
+//        self.arSceneViewModel = arSceneViewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    init(arSceneViewModel: ARSceneViewControllerViewModel) {
+        self.arSceneViewModel = arSceneViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        // Provide a meaningful implementation if needed
+        self.arSceneViewModel = ARSceneViewControllerViewModel()
+        super.init(coder: coder)
+        // or mark it as unavailable
+        // fatalError("init(coder:) has not been implemented")
+    }
     
     var modelURL: URL? {
         didSet {
@@ -599,5 +623,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
             return false
         }
         return true
+    }
+    
+    func capture() {
+        print("SpacialObjectDetectionViewController detecting ")
+        // clear previous results when taking new snapshot
+        sceneView.scene.rootNode.enumerateChildNodes({ (node,_)  in
+            node.removeFromParentNode()
+        })
+    
+        let snapshot = sceneView.snapshot()
+        arSceneViewModel.detect(snapshot: snapshot)
     }
 }

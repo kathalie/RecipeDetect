@@ -42,58 +42,60 @@ struct SpacialObjectScanner: View {
 //        self.arSceneViewModel = arSceneViewModel
 //    }
     
-    var body: some View {
-        ZStack {
-//            SpacialScannerViewControllerWrapper(viewModel: spacialObjectScannerviewModel)
-            SpacialScannerViewControllerWrapper()
-
-//    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
-//        
-//    @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
-//    @State private var productName : String = ""
-//
-//    
 //    var body: some View {
 //        ZStack {
-//            SpacialScannerViewControllerWrapper(viewModel: spacialObjectScannerviewModel)
-//                .onAppear {
-//                    coordinator = SpacialScannerViewControllerWrapper(
+////            SpacialScannerViewControllerWrapper(viewModel: spacialObjectScannerviewModel)
+//            SpacialScannerViewControllerWrapper()
+
+//    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
+        
+    @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
+    @State private var productName : String = ""
+
+    
+    var body: some View {
+        ZStack {
+            SpacialScannerViewControllerWrapper(
+//                viewModel: spacialObjectScannerviewModel
+            )
+                .onAppear {
+                    coordinator = SpacialScannerViewControllerWrapper(
 //                        viewModel: spacialObjectScannerviewModel
-//                    ).makeCoordinator()
-//                }
+                    ).makeCoordinator()
+                }
             VStack(spacing: 0) {
-                HStack {
-                    Button(action: self.backAction) {
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(.white)
-                    }
-                    Spacer()
-                    Text(title)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                    Spacer()
-                    Button(action: self.restartAction) {
-                        Text("Restart")
-                    }
-                }
-//                Text(productName)
-//                    .foregroundColor(.white)
-//                    .font(.headline)
-                Spacer()
-                Text("Session info")
-                Spacer()
-                Text(hint)
-                Spacer()
-                if hasNextButton {
-                    Button(action: self.nextAction) {
-                        Text("Next")
-                    }
-                }
-//                Button(action: {
-//                    coordinator?.capture()
-//                }){
-//                    Text("Define object")
+//                HStack {
+//                    Button(action: self.backAction) {
+//                        Image(systemName: "arrow.left")
+//                            .foregroundColor(.white)
+//                    }
+//                    Spacer()
+//                    Text(title)
+//                        .foregroundColor(.white)
+//                        .font(.headline)
+//                    Spacer()
+//                    Button(action: self.restartAction) {
+//                        Text("Restart")
+//                    }
 //                }
+                Text(productName)
+                    .foregroundColor(.white)
+                    .font(.headline)
+//                Spacer()
+//                Text("Session info")
+//                Spacer()
+//                Text(hint)
+//                Spacer()
+//                if hasNextButton {
+//                    Button(action: self.nextAction) {
+//                        Text("Next")
+//                    }
+//                }
+                Button(action: {
+                    coordinator?.capture()
+                }){
+                    Text("Define object")
+                }
                 
             }
         }

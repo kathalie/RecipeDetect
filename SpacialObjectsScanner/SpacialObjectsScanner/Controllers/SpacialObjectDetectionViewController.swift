@@ -27,11 +27,13 @@ public class SpacialObjectDetectionViewController: UIViewController {
     internal var screenCenter = CGPoint()
     
     var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
-    var arSceneViewModel : ARSceneViewControllerViewModel
+//    var arSceneViewModel : ARSceneViewControllerViewModel
     
-    init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate, arSceneViewModel : ARSceneViewControllerViewModel) {
+    init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
+//         ,arSceneViewModel : ARSceneViewControllerViewModel
+    ) {
         self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
-        self.arSceneViewModel = arSceneViewModel
+//        self.arSceneViewModel = arSceneViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -109,17 +111,17 @@ public class SpacialObjectDetectionViewController: UIViewController {
         }
     }
     
-    func capture() {
-        print("SpacialObjectDetectionViewController detecting ")
-        // clear previous results when taking new snapshot
-        sceneView.scene.rootNode.enumerateChildNodes({ (node,_)  in
-            node.removeFromParentNode()
-        })
-    
-        let snapshot = sceneView.snapshot()
-        arSceneViewModel.detect(snapshot: snapshot)
-        
-    }
+//    func capture() {
+//        print("SpacialObjectDetectionViewController detecting ")
+//        // clear previous results when taking new snapshot
+//        sceneView.scene.rootNode.enumerateChildNodes({ (node,_)  in
+//            node.removeFromParentNode()
+//        })
+//    
+//        let snapshot = sceneView.snapshot()
+//        arSceneViewModel.detect(snapshot: snapshot)
+//        
+//    }
     
 //    var limitedTrackingTimer: Timer?
     
