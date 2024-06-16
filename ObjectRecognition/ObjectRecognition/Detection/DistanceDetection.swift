@@ -1,13 +1,12 @@
 //
 //  DistanceDetection.swift
-//  RecipeDetect
+//  ObjectRecognition
 //
-//  Created by Iryna Zubrytska.
+//  Created by Olesya Petrova on 16.06.2024.
 //
 
 import Foundation
 
-/// Represents detection after being processed with full data
 struct DistanceDetection: Identifiable, CustomStringConvertible {
     let id = UUID().uuidString
     let label: String

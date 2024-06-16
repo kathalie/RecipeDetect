@@ -27,9 +27,11 @@ public class SpacialObjectDetectionViewController: UIViewController {
     internal var screenCenter = CGPoint()
     
     var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
+    var arSceneViewModel : ARSceneViewControllerViewModel
     
-    public init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate) {
+    init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate, arSceneViewModel : ARSceneViewControllerViewModel) {
         self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
+        self.arSceneViewModel = arSceneViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -97,6 +99,7 @@ public class SpacialObjectDetectionViewController: UIViewController {
   
     func backFromBackground() {
         if state == .scanning {
+            
             let title = "Warning: Scan may be broken"
             let message = "The scan was interrupted. It is recommended to restart the scan."
             let buttonTitle = "Restart Scan"
@@ -104,6 +107,18 @@ public class SpacialObjectDetectionViewController: UIViewController {
                 self.state = .notReady
             }
         }
+    }
+    
+    func capture() {
+        print("SpacialObjectDetectionViewController detecting ")
+        // clear previous results when taking new snapshot
+        sceneView.scene.rootNode.enumerateChildNodes({ (node,_)  in
+            node.removeFromParentNode()
+        })
+    
+        let snapshot = sceneView.snapshot()
+        arSceneViewModel.detect(snapshot: snapshot)
+        
     }
     
 //    var limitedTrackingTimer: Timer?

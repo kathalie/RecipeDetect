@@ -40,6 +40,7 @@ extension SpacialObjectDetectionViewController: UIGestureRecognizerDelegate {
     func didTap(_ gesture: UITapGestureRecognizer) {
         if state == .scanning {
             scan?.didTap(gesture)
+            // add here recognition
         }
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 import ARKit
 
-public enum SpacialObjectDetectionState {
+public enum SpacialObjectDetectionState : Equatable {
     case startARSession
     case tapObject
     case boundObject

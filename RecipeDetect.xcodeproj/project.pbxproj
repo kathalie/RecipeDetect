@@ -122,7 +122,7 @@
 		8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectScanner.swift; sourceTree = "<group>"; };
 		8CB797442C1DACAA0090E40E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
-		97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ProductsClassifier.mlmodel; sourceTree = "<group>"; };
+		97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ProductsClassifier.mlmodel; path = ../ObjectRecognition/ObjectRecognition/ProductsClassifier.mlmodel; sourceTree = "<group>"; };
 		BFDBB2CADA569F2123432001 /* Pods-RecipeDetect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.release.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.release.xcconfig"; sourceTree = "<group>"; };
 		BFDC3752655503819FF6FB19 /* Pods-RecipeDetect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.debug.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.debug.xcconfig"; sourceTree = "<group>"; };
 		EB23D28F29FC0A1600F940FB /* View+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Overlay.swift"; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		EB23D29E29FC62E000F940FB /* ImageCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureView.swift; sourceTree = "<group>"; };
 		EB23D2A029FC647C00F940FB /* CGRect+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Hashable.swift"; sourceTree = "<group>"; };
 		EB23D2A229FC674100F940FB /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		EB23D2A529FC6AEE00F940FB /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		EB23D2A529FC6AEE00F940FB /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = ../../ObjectRecognition/ObjectRecognition/AppError.swift; sourceTree = "<group>"; };
 		EB23D2AC29FC7BE200F940FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		EB2D551B29E9F60B001657B4 /* RecipeDetect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeDetect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2D551E29E9F60B001657B4 /* RecipeDetectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetectApp.swift; sourceTree = "<group>"; };
@@ -423,7 +423,8 @@
 				EBC28D9E29EA00D50056A9F5 /* Detection.swift */,
 				EBD001D629FC86EE00B74C8E /* DistanceDetection.swift */,
 			);
-			path = Detection;
+			name = Detection;
+			path = ../ObjectRecognition/ObjectRecognition/Detection;
 			sourceTree = "<group>";
 		};
 		EBC28DA229EA01110056A9F5 /* UIKit */ = {
@@ -819,7 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = C6R4M4K6S2;
+				DEVELOPMENT_TEAM = QSMWZSWSZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
@@ -833,7 +834,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.verkhohliad.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -852,7 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = C6R4M4K6S2;
+				DEVELOPMENT_TEAM = QSMWZSWSZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
@@ -866,7 +867,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.verkhohliad.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
