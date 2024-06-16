@@ -39,6 +39,7 @@
 		8C564D6F2C1F2AF00011D532 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D622C1F2AF00011D532 /* Wireframe.swift */; };
 		8C564D702C1F2AF00011D532 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */; };
 		8C564D722C1F2AFF0011D532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C564D712C1F2AFF0011D532 /* Main.storyboard */; };
+		8C564D742C1F4EB10011D532 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D732C1F4EB10011D532 /* SceneDelegate.swift */; };
 		8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */; };
 		8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797442C1DACAA0090E40E /* TopBar.swift */; };
 		8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */; };
@@ -119,6 +120,8 @@
 		8C564D622C1F2AF00011D532 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
 		8C564D712C1F2AFF0011D532 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8C564D732C1F4EB10011D532 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8C564D752C1F4F920011D532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectScanner.swift; sourceTree = "<group>"; };
 		8CB797442C1DACAA0090E40E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				8C564D462C1F2ABE0011D532 /* AppDelegate.swift */,
+				8C564D732C1F4EB10011D532 /* SceneDelegate.swift */,
 				8C564D452C1F2ABE0011D532 /* Scan.swift */,
 				8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */,
 				8C564D4B2C1F2ABE0011D532 /* TestRun.swift */,
@@ -351,6 +355,7 @@
 		EB2D551D29E9F60B001657B4 /* RecipeDetect */ = {
 			isa = PBXGroup;
 			children = (
+				8C564D752C1F4F920011D532 /* Info.plist */,
 				8C1D61982C1E531A006BDECE /* SpacialObjectsScanner */,
 				EB7A76022A0194430048D12B /* DataStore */,
 				EBD001DE29FEB1B500B74C8E /* Firebase */,
@@ -636,6 +641,7 @@
 				EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */,
 				EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */,
 				8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */,
+				8C564D742C1F4EB10011D532 /* SceneDelegate.swift in Sources */,
 				8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */,
 				8C564D442C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				8C564D4F2C1F2ABE0011D532 /* AppDelegate.swift in Sources */,
@@ -820,11 +826,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeDetect/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -834,7 +840,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.verkhohliad.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -853,11 +859,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeDetect/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -867,7 +873,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.verkhohliad.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

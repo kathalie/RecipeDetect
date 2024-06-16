@@ -36,11 +36,11 @@ import ARKit
 struct SpacialObjectScanner: View {
 //    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
     
-    private var arSceneViewModel: ARSceneViewControllerViewModel
-    
-    init(arSceneViewModel: ARSceneViewControllerViewModel) {
-        self.arSceneViewModel = arSceneViewModel
-    }
+//    private var arSceneViewModel: ARSceneViewControllerViewModel
+//    
+//    init(arSceneViewModel: ARSceneViewControllerViewModel) {
+//        self.arSceneViewModel = arSceneViewModel
+//    }
     
     var body: some View {
         ZStack {

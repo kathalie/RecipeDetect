@@ -84,6 +84,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         sceneView.delegate = self
         sceneView.session.delegate = self
         
+        setupGestureRecognisers()
+        blurView.isHidden = true // TODO remove
+        
         // Prevent the screen from being dimmed after a while.
         UIApplication.shared.isIdleTimerDisabled = true
         
