@@ -139,7 +139,8 @@ final class ARSceneViewController: UIViewController, ARSCNViewDelegate {
     // MARK: Bindings
     private func setupBindings() {
         viewModel.onDetectionSuccess = { [weak self] detections in
-            self?.handleDetections(detections)
+            //TODO do it
+            //self?.handleDetections(detections)
         }
     }
     

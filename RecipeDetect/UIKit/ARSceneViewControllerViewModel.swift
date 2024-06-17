@@ -8,15 +8,21 @@
 import UIKit
 
 final class ARSceneViewControllerViewModel: ObservableObject {
+//    enum State {
+//        case initial
+//        case data([DistanceDetection], UIImage, CGSize)
+//        case error(AppError)
+//    }
     enum State {
         case initial
-        case data([DistanceDetection], UIImage, CGSize)
-        case error(AppError)
+        case data
+        case error
     }
-
-    var onDetectionSuccess: (([Detection]) -> Void)?
+    var onDetectionSuccess: ((Classification) -> Void)?
 
     @Published private(set) var state: State = .initial
+    @Published private(set) var classification: Classification? = nil
+
     private(set) var snapshot: UIImage?
 
     private let detector = ObjectDetector()
@@ -29,9 +35,14 @@ final class ARSceneViewControllerViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                     case .success(let classification):
+                        self.onDetectionSuccess?(classification)
+                        self.classification = classification
+                        self.state = .data
+                    
                         print("Detected: \(classification.label) with confidence: \(classification.confidence)")
                     case .failure(let error):
-                        print("Error: \(error)")
+                        //self.state = .error(.detectionFailed)
+                        self.state = .error
                     }
 //                case let .success(detections):
 //                    if detections.isEmpty {
@@ -49,9 +60,11 @@ final class ARSceneViewControllerViewModel: ObservableObject {
     func handleDistanceDetections(_ detections: [DistanceDetection], size: CGSize) {
         guard let snapshot else { return }
         if detections.isEmpty {
-            state = .error(.raycastFail)
+            state = .error
+            //state = .error(.raycastFail)
         } else {
-            state = .data(detections, snapshot, size)
+            //state = .data(detections, snapshot, size)
+            state = .data
         }
     }
     

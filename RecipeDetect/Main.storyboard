@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hsT-lP-hVw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -163,7 +163,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMG-tI-aCY" customClass="MessageLabel" customModule="ScanningApp" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMG-tI-aCY" customClass="MessageLabel" customModule="RecipeDetect" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="8" width="0.0" height="9"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -260,9 +260,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbK-zg-QUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="WgG-TK-awf"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="Vsh-G7-JsZ"/>
-                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="ULs-pT-sWQ" customClass="ThresholdPanGestureRecognizer" customModule="ScanningApp" customModuleProvider="target"/>
-                <rotationGestureRecognizer id="H40-G9-An6" customClass="ThresholdRotationGestureRecognizer" customModule="ScanningApp" customModuleProvider="target"/>
-                <pinchGestureRecognizer id="uks-eJ-8Dv" customClass="ThresholdPinchGestureRecognizer" customModule="ScanningApp" customModuleProvider="target"/>
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="ULs-pT-sWQ" customClass="ThresholdPanGestureRecognizer" customModule="RecipeDetect" customModuleProvider="target"/>
+                <rotationGestureRecognizer id="H40-G9-An6" customClass="ThresholdRotationGestureRecognizer" customModule="RecipeDetect" customModuleProvider="target"/>
+                <pinchGestureRecognizer id="uks-eJ-8Dv" customClass="ThresholdPinchGestureRecognizer" customModule="RecipeDetect" customModuleProvider="target"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.40000000000000002" id="tcA-af-vt3"/>
             </objects>
             <point key="canvasLocation" x="140" y="133.00492610837438"/>

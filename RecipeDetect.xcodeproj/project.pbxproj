@@ -39,7 +39,7 @@
 		8C564D6F2C1F2AF00011D532 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D622C1F2AF00011D532 /* Wireframe.swift */; };
 		8C564D702C1F2AF00011D532 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */; };
 		8C564D722C1F2AFF0011D532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C564D712C1F2AFF0011D532 /* Main.storyboard */; };
-		8C564D742C1F4EB10011D532 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D732C1F4EB10011D532 /* SceneDelegate.swift */; };
+		8C86A8322C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */; };
 		8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */; };
 		8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797442C1DACAA0090E40E /* TopBar.swift */; };
 		8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */; };
@@ -120,8 +120,8 @@
 		8C564D622C1F2AF00011D532 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		8C564D632C1F2AF00011D532 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
 		8C564D712C1F2AFF0011D532 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8C564D732C1F4EB10011D532 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C564D752C1F4F920011D532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectDetectionDelegate.swift; sourceTree = "<group>"; };
 		8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectScanner.swift; sourceTree = "<group>"; };
 		8CB797442C1DACAA0090E40E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
@@ -226,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				8C564D462C1F2ABE0011D532 /* AppDelegate.swift */,
-				8C564D732C1F4EB10011D532 /* SceneDelegate.swift */,
 				8C564D452C1F2ABE0011D532 /* Scan.swift */,
 				8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */,
 				8C564D4B2C1F2ABE0011D532 /* TestRun.swift */,
@@ -235,6 +234,7 @@
 				8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */,
 				8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */,
 				8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */,
+				8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -641,7 +641,6 @@
 				EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */,
 				EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */,
 				8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */,
-				8C564D742C1F4EB10011D532 /* SceneDelegate.swift in Sources */,
 				8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */,
 				8C564D442C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				8C564D4F2C1F2ABE0011D532 /* AppDelegate.swift in Sources */,
@@ -670,6 +669,7 @@
 				EB23D2AD29FC7BE200F940FB /* NextButton.swift in Sources */,
 				EBC28DAB29EA02560056A9F5 /* Recipe.swift in Sources */,
 				EB7A75FA2A0154F20048D12B /* OnboardingView.swift in Sources */,
+				8C86A8322C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift in Sources */,
 				8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */,
 				EBD001EA2A0082FB00B74C8E /* Calculator.swift in Sources */,
 				8C564D6A2C1F2AF00011D532 /* PointCloud+CreateVisualization.swift in Sources */,
@@ -831,6 +831,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -864,6 +865,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to scan ingredients.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

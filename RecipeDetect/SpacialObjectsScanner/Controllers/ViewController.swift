@@ -44,6 +44,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
+    var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
     var arSceneViewModel : ARSceneViewControllerViewModel
 
 //    init(arSceneViewModel : ARSceneViewControllerViewModel
@@ -56,17 +57,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
 //        fatalError("init(coder:) has not been implemented")
 //    }
     
-    init(arSceneViewModel: ARSceneViewControllerViewModel) {
+//    init(arSceneViewModel: ARSceneViewControllerViewModel) {
+//        self.arSceneViewModel = arSceneViewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+    
+    init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate, arSceneViewModel : ARSceneViewControllerViewModel) {
+        self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
         self.arSceneViewModel = arSceneViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
-        // Provide a meaningful implementation if needed
         self.arSceneViewModel = ARSceneViewControllerViewModel()
+        self.spacialObjectDetectionDelegate = SpacialObjectScannerViewModel()
         super.init(coder: coder)
-        // or mark it as unavailable
-        // fatalError("init(coder:) has not been implemented")
     }
     
     var modelURL: URL? {

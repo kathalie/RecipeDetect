@@ -10,112 +10,113 @@ import SwiftUI
 import ARKit
 //import SpacialObjectsScanner
 
-//class SpacialObjectScannerViewModel: ObservableObject, SpacialObjectDetectionDelegate {
-//    func setState(newState: SpacialObjectDetectionState) {
-//        state = newState
-//    }
-//    
-//    @Published private(set) var state: SpacialObjectDetectionState = .tapObject
-//    
-//    func previousState() {
+class SpacialObjectScannerViewModel: ObservableObject, SpacialObjectDetectionDelegate
+{
+    func setState(newState: SpacialObjectDetectionState) {
+        state = newState
+    }
+    
+    @Published private(set) var state: SpacialObjectDetectionState = .tapObject
+    
+    func previousState() {
+        
+    }
+    
+    func nextState() -> SpacialObjectDetectionState {
+        switch(state) {
+        case .startARSession: state = .tapObject
+        case .tapObject: state = .boundObject
+        case .boundObject: state = .scan(progress: 0)
+        case .scan: state = .info(arReferenceObject: nil)
+        case .info: return state
+        }
+        return state
+    }
+}
+
+struct SpacialObjectScanner: View {
+
+    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
+    @StateObject var arSceneViewModel: ARSceneViewControllerViewModel = ARSceneViewControllerViewModel()
+    @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
+    @State private var productName : String = ""
+    
+    
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                SpacialScannerViewControllerWrapper(
+                    viewModel: spacialObjectScannerviewModel, arSceneViewModel: arSceneViewModel)
+                    .onAppear {
+                        coordinator = SpacialScannerViewControllerWrapper(
+                            viewModel: spacialObjectScannerviewModel, arSceneViewModel: arSceneViewModel
+                        ).makeCoordinator()
+
+                    }
+                VStack(spacing: 0) {
+    //                HStack {
+    //                    Button(action: self.backAction) {
+    //                        Image(systemName: "arrow.left")
+    //                            .foregroundColor(.white)
+    //                    }
+    //                    Spacer()
+    //                    Text(title)
+    //                        .foregroundColor(.white)
+    //                        .font(.headline)
+    //                    Spacer()
+    //                    Button(action: self.restartAction) {
+    //                        Text("Restart")
+    //                    }
+    //                }
+                    Spacer()
+                    Text(productName)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .background(Color.black)
+                    Text(productMessage)
+                        .background(Color.black)
+                    Spacer()
+    //                Text("Session info")
+    //                Text(productMessage)
+    //                Spacer()
+    //                Text(hint)
+    //                Spacer()
+    //                if hasNextButton {
+    //                    Button(action: self.nextAction) {
+    //                        Text("Next")
+    //                    }
+    //                }
+                }
+            }
+            Button(action: {
+                coordinator?.capture()
+            }){
+                Text("Define object")
+            }
+        }
+    }
+    
+//    func backAction() {
 //        
 //    }
 //    
-//    func nextState() -> SpacialObjectDetectionState {
-//        switch(state) {
-//        case .startARSession: state = .tapObject
-//        case .tapObject: state = .boundObject
-//        case .boundObject: state = .scan(progress: 0)
-//        case .scan: state = .info(arReferenceObject: nil)
-//        case .info: return state
-//        }
-//        return state
+//    func restartAction() {
+//        
 //    }
-//}
-
-struct SpacialObjectScanner: View {
-//    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
-    
-//    private var arSceneViewModel: ARSceneViewControllerViewModel
 //    
-//    init(arSceneViewModel: ARSceneViewControllerViewModel) {
-//        self.arSceneViewModel = arSceneViewModel
-//    }
-    
-//    var body: some View {
-//        ZStack {
-////            SpacialScannerViewControllerWrapper(viewModel: spacialObjectScannerviewModel)
-//            SpacialScannerViewControllerWrapper()
-
-//    @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
-        
-    @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
-    @State private var productName : String = ""
-
-    
-    var body: some View {
-        ZStack {
-            SpacialScannerViewControllerWrapper(
-//                viewModel: spacialObjectScannerviewModel
-            )
-                .onAppear {
-                    coordinator = SpacialScannerViewControllerWrapper(
-//                        viewModel: spacialObjectScannerviewModel
-                    ).makeCoordinator()
-                }
-            VStack(spacing: 0) {
-//                HStack {
-//                    Button(action: self.backAction) {
-//                        Image(systemName: "arrow.left")
-//                            .foregroundColor(.white)
-//                    }
-//                    Spacer()
-//                    Text(title)
-//                        .foregroundColor(.white)
-//                        .font(.headline)
-//                    Spacer()
-//                    Button(action: self.restartAction) {
-//                        Text("Restart")
-//                    }
-//                }
-                Text(productName)
-                    .foregroundColor(.white)
-                    .font(.headline)
-//                Spacer()
-//                Text("Session info")
-//                Spacer()
-//                Text(hint)
-//                Spacer()
-//                if hasNextButton {
-//                    Button(action: self.nextAction) {
-//                        Text("Next")
-//                    }
-//                }
-                Button(action: {
-                    coordinator?.capture()
-                }){
-                    Text("Define object")
-                }
-                
-            }
-        }
-
-    }
-    
-    func backAction() {
-        
-    }
-    
-    func restartAction() {
-        
-    }
-    
-    func nextAction() {
+//    func nextAction() {
 //        _ = spacialObjectScannerviewModel.nextState()
+//    }
+    var productMessage: String {
+        switch(arSceneViewModel.state) {
+        case .initial: return "Init "
+        case .data: return "Detected: \(arSceneViewModel.classification!.label) with confidence: \(arSceneViewModel.classification!.confidence)"
+        case .error: return "Error"
+        }
     }
-    
-    
-    var title: String {
+//    
+//    var title: String {
 //        switch(spacialObjectScannerviewModel.state) {
 //        case .startARSession: return "Initialiying session..."
 //        case .tapObject: return "Defining product"
@@ -123,10 +124,9 @@ struct SpacialObjectScanner: View {
 //        case .scan(let progress): return "Scanning \(progress)%"
 //        case .info: return "Estimated"
 //        }
-        return ""
-    }
-    
-    var hint: String {
+//    }
+//    
+//    var hint: String {
 //        switch(spacialObjectScannerviewModel.state) {
 //        case .startARSession: return "Wait a while..."
 //        case .tapObject: return "Point your camera and tap on the product you wish to use for cooking"
@@ -134,14 +134,12 @@ struct SpacialObjectScanner: View {
 //        case .scan: return "Move your camera around the product to scan it. Do not move the product!"
 //        case .info(let referenceObject): return "\(referenceObject?.description)"
 //        }
-        return ""
-    }
-    
-    var hasNextButton: Bool {
+//    }
+//    
+//    var hasNextButton: Bool {
 //        switch(spacialObjectScannerviewModel.state) {
 //        case .info: return false
 //        default: return true
 //        }
-        return false
-    }
+//    }
 }
