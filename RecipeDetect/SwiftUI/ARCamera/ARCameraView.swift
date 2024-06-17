@@ -18,7 +18,7 @@ struct ARCameraView: View {
 //                    ARSceneViewControllerWrapper(viewModel: viewModel)
 //                        .drawCaptureBox(screenCenter(geometry.size))
 //                }
-                SpacialObjectScanner(arSceneViewModel: viewModel)
+                SpacialObjectScanner()
                 
                 switch viewModel.state {
                     case .initial:

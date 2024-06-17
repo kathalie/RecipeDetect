@@ -34,18 +34,21 @@ class SpacialObjectScannerViewModel: ObservableObject, SpacialObjectDetectionDel
 }
 
 struct SpacialObjectScanner: View {
+
     @StateObject var spacialObjectScannerviewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
-    
-    private var arSceneViewModel: ARSceneViewControllerViewModel
-    
-    init(arSceneViewModel: ARSceneViewControllerViewModel) {
-        self.arSceneViewModel = arSceneViewModel
         
-    }
+    @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
+    @State private var productName : String = ""
+
     
     var body: some View {
         ZStack {
             SpacialScannerViewControllerWrapper(viewModel: spacialObjectScannerviewModel)
+                .onAppear {
+                    coordinator = SpacialScannerViewControllerWrapper(
+                        viewModel: spacialObjectScannerviewModel
+                    ).makeCoordinator()
+                }
             VStack(spacing: 0) {
                 HStack {
                     Button(action: self.backAction) {
@@ -61,6 +64,9 @@ struct SpacialObjectScanner: View {
                         Text("Restart")
                     }
                 }
+                Text(productName)
+                    .foregroundColor(.white)
+                    .font(.headline)
                 Spacer()
                 Text("Session info")
                 Spacer()
@@ -71,9 +77,15 @@ struct SpacialObjectScanner: View {
                         Text("Next")
                     }
                 }
+                Button(action: {
+                    coordinator?.capture()
+                }){
+                    Text("Define object")
+                }
                 
             }
         }
+
     }
     
     func backAction() {
@@ -87,6 +99,7 @@ struct SpacialObjectScanner: View {
     func nextAction() {
         _ = spacialObjectScannerviewModel.nextState()
     }
+    
     
     var title: String {
         switch(spacialObjectScannerviewModel.state) {
