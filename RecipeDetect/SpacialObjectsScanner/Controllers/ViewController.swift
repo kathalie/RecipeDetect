@@ -23,7 +23,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     var mergeScanButton: UIBarButtonItem!
     @IBOutlet weak var instructionView: UIVisualEffectView!
     @IBOutlet weak var instructionLabel: MessageLabel!
-    @IBOutlet weak var loadModelButton: ToggleRoundedButton!
     @IBOutlet weak var flashlightButton: FlashlightButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var sessionInfoView: UIVisualEffectView!
@@ -234,27 +233,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         }
     }
     
-    @IBAction func loadModelButtonTapped(_ sender: Any) {
-        guard !loadModelButton.isHidden && loadModelButton.isEnabled else { return }
-        
-        let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.pixar.universal-scene-description-mobile"], in: .import)
-        documentPicker.delegate = self
-        
-        documentPicker.modalPresentationStyle = .overCurrentContext
-        documentPicker.popoverPresentationController?.sourceView = self.loadModelButton
-        documentPicker.popoverPresentationController?.sourceRect = self.loadModelButton.bounds
-        
-        DispatchQueue.main.async {
-            self.present(documentPicker, animated: true, completion: nil)
-        }
-    }
-    
     @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
         // A tap in the extended hit area on the lower left should cause a tap
         //  on the button that is currently visible at that location.
-        if !loadModelButton.isHidden {
-            loadModelButtonTapped(self)
-        } else if !flashlightButton.isHidden {
+        if !flashlightButton.isHidden {
             toggleFlashlightButtonTapped(self)
         }
     }
@@ -277,37 +259,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first else { return }
         readFile(url)
-    }
-    
-    func showAlert(title: String, message: String, buttonTitle: String? = "OK", showCancel: Bool = false, buttonHandler: ((UIAlertAction) -> Void)? = nil) {
-        print(title + "\n" + message)
-        
-        var actions = [UIAlertAction]()
-        if let buttonTitle = buttonTitle {
-            actions.append(UIAlertAction(title: buttonTitle, style: .default, handler: buttonHandler))
-        }
-        if showCancel {
-            actions.append(UIAlertAction(title: "Cancel", style: .cancel))
-        }
-        self.showAlert(title: title, message: message, actions: actions)
-    }
-    
-    func showAlert(title: String, message: String, actions: [UIAlertAction]) {
-        let showAlertBlock = {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            actions.forEach { alertController.addAction($0) }
-            DispatchQueue.main.async {
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-        
-        if presentedViewController != nil {
-            dismiss(animated: true) {
-                showAlertBlock()
-            }
-        } else {
-            showAlertBlock()
-        }
     }
     
     func testObjectDetection() {

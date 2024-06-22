@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C1D61D22C1E558C006BDECE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D61D12C1E558C006BDECE /* art.scnassets */; };
+		8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C44651E2C2764B200C222BD /* ViewController+Alert.swift */; };
 		8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */; };
 		8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D362C1F2A8B0011D532 /* MessageLabel.swift */; };
 		8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */; };
@@ -89,6 +90,7 @@
 		3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeDetect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1D61D12C1E558C006BDECE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C44651E2C2764B200C222BD /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
 		8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleRoundedButton.swift; sourceTree = "<group>"; };
 		8C564D362C1F2A8B0011D532 /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */,
 				8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */,
 				8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */,
+				8C44651E2C2764B200C222BD /* ViewController+Alert.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */,
 				EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */,
 				8C564D542C1F2ABE0011D532 /* TestRun.swift in Sources */,
+				8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */,
 				8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */,
 				8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */,
 				EB23D2A129FC647C00F940FB /* CGRect+Hashable.swift in Sources */,

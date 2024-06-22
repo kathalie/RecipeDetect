@@ -110,7 +110,7 @@ struct SpacialObjectScanner: View {
 //    }
     var productMessage: String {
         switch(arSceneViewModel.state) {
-        case .initial: return "Init "
+        case .initial: return "Init"
         case .data: return "Detected: \(arSceneViewModel.classification!.label) with confidence: \(arSceneViewModel.classification!.confidence)"
         case .error: return "Error"
         }
