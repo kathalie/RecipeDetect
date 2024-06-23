@@ -71,7 +71,6 @@ struct SpacialObjectScanner: View {
     //                    }
     //                }
                     Spacer()
-                    Text(CGALWrapper.testStr())
                     Text(productName)
                         .foregroundColor(.white)
                         .font(.headline)

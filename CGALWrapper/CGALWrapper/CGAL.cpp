@@ -7,12 +7,10 @@
 
 #include "CGAL.h"
 
-//float calculate_volume(Point_3* points, std::size_t num_points) {
-//    Delaunay dt;
-//    
-//    for (std::size_t i = 0; i < num_points; ++i) {
-//        dt.insert(points[i]);
-//    }
-//    
-//    return dt.volume();
+//float calculate_volume(Point_3* points, unsigned num_points) {
+//    return 0.0;
 //}
+
+char* test() {
+    return "Hello from c++";
+}
