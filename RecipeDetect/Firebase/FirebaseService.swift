@@ -8,11 +8,16 @@
 import Foundation
 import FirebaseDatabase
 import CodableFirebase
+import FirebaseVertexAI
 
 final class FirebaseService {
     private let ref = Database.database().reference()
     
+    
     func getRecipes(completion: @escaping ([Recipe]) -> Void) {
+//        let vertex = VertexAI.vertexAI()
+//        let model = vertex.generativeModel(modelName: "gemini-1.0-pro")
+        
         ref
             .child("recipes")
             .observeSingleEvent(of: .value) { snapshot, _ in
