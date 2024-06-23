@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import ARKit
+import CGALWrapper
 //import SpacialObjectsScanner
 
 class SpacialObjectScannerViewModel: ObservableObject, SpacialObjectDetectionDelegate
@@ -70,6 +71,7 @@ struct SpacialObjectScanner: View {
     //                    }
     //                }
                     Spacer()
+                    Text(CGALWrapper.testStr())
                     Text(productName)
                         .foregroundColor(.white)
                         .font(.headline)

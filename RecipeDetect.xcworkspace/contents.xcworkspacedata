@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CGALWrapper/CGALWrapper.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ObjectRecognition/ObjectRecognition.xcodeproj">
    </FileRef>
    <FileRef

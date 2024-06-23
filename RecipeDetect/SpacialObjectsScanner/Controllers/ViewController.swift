@@ -196,7 +196,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     }
     
     @IBAction func addScanButtonTapped(_ sender: Any) {
-        guard state == .testing else { return }
+        guard state == .calculatingVolume else { return }
 
         let title = "Merge another scan?"
         let message = """
@@ -387,7 +387,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
             switch state {
             case .startARSession:
                 state = .notReady
-            case .notReady, .testing:
+            case .notReady, .calculatingVolume:
                 break
             case .scanning:
                 if let scan = scan {
@@ -422,7 +422,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
             switch state {
             case .startARSession, .notReady:
                 state = .scanning
-            case .scanning, .testing:
+            case .scanning, .calculatingVolume:
                 break
             }
         }
@@ -461,7 +461,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     }
     
     fileprivate func mergeIntoCurrentScan(referenceObject: ARReferenceObject, from url: URL) {
-        if self.state == .testing {
+        if self.state == .calculatingVolume {
             
             // Show activity indicator during the merge.
             ViewController.instance?.showAlert(title: "", message: "Merging other scan into this scan...", buttonTitle: nil)
@@ -517,7 +517,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
             }
             let test = UIAlertAction(title: "Test Received Scan", style: .default) { _ in
                 self.referenceObjectToTest = receivedReferenceObject
-                self.state = .testing
+                self.state = .calculatingVolume
             }
             self.showAlert(title: title, message: message, actions: [merge, test])
             

@@ -26,7 +26,7 @@ class ShareScanViewController: UIActivityViewController {
     deinit {
         // Restart the session in case it was interrupted by the share sheet
         if let configuration = ViewController.instance?.sceneView.session.configuration,
-            ViewController.instance?.state == .testing {
+            ViewController.instance?.state == .calculatingVolume {
             ViewController.instance?.sceneView.session.run(configuration)
         }
     }

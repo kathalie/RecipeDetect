@@ -15,7 +15,7 @@ extension ViewController {
         case startARSession
         case notReady
         case scanning
-        case testing
+        case calculatingVolume
     }
     
     /// - Tag: ARObjectScanningConfiguration
@@ -54,7 +54,7 @@ extension ViewController {
                 } else {
                     newState = .startARSession
                 }
-            case .testing:
+            case .calculatingVolume:
                 guard scan?.boundingBoxExists == true || referenceObjectToTest != nil else {
                     print("Error: Scan is not ready to be tested.")
                     return
@@ -104,16 +104,17 @@ extension ViewController {
                 testRun = nil
                 
                 startMaxScanTimeTimer()
-            case .testing:
-                print("State: Testing")
-                self.setNavigationBarTitle("Test")
+            case .calculatingVolume:
+                print("State: Calculating Volume")
+                self.setNavigationBarTitle("Calculate Volume")
                 flashlightButton.isHidden = false
-                showMergeScanButton()
+//                showMergeScanButton()
                 nextButton.isEnabled = true
                 nextButton.setTitle("Share", for: [])
                 
-                testRun = TestRun(sceneView: sceneView)
-                testObjectDetection()
+//                testRun = TestRun(sceneView: sceneView)
+//                testObjectDetection()
+                calculateVolume()
                 cancelMaxScanTimeTimer()
             }
             
@@ -198,7 +199,7 @@ extension ViewController {
                     scan.state = .scanning
                 }
             }
-        case .testing:
+        case .calculatingVolume:
             state = .scanning
             scan?.state = .adjustingOrigin
         }
@@ -220,10 +221,10 @@ extension ViewController {
                 case .scanning:
                     scan.state = .adjustingOrigin
                 case .adjustingOrigin:
-                    state = .testing
+                    state = .calculatingVolume
                 }
             }
-        case .testing:
+        case .calculatingVolume:
             // Testing is the last state, show the share sheet at the end.
             createAndShareReferenceObject()
         }

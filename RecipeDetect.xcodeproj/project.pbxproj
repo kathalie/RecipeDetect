@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8C1D61D22C1E558C006BDECE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D61D12C1E558C006BDECE /* art.scnassets */; };
 		8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C44651E2C2764B200C222BD /* ViewController+Alert.swift */; };
+		8C4465212C2841A100C222BD /* ViewController+Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465202C2841A100C222BD /* ViewController+Volume.swift */; };
+		8C4465AE2C28A96800C222BD /* libCGALWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4465AD2C28A96800C222BD /* libCGALWrapper.a */; };
 		8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */; };
 		8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D362C1F2A8B0011D532 /* MessageLabel.swift */; };
 		8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */; };
@@ -91,6 +93,10 @@
 		8C1D61D12C1E558C006BDECE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpacialObjectsScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C44651E2C2764B200C222BD /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
+		8C4465202C2841A100C222BD /* ViewController+Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Volume.swift"; sourceTree = "<group>"; };
+		8C4465362C28530000C222BD /* TriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4465552C28584800C222BD /* CTriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CTriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4465AD2C28A96800C222BD /* libCGALWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCGALWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleRoundedButton.swift; sourceTree = "<group>"; };
 		8C564D362C1F2A8B0011D532 /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4465AE2C28A96800C222BD /* libCGALWrapper.a in Frameworks */,
 				EB04454BFAE554B399DCB6ED /* Pods_RecipeDetect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +245,7 @@
 				8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */,
 				8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */,
 				8C44651E2C2764B200C222BD /* ViewController+Alert.swift */,
+				8C4465202C2841A100C222BD /* ViewController+Volume.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -506,6 +514,9 @@
 		F0784AFF1E074E2E073A6D50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C4465AD2C28A96800C222BD /* libCGALWrapper.a */,
+				8C4465552C28584800C222BD /* CTriangularMesh.framework */,
+				8C4465362C28530000C222BD /* TriangularMesh.framework */,
 				8C253B8C2C173C2B0065B0FF /* SpacialObjectsScanner.framework */,
 				3420344BD71366261AFDB9FE /* Pods_RecipeDetect.framework */,
 			);
@@ -546,6 +557,7 @@
 				TargetAttributes = {
 					EB2D551A29E9F60B001657B4 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -696,6 +708,7 @@
 				EB23D2A629FC6AEE00F940FB /* AppError.swift in Sources */,
 				EBC28DB329EA03670056A9F5 /* Ingredient.swift in Sources */,
 				8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */,
+				8C4465212C2841A100C222BD /* ViewController+Volume.swift in Sources */,
 				8C564D3E2C1F2AA70011D532 /* ARCameraTrackingState.swift in Sources */,
 				8C564D672C1F2AF00011D532 /* ObjectOriginAxis.swift in Sources */,
 				97C2B9802C1BAA6200C2BD92 /* ProductsClassifier.mlmodel in Sources */,
@@ -826,6 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -849,6 +863,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objc;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -860,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -883,6 +900,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
