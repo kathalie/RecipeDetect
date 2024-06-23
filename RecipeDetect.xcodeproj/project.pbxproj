@@ -25,7 +25,6 @@
 		8C564D512C1F2ABE0011D532 /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */; };
 		8C564D522C1F2ABE0011D532 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */; };
 		8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */; };
-		8C564D542C1F2ABE0011D532 /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4B2C1F2ABE0011D532 /* TestRun.swift */; };
 		8C564D552C1F2ABE0011D532 /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */; };
 		8C564D562C1F2ABE0011D532 /* ShareScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */; };
 		8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */; };
@@ -138,7 +137,6 @@
 		8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
 		8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
-		8C564D4B2C1F2ABE0011D532 /* TestRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRun.swift; sourceTree = "<group>"; };
 		8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
 		8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareScanViewController.swift; sourceTree = "<group>"; };
 		8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				8C564D462C1F2ABE0011D532 /* AppDelegate.swift */,
 				8C564D452C1F2ABE0011D532 /* Scan.swift */,
 				8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */,
-				8C564D4B2C1F2ABE0011D532 /* TestRun.swift */,
 				8C564D472C1F2ABE0011D532 /* ViewController.swift */,
 				8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */,
 				8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */,
@@ -756,7 +753,6 @@
 				EBD001D929FD07D900B74C8E /* TimeText.swift in Sources */,
 				EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */,
 				EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */,
-				8C564D542C1F2ABE0011D532 /* TestRun.swift in Sources */,
 				8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */,
 				8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */,
 				8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */,
@@ -929,7 +925,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
@@ -966,7 +962,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;

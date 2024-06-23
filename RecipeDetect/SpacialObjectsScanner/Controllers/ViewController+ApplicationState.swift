@@ -55,8 +55,8 @@ extension ViewController {
                     newState = .startARSession
                 }
             case .calculatingVolume:
-                guard scan?.boundingBoxExists == true || referenceObjectToTest != nil else {
-                    print("Error: Scan is not ready to be tested.")
+                guard scan?.boundingBoxExists == true else {
+                    print("Error: Scan is not ready to calculate volume.")
                     return
                 }
             }
@@ -68,8 +68,6 @@ extension ViewController {
             case .startARSession:
                 print("State: Starting ARSession")
                 scan = nil
-                testRun = nil
-                modelURL = nil
                 self.setNavigationBarTitle("")
                 instructionsVisible = false
                 showBackButton(false)
@@ -87,7 +85,6 @@ extension ViewController {
             case .notReady:
                 print("State: Not ready to scan")
                 scan = nil
-                testRun = nil
                 self.setNavigationBarTitle("")
                 flashlightButton.isHidden = true
                 showBackButton(false)
@@ -101,8 +98,6 @@ extension ViewController {
                     self.scan = Scan(sceneView)
                     self.scan?.state = .ready
                 }
-                testRun = nil
-                
                 startMaxScanTimeTimer()
             case .calculatingVolume:
                 print("State: Calculating Volume")
@@ -225,8 +220,7 @@ extension ViewController {
                 }
             }
         case .calculatingVolume:
-            // Testing is the last state, show the share sheet at the end.
-            createAndShareReferenceObject()
+            calculateVolume()
         }
     }
     

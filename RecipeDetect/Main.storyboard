@@ -238,17 +238,6 @@
             <point key="canvasLocation" x="140" y="133.00492610837438"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Du0-YS-P88">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Rdb-04-mSL">
-            <size key="intrinsicContentSize" width="32" height="30"/>
-        </designable>
-        <designable name="cv0-h2-sDf">
-            <size key="intrinsicContentSize" width="61" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="addPressed" width="48" height="48"/>
         <systemColor name="darkTextColor">

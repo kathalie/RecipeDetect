@@ -65,9 +65,7 @@ class ObjectOrigin: SCNNode {
         addChildNode(xAxis)
         addChildNode(yAxis)
         addChildNode(zAxis)
-        
-        set3DModel(ViewController.instance?.modelURL, extentForScaling: extent)
-        
+                
         NotificationCenter.default.addObserver(self, selector: #selector(self.scanningStateChanged(_:)),
                                                name: Scan.stateChangedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.boundingBoxExtentChanged(_:)),
