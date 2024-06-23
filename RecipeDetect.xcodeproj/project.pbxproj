@@ -26,7 +26,6 @@
 		8C564D522C1F2ABE0011D532 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */; };
 		8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */; };
 		8C564D552C1F2ABE0011D532 /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */; };
-		8C564D562C1F2ABE0011D532 /* ShareScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */; };
 		8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */; };
 		8C564D652C1F2AF00011D532 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D582C1F2AEF0011D532 /* Snapping.swift */; };
 		8C564D662C1F2AF00011D532 /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D592C1F2AEF0011D532 /* ScannedObject.swift */; };
@@ -138,7 +137,6 @@
 		8C564D492C1F2ABE0011D532 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		8C564D4A2C1F2ABE0011D532 /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
 		8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
-		8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareScanViewController.swift; sourceTree = "<group>"; };
 		8C564D572C1F2AEF0011D532 /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
 		8C564D582C1F2AEF0011D532 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
 		8C564D592C1F2AEF0011D532 /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 			children = (
 				8C564D462C1F2ABE0011D532 /* AppDelegate.swift */,
 				8C564D452C1F2ABE0011D532 /* Scan.swift */,
-				8C564D4D2C1F2ABE0011D532 /* ShareScanViewController.swift */,
 				8C564D472C1F2ABE0011D532 /* ViewController.swift */,
 				8C564D482C1F2ABE0011D532 /* ViewController+ApplicationState.swift */,
 				8C564D4C2C1F2ABE0011D532 /* ViewController+Gestures.swift */,
@@ -743,7 +740,6 @@
 				8C564D442C1F2AB40011D532 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				8C564D4F2C1F2ABE0011D532 /* AppDelegate.swift in Sources */,
 				EB7A75F32A013F380048D12B /* CaptureBoxView.swift in Sources */,
-				8C564D562C1F2ABE0011D532 /* ShareScanViewController.swift in Sources */,
 				8C564D702C1F2AF00011D532 /* ScannedPointCloud.swift in Sources */,
 				EBC28DD029EAE7270056A9F5 /* Float+Format.swift in Sources */,
 				8C564D512C1F2ABE0011D532 /* ViewController+ApplicationState.swift in Sources */,

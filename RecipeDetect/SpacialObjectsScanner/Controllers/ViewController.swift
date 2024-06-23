@@ -20,7 +20,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var nextButton: ToggleRoundedButton!
     var backButton: UIBarButtonItem!
-    var mergeScanButton: UIBarButtonItem!
     @IBOutlet weak var instructionView: UIVisualEffectView!
     @IBOutlet weak var instructionLabel: MessageLabel!
     @IBOutlet weak var flashlightButton: FlashlightButton!
@@ -40,24 +39,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     internal var screenCenter = CGPoint()
     var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
     var arSceneViewModel : ARSceneViewControllerViewModel
-
-//    init(arSceneViewModel : ARSceneViewControllerViewModel
-//    ) {
-//        self.arSceneViewModel = arSceneViewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
-//    init(arSceneViewModel: ARSceneViewControllerViewModel) {
-//        self.arSceneViewModel = arSceneViewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-    
-    init(spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate, arSceneViewModel : ARSceneViewControllerViewModel) {
+    init(
+        spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate,
+        arSceneViewModel : ARSceneViewControllerViewModel
+    ) {
         self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
         self.arSceneViewModel = arSceneViewModel
         super.init(nibName: nil, bundle: nil)
@@ -168,23 +154,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard !nextButton.isHidden && nextButton.isEnabled else { return }
         switchToNextState()
-    }
-    
-    @IBAction func addScanButtonTapped(_ sender: Any) {
-        guard state == .calculatingVolume else { return }
-
-        let title = "Merge another scan?"
-        let message = """
-            Merging multiple scan results improves detection.
-            You can start a new scan now to merge into this one, or load an already scanned *.arobject file.
-            """
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        DispatchQueue.main.async {
-            self.present(alertController, animated: true, completion: nil)
-        }
     }
     
     @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
@@ -334,6 +303,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             switchToNextState()
             return
         }
+        
         DispatchQueue.main.async {
             self.setNavigationBarTitle("Scan (\(percentage)%)")
         }
@@ -341,14 +311,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     @objc
     func boundingBoxPositionOrExtentChanged(_ notification: Notification) {
-        guard let box = notification.object as? BoundingBox,
-            let cameraPos = sceneView.pointOfView?.simdWorldPosition else { return }
+        guard 
+            let box = notification.object as? BoundingBox,
+            let cameraPos = sceneView.pointOfView?.simdWorldPosition 
+        else { return }
         
         let xString = String(format: "width: %.2f", box.extent.x)
         let yString = String(format: "height: %.2f", box.extent.y)
         let zString = String(format: "length: %.2f", box.extent.z)
+        
         let distanceFromCamera = String(format: "%.2f m", distance(box.simdWorldPosition, cameraPos))
-        displayMessage("Current bounding box: \(distanceFromCamera) away\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
+        displayMessage(
+            "Current bounding box: \(distanceFromCamera) away\n\(xString) \(yString) \(zString)",
+            expirationTime: 1.5
+        )
     }
     
     @objc
@@ -359,7 +335,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let xString = String(format: "x: %.2f", node.position.x)
         let yString = String(format: "y: %.2f", node.position.y)
         let zString = String(format: "z: %.2f", node.position.z)
-        displayMessage("Current local origin position in meters:\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
+        
+        displayMessage(
+            "Current local origin position in meters:\n\(xString) \(yString) \(zString)",
+            expirationTime: 1.5
+        )
     }
     
     @objc
@@ -368,6 +348,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             let title = "Low Power Mode is enabled"
             let message = "Performance may be impacted. For best scanning results, disable Low Power Mode in Settings > Battery, and restart the scan."
             let buttonTitle = "OK"
+            
             self.showAlert(title: title, message: message, buttonTitle: buttonTitle, showCancel: false)
         }
     }

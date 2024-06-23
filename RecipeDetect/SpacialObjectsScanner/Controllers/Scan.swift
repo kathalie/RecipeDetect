@@ -10,7 +10,6 @@ import UIKit
 import ARKit
 
 class Scan {
-    
     static let stateChangedNotification = Notification.Name("ScanningStateChanged")
     static let stateUserInfoKey = "ScanState"
     static let objectCreationInterval: CFTimeInterval = 1.0
