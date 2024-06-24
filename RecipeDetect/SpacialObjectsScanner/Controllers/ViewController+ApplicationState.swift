@@ -126,6 +126,7 @@ extension ViewController {
             case .calculatingVolume:
                 print("State: Calculating Volume")
                 self.setNavigationBarTitle("Volume")
+                nextButton.isHidden = true
                 calculateVolume()
                 cancelMaxScanTimeTimer()
             }
@@ -147,6 +148,7 @@ extension ViewController {
                 print("State: Ready to scan")
                 self.setNavigationBarTitle("Ready to scan")
                 self.showBackButton(false)
+                self.nextButton.isHidden = false
                 self.nextButton.setTitle("Next", for: [])
                 self.flashlightButton.isHidden = false
                 if scan.ghostBoundingBoxExists {
@@ -162,6 +164,7 @@ extension ViewController {
                     "Long press sides to push/pull them in or out. "))
                 self.setNavigationBarTitle("Define bounding box")
                 self.showBackButton(true)
+                self.nextButton.isHidden = false
                 self.nextButton.isEnabled = scan.boundingBoxExists
                 self.flashlightButton.isHidden = false
                 self.nextButton.setTitle("Scan", for: [])
@@ -174,9 +177,8 @@ extension ViewController {
                     self.setNavigationBarTitle("Scan 0%")
                 }
                 self.showBackButton(true)
-                self.nextButton.isEnabled = true
+                self.nextButton.isHidden = true
                 self.flashlightButton.isHidden = false
-                self.nextButton.setTitle("Finish", for: [])
                 
                 // Disable plane detection (even if no plane has been found yet at this time) for performance reasons.
                 self.sceneView.stopPlaneDetection()
@@ -187,6 +189,7 @@ extension ViewController {
                     "You can load a *.usdz 3D model overlay."))
                 self.setNavigationBarTitle("Adjust origin")
                 self.showBackButton(true)
+                self.nextButton.isHidden = false
                 self.nextButton.isEnabled = true
                 self.flashlightButton.isHidden = false
                 self.nextButton.setTitle("Volume", for: [])

@@ -383,7 +383,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             case .error:
                 self.showDetectionFailureDialog(failureReson: "Error occured when detecting object.")
             case .data:
-                self.showDetectionSucceededDialog(classification)
+                guard
+                    let productName = classification?.label,
+                    let confidence = classification?.confidence
+                else {
+                    print("Something went wrong: classification is nil")
+                    return
+                }
+                
+                self.productName = productName
+                self.showDetectionSucceededDialog(productName, confidence)
             }
         }
     }
@@ -403,15 +412,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         )
     }
     
-    private func showDetectionSucceededDialog(_ classification: Classification?) {
-        guard
-            let productName = classification?.label,
-            let confidence = classification?.confidence
-        else {
-            print("Something went wrong: classification is nil")
-            return
-        }
-        
+    private func showDetectionSucceededDialog(_ productName: String, _ confidence: Float) {
         let calculateVolumeAction = UIAlertAction(
             title: "Calculate volume",
             style: UIAlertAction.Style.default
@@ -423,7 +424,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             title: "Go to recipes",
             style: UIAlertAction.Style.default
         ) { (action) in
-            self.productName = productName
             self.arSceneViewModel.product = Product(name: productName, volume: nil)
         }
         
