@@ -12,10 +12,9 @@ struct Recipe: Decodable, Identifiable {
     let name: String
     let ingredients: [Ingredient]
     let time: String
-    let details: String
-    let image: String
+    let details: [String]
 
     enum CodingKeys: String, CodingKey {
-        case name, ingredients, time, details, image
+        case name, ingredients, time, details
     }
 }
