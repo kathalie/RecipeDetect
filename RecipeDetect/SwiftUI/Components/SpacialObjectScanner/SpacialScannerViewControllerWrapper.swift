@@ -12,7 +12,7 @@ import UIKit
 struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable {
     typealias UIViewControllerType = ViewController
     static var viewController : ViewController!
-    var viewModel: SpacialObjectScannerViewModel
+//    var viewModel: SpacialObjectScannerViewModel
     var arSceneViewModel: ARSceneViewControllerViewModel
 
 //    func makeUIViewController(context: Context) -> ViewController {
@@ -28,7 +28,7 @@ struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable {
         )
         let vc = storyBoard.instantiateViewController(identifier: "ViewController") as! ViewController
 
-        vc.spacialObjectDetectionDelegate = viewModel
+//        vc.spacialObjectDetectionDelegate = viewModel
         vc.arSceneViewModel = arSceneViewModel
 
         SpacialScannerViewControllerWrapper.viewController = vc

@@ -37,21 +37,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
-    var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
+//    var spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate
     var arSceneViewModel : ARSceneViewControllerViewModel
     
     init(
-        spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate,
+//        spacialObjectDetectionDelegate: SpacialObjectDetectionDelegate,
         arSceneViewModel : ARSceneViewControllerViewModel
     ) {
-        self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
+//        self.spacialObjectDetectionDelegate = spacialObjectDetectionDelegate
         self.arSceneViewModel = arSceneViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         self.arSceneViewModel = ARSceneViewControllerViewModel()
-        self.spacialObjectDetectionDelegate = SpacialObjectScannerViewModel()
+//        self.spacialObjectDetectionDelegate = SpacialObjectScannerViewModel()
         super.init(coder: coder)
     }
     
@@ -153,6 +153,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard !nextButton.isHidden && nextButton.isEnabled else { return }
+        
+//        if state == .detecting {
+//            capture()
+//        }
+        
         switchToNextState()
     }
     

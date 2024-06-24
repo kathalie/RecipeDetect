@@ -42,7 +42,6 @@
 		8C564D722C1F2AFF0011D532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C564D712C1F2AFF0011D532 /* Main.storyboard */; };
 		8C86A8322C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */; };
 		8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */; };
-		8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797442C1DACAA0090E40E /* TopBar.swift */; };
 		8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */; };
 		9736A33F2C28F7870058F8ED /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9736A33E2C28F7870058F8ED /* FirebaseAnalytics */; };
 		9736A3412C28F7870058F8ED /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9736A3402C28F7870058F8ED /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -154,7 +153,6 @@
 		8C564D752C1F4F920011D532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8C86A8312C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectDetectionDelegate.swift; sourceTree = "<group>"; };
 		8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialObjectScanner.swift; sourceTree = "<group>"; };
-		8CB797442C1DACAA0090E40E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialScannerViewControllerWrapper.swift; sourceTree = "<group>"; };
 		97C2B97F2C1BAA6100C2BD92 /* ProductsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ProductsClassifier.mlmodel; path = ../ObjectRecognition/ObjectRecognition/ProductsClassifier.mlmodel; sourceTree = "<group>"; };
 		BFDBB2CADA569F2123432001 /* Pods-RecipeDetect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeDetect.release.xcconfig"; path = "Target Support Files/Pods-RecipeDetect/Pods-RecipeDetect.release.xcconfig"; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				8CB797412C1DA9120090E40E /* SpacialObjectScanner.swift */,
-				8CB797442C1DACAA0090E40E /* TopBar.swift */,
 				8CB797462C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift */,
 			);
 			path = SpacialObjectScanner;
@@ -751,7 +748,6 @@
 				EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */,
 				8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */,
 				8CB797472C1DB0070090E40E /* SpacialScannerViewControllerWrapper.swift in Sources */,
-				8CB797452C1DACAA0090E40E /* TopBar.swift in Sources */,
 				EB23D2A129FC647C00F940FB /* CGRect+Hashable.swift in Sources */,
 				8C564D662C1F2AF00011D532 /* ScannedObject.swift in Sources */,
 				8C564D6E2C1F2AF00011D532 /* DetectedBoundingBox.swift in Sources */,

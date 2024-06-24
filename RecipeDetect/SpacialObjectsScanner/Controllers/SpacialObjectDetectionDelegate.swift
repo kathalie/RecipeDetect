@@ -8,15 +8,17 @@
 import Foundation
 import ARKit
 
-public enum SpacialObjectDetectionState : Equatable {
-    case startARSession
-    case tapObject
-    case boundObject
-    case scan(progress: Int = 0)
-    case info(arReferenceObject: ARReferenceObject?)
-}
-
-public protocol SpacialObjectDetectionDelegate {
-    func nextState() -> SpacialObjectDetectionState
-    func setState(newState: SpacialObjectDetectionState)
-}
+//public enum SpacialObjectDetectionState : Equatable {
+//    case startARSession
+//    case notReady
+//    case detecting
+//    case ready
+//    case defineBoundingBox
+//    case scan(progress: Int = 0)
+//    case volume(arReferenceObject: ARReferenceObject?)
+//}
+//
+//public protocol SpacialObjectDetectionDelegate {
+//    func nextState() -> SpacialObjectDetectionState
+//    func setState(newState: SpacialObjectDetectionState)
+//}
