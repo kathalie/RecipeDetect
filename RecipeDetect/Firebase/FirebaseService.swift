@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseDatabase
 import CodableFirebase
+import FirebaseVertexAI
 
 final class FirebaseService {
     private let ref = Database.database().reference()
