@@ -11,8 +11,8 @@
 		8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C44651E2C2764B200C222BD /* ViewController+Alert.swift */; };
 		8C4465212C2841A100C222BD /* ViewController+Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465202C2841A100C222BD /* ViewController+Volume.swift */; };
 		8C4465AE2C28A96800C222BD /* libCGALWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4465AD2C28A96800C222BD /* libCGALWrapper.a */; };
-		8C4465E92C2A0AA700C222BD /* VolumeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */; };
-		8C4465EB2C2A0AC100C222BD /* VolumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */; };
+		8C4465EE2C2A196A00C222BD /* VolumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465EC2C2A196A00C222BD /* VolumeModel.swift */; };
+		8C4465EF2C2A196A00C222BD /* VolumeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465ED2C2A196A00C222BD /* VolumeFetcher.swift */; };
 		8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */; };
 		8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D362C1F2A8B0011D532 /* MessageLabel.swift */; };
 		8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */; };
@@ -80,7 +80,6 @@
 		EB23D29F29FC62E000F940FB /* ImageCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D29E29FC62E000F940FB /* ImageCaptureView.swift */; };
 		EB23D2A129FC647C00F940FB /* CGRect+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D2A029FC647C00F940FB /* CGRect+Hashable.swift */; };
 		EB23D2A329FC674100F940FB /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D2A229FC674100F940FB /* RoundedButton.swift */; };
-		EB23D2A629FC6AEE00F940FB /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D2A529FC6AEE00F940FB /* AppError.swift */; };
 		EB23D2AD29FC7BE200F940FB /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23D2AC29FC7BE200F940FB /* NextButton.swift */; };
 		EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D551E29E9F60B001657B4 /* RecipeDetectApp.swift */; };
 		EB2D552129E9F60B001657B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D552029E9F60B001657B4 /* ContentView.swift */; };
@@ -119,8 +118,8 @@
 		8C4465362C28530000C222BD /* TriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4465552C28584800C222BD /* CTriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CTriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4465AD2C28A96800C222BD /* libCGALWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCGALWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeFetcher.swift; sourceTree = "<group>"; };
-		8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeModel.swift; sourceTree = "<group>"; };
+		8C4465EC2C2A196A00C222BD /* VolumeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeModel.swift; sourceTree = "<group>"; };
+		8C4465ED2C2A196A00C222BD /* VolumeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeFetcher.swift; sourceTree = "<group>"; };
 		8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleRoundedButton.swift; sourceTree = "<group>"; };
 		8C564D362C1F2A8B0011D532 /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 		EB23D29E29FC62E000F940FB /* ImageCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureView.swift; sourceTree = "<group>"; };
 		EB23D2A029FC647C00F940FB /* CGRect+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Hashable.swift"; sourceTree = "<group>"; };
 		EB23D2A229FC674100F940FB /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		EB23D2A529FC6AEE00F940FB /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = ../../ObjectRecognition/ObjectRecognition/AppError.swift; sourceTree = "<group>"; };
 		EB23D2AC29FC7BE200F940FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		EB2D551B29E9F60B001657B4 /* RecipeDetect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeDetect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2D551E29E9F60B001657B4 /* RecipeDetectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetectApp.swift; sourceTree = "<group>"; };
@@ -258,8 +256,8 @@
 		8C4465E72C2A0A8900C222BD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */,
-				8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */,
+				8C4465ED2C2A196A00C222BD /* VolumeFetcher.swift */,
+				8C4465EC2C2A196A00C222BD /* VolumeModel.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -410,7 +408,6 @@
 				8C1D61982C1E531A006BDECE /* SpacialObjectsScanner */,
 				EBD001DE29FEB1B500B74C8E /* Firebase */,
 				EBC28D9B29EA00B90056A9F5 /* Detection */,
-				EBC28DA929EA02480056A9F5 /* Enums */,
 				EBC28DA329EA01220056A9F5 /* SwiftUI */,
 				EBC28DA229EA01110056A9F5 /* UIKit */,
 				EBC28DCE29EAE7060056A9F5 /* Extensions */,
@@ -485,14 +482,6 @@
 				EBC28DA729EA01490056A9F5 /* OrientationExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EBC28DA929EA02480056A9F5 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				EB23D2A529FC6AEE00F940FB /* AppError.swift */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		EBC28DCE29EAE7060056A9F5 /* Extensions */ = {
@@ -708,6 +697,7 @@
 				8C564D502C1F2ABE0011D532 /* ViewController.swift in Sources */,
 				EB2D552129E9F60B001657B4 /* ContentView.swift in Sources */,
 				8C564D682C1F2AF00011D532 /* DetectedObject.swift in Sources */,
+				8C4465EE2C2A196A00C222BD /* VolumeModel.swift in Sources */,
 				8C564D6D2C1F2AF00011D532 /* BoundingBox.swift in Sources */,
 				EBC28D9F29EA00D50056A9F5 /* Detection.swift in Sources */,
 				8C564D652C1F2AF00011D532 /* Snapping.swift in Sources */,
@@ -716,6 +706,7 @@
 				EB7A75FE2A01587D0048D12B /* CaptureFramePageView.swift in Sources */,
 				EBD001F82A00F0D600B74C8E /* ARCameraView.swift in Sources */,
 				EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */,
+				8C4465EF2C2A196A00C222BD /* VolumeFetcher.swift in Sources */,
 				EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */,
 				8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */,
 				8C564D532C1F2ABE0011D532 /* ViewController+SessionInfo.swift in Sources */,
@@ -758,11 +749,9 @@
 				F6C5E48B2C29BBDF001ED3F6 /* Ingredient.swift in Sources */,
 				8C564D3D2C1F2AA70011D532 /* Utilities.swift in Sources */,
 				F6C5E48E2C29BBDF001ED3F6 /* RecipeListItemView.swift in Sources */,
-				8C4465EB2C2A0AC100C222BD /* VolumeModel.swift in Sources */,
 				EB23D2A329FC674100F940FB /* RoundedButton.swift in Sources */,
 				8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */,
 				8C564D6C2C1F2AF00011D532 /* Tile.swift in Sources */,
-				EB23D2A629FC6AEE00F940FB /* AppError.swift in Sources */,
 				8C564D642C1F2AF00011D532 /* BoundingBoxSide.swift in Sources */,
 				8C4465212C2841A100C222BD /* ViewController+Volume.swift in Sources */,
 				8C564D3E2C1F2AA70011D532 /* ARCameraTrackingState.swift in Sources */,
@@ -900,7 +889,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
@@ -915,7 +904,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.ml.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -937,7 +926,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = QSMWZSWSZF;
+				DEVELOPMENT_TEAM = C6R4M4K6S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
@@ -952,7 +941,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.ml.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
