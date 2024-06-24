@@ -14,6 +14,7 @@ extension ViewController {
     enum State {
         case startARSession
         case notReady
+        case detecting
         case scanning
         case calculatingVolume
     }
@@ -38,6 +39,18 @@ extension ViewController {
                         newState = .scanning
                     default:
                         break
+                    }
+                } else {
+                    newState = .startARSession
+                }
+            case .detecting:
+                // Immediately switch to .notReady if tracking state is not normal.
+                if let camera = self.sceneView.session.currentFrame?.camera {
+                    switch camera.trackingState {
+                    case .normal:
+                        break
+                    default:
+                        newState = .notReady
                     }
                 } else {
                     newState = .startARSession
@@ -92,8 +105,20 @@ extension ViewController {
                 nextButton.setTitle("Next", for: [])
                 displayInstruction(Message("Please wait for stable tracking"))
                 cancelMaxScanTimeTimer()
+            case .detecting:
+                print("State: Detecting object")
+                scan = nil
+                self.setNavigationBarTitle("Detection")
+                flashlightButton.isHidden = false
+                showBackButton(false)
+                nextButton.isEnabled = true
+                nextButton.setTitle("Detect", for: [])
+                displayInstruction(Message("Point camera at the product you wish to detect"))
+                cancelMaxScanTimeTimer()
             case .scanning:
                 print("State: Scanning")
+                flashlightButton.isHidden = false
+                showBackButton(true)
                 if scan == nil {
                     self.scan = Scan(sceneView)
                     self.scan?.state = .ready
@@ -103,12 +128,8 @@ extension ViewController {
                 print("State: Calculating Volume")
                 self.setNavigationBarTitle("Calculate Volume")
                 flashlightButton.isHidden = false
-//                showMergeScanButton()
                 nextButton.isEnabled = true
                 nextButton.setTitle("Share", for: [])
-                
-//                testRun = TestRun(sceneView: sceneView)
-//                testObjectDetection()
                 calculateVolume()
                 cancelMaxScanTimeTimer()
             }
@@ -181,6 +202,8 @@ extension ViewController {
             break
         case .notReady:
             state = .startARSession
+        case .detecting:
+            state = .notReady
         case .scanning:
             if let scan = scan {
                 switch scan.state {
@@ -205,6 +228,8 @@ extension ViewController {
         case .startARSession:
             state = .notReady
         case .notReady:
+            state = .detecting
+        case .detecting:
             state = .scanning
         case .scanning:
             if let scan = scan {
