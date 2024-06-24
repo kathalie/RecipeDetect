@@ -13,40 +13,47 @@ struct RecipeListView: View {
     @ObservedObject private var firebaseViewModel = FirebaseViewModel()
     static var newRequest : Bool = false
     @Binding var state : String
+    let product : Product
     
     var body: some View {
-        NavigationView{
-            VStack {
-                if (firebaseViewModel.response.isEmpty){
-                    ProgressView()
-                } else {
-                    List(firebaseViewModel.response, id: \.id) { recipe in
-                        NavigationLink(destination: RecipeDetailsView(recipe: recipe)) {
-                            RecipeListItemView(recipe: recipe)
+        VStack{
+            Text("Product name: \(product.name)")
+            if(product.volume != nil) {
+                Text("Volume: \(product.volume!)")
+            }
+            NavigationView{
+                VStack {
+                    if (firebaseViewModel.response.isEmpty){
+                        ProgressView()
+                    } else {
+                        List(firebaseViewModel.response, id: \.id) { recipe in
+                            NavigationLink(destination: RecipeDetailsView(recipe: recipe)) {
+                                RecipeListItemView(recipe: recipe)
+                            }
                         }
+                        .listStyle(.plain)
                     }
-                    .listStyle(.plain)
                 }
-            }
-            .toolbar {
-                Button(action: {
-                    state = "scanner"
-                }, label: {
-                    Image(systemName: "camera")
-                })
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    NavigationLink(destination: SpacialObjectScanner()) {
-//                        Image(systemName: "camera")
-//                    }
-//                }
-            }
-            .navigationBarTitle("Recommendation list")
-            .navigationBarTitleDisplayMode(.large)
-            .onAppear {
-                if(RecipeListView.newRequest){
-                    print("fetch")
-                    firebaseViewModel.getRecepies()
-                    RecipeListView.newRequest = false
+                .toolbar {
+                    Button(action: {
+                        state = "scanner"
+                    }, label: {
+                        Image(systemName: "camera")
+                    })
+                    //                ToolbarItem(placement: .navigationBarTrailing) {
+                    //                    NavigationLink(destination: SpacialObjectScanner()) {
+                    //                        Image(systemName: "camera")
+                    //                    }
+                    //                }
+                }
+                .navigationBarTitle("Recommendation list")
+                .navigationBarTitleDisplayMode(.large)
+                .onAppear {
+                    if(RecipeListView.newRequest){
+                        print("fetch")
+                        firebaseViewModel.getRecepies(product: product)
+                        RecipeListView.newRequest = false
+                    }
                 }
             }
         }

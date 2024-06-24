@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "079AC54A-296D-4707-ADA6-E5FA39A1A303"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecipeDetect/SwiftUI/ARCamera/ARCameraView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "69F500A1-C049-4D80-BBFE-0A08A7836564"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -32,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
             endingLineNumber = "12"
-            landmarkName = "ARSceneViewControllerViewModel"
-            landmarkType = "3">
+            landmarkName = "Product"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +94,10 @@
             filePath = "RecipeDetect/SwiftUI/Components/SpacialObjectScanner/SpacialObjectScanner.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "BA9604DC-EBCC-4A98-ADD9-26DCAFB83E9F - 781f60a342d4b95b"
@@ -158,10 +142,10 @@
             filePath = "RecipeDetect/SwiftUI/Components/SpacialObjectScanner/SpacialObjectScanner.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "SpacialObjectScanner"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "ABD98318-BE48-484B-88E1-EB40B6569E9B - cd4942ac09a85a72"

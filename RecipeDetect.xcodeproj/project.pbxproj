@@ -91,21 +91,16 @@
 		EB7A75FC2A0158490048D12B /* MoveIphonePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A75FB2A0158490048D12B /* MoveIphonePageView.swift */; };
 		EB7A75FE2A01587D0048D12B /* CaptureFramePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A75FD2A01587D0048D12B /* CaptureFramePageView.swift */; };
 		EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A75FF2A01860B0048D12B /* Array+Ingredient.swift */; };
-		EBC28D9A29E9FB4A0056A9F5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28D9929E9FB4A0056A9F5 /* FirebaseService.swift */; };
 		EBC28D9D29EA00C60056A9F5 /* ObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28D9C29EA00C60056A9F5 /* ObjectDetector.swift */; };
 		EBC28D9F29EA00D50056A9F5 /* Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28D9E29EA00D50056A9F5 /* Detection.swift */; };
 		EBC28DA829EA01490056A9F5 /* OrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DA729EA01490056A9F5 /* OrientationExtension.swift */; };
 		EBC28DB729EA1EA80056A9F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBC28DB629EA1EA80056A9F5 /* GoogleService-Info.plist */; };
-		EBC28DBA29EA249B0056A9F5 /* SessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DB929EA249B0056A9F5 /* SessionDataStore.swift */; };
-		EBC28DC729EA97B50056A9F5 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DC629EA97B50056A9F5 /* ARSceneViewController.swift */; };
 		EBC28DC929EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DC829EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift */; };
 		EBC28DCB29EADC3C0056A9F5 /* DetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DCA29EADC3C0056A9F5 /* DetectionView.swift */; };
 		EBC28DD029EAE7270056A9F5 /* Float+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DCF29EAE7270056A9F5 /* Float+Format.swift */; };
 		EBC28DD229EAE9F90056A9F5 /* ARSceneViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC28DD129EAE9F90056A9F5 /* ARSceneViewControllerViewModel.swift */; };
 		EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD001D629FC86EE00B74C8E /* DistanceDetection.swift */; };
 		EBD001D929FD07D900B74C8E /* TimeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD001D829FD07D900B74C8E /* TimeText.swift */; };
-		EBD001E82A00805400B74C8E /* IngredientCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD001E72A00805400B74C8E /* IngredientCase.swift */; };
-		EBD001EA2A0082FB00B74C8E /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD001E92A0082FB00B74C8E /* Calculator.swift */; };
 		EBD001F82A00F0D600B74C8E /* ARCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD001F72A00F0D600B74C8E /* ARCameraView.swift */; };
 		F6C5E48B2C29BBDF001ED3F6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5E4842C29BBDF001ED3F6 /* Ingredient.swift */; };
 		F6C5E48C2C29BBDF001ED3F6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5E4852C29BBDF001ED3F6 /* Recipe.swift */; };
@@ -179,21 +174,16 @@
 		EB7A75FB2A0158490048D12B /* MoveIphonePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveIphonePageView.swift; sourceTree = "<group>"; };
 		EB7A75FD2A01587D0048D12B /* CaptureFramePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureFramePageView.swift; sourceTree = "<group>"; };
 		EB7A75FF2A01860B0048D12B /* Array+Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ingredient.swift"; sourceTree = "<group>"; };
-		EBC28D9929E9FB4A0056A9F5 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		EBC28D9C29EA00C60056A9F5 /* ObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetector.swift; sourceTree = "<group>"; };
 		EBC28D9E29EA00D50056A9F5 /* Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detection.swift; sourceTree = "<group>"; };
 		EBC28DA729EA01490056A9F5 /* OrientationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtension.swift; sourceTree = "<group>"; };
 		EBC28DB629EA1EA80056A9F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EBC28DB929EA249B0056A9F5 /* SessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataStore.swift; sourceTree = "<group>"; };
-		EBC28DC629EA97B50056A9F5 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
 		EBC28DC829EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewControllerWrapper.swift; sourceTree = "<group>"; };
 		EBC28DCA29EADC3C0056A9F5 /* DetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionView.swift; sourceTree = "<group>"; };
 		EBC28DCF29EAE7270056A9F5 /* Float+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Format.swift"; sourceTree = "<group>"; };
 		EBC28DD129EAE9F90056A9F5 /* ARSceneViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewControllerViewModel.swift; sourceTree = "<group>"; };
 		EBD001D629FC86EE00B74C8E /* DistanceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceDetection.swift; sourceTree = "<group>"; };
 		EBD001D829FD07D900B74C8E /* TimeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeText.swift; sourceTree = "<group>"; };
-		EBD001E72A00805400B74C8E /* IngredientCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCase.swift; sourceTree = "<group>"; };
-		EBD001E92A0082FB00B74C8E /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		EBD001F72A00F0D600B74C8E /* ARCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraView.swift; sourceTree = "<group>"; };
 		F6C5E4842C29BBDF001ED3F6 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		F6C5E4852C29BBDF001ED3F6 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -418,9 +408,7 @@
 				8C4465E72C2A0A8900C222BD /* Networking */,
 				8C564D752C1F4F920011D532 /* Info.plist */,
 				8C1D61982C1E531A006BDECE /* SpacialObjectsScanner */,
-				EB7A76022A0194430048D12B /* DataStore */,
 				EBD001DE29FEB1B500B74C8E /* Firebase */,
-				EB7A76032A0194600048D12B /* Calculator */,
 				EBC28D9B29EA00B90056A9F5 /* Detection */,
 				EBC28DA929EA02480056A9F5 /* Enums */,
 				EBC28DA329EA01220056A9F5 /* SwiftUI */,
@@ -456,22 +444,6 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		EB7A76022A0194430048D12B /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-				EBC28DB929EA249B0056A9F5 /* SessionDataStore.swift */,
-			);
-			path = DataStore;
-			sourceTree = "<group>";
-		};
-		EB7A76032A0194600048D12B /* Calculator */ = {
-			isa = PBXGroup;
-			children = (
-				EBD001E92A0082FB00B74C8E /* Calculator.swift */,
-			);
-			path = Calculator;
-			sourceTree = "<group>";
-		};
 		EBC28D9B29EA00B90056A9F5 /* Detection */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				EBC28DA429EA012B0056A9F5 /* Extensions */,
-				EBC28DC629EA97B50056A9F5 /* ARSceneViewController.swift */,
 				EBC28DD129EAE9F90056A9F5 /* ARSceneViewControllerViewModel.swift */,
 			);
 			path = UIKit;
@@ -519,7 +490,6 @@
 		EBC28DA929EA02480056A9F5 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				EBD001E72A00805400B74C8E /* IngredientCase.swift */,
 				EB23D2A529FC6AEE00F940FB /* AppError.swift */,
 			);
 			path = Enums;
@@ -539,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				F6C5E4902C29BC1B001ED3F6 /* FirebaseViewModel.swift */,
-				EBC28D9929E9FB4A0056A9F5 /* FirebaseService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -746,7 +715,6 @@
 				EBC28DCB29EADC3C0056A9F5 /* DetectionView.swift in Sources */,
 				EB7A75FE2A01587D0048D12B /* CaptureFramePageView.swift in Sources */,
 				EBD001F82A00F0D600B74C8E /* ARCameraView.swift in Sources */,
-				EBC28DBA29EA249B0056A9F5 /* SessionDataStore.swift in Sources */,
 				EBD001D729FC86EE00B74C8E /* DistanceDetection.swift in Sources */,
 				EB7A76002A01860B0048D12B /* Array+Ingredient.swift in Sources */,
 				8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */,
@@ -760,7 +728,6 @@
 				8C564D512C1F2ABE0011D532 /* ViewController+ApplicationState.swift in Sources */,
 				8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */,
 				8C564D432C1F2AB40011D532 /* ThresholdRotationGestureRecognizer.swift in Sources */,
-				EBC28D9A29E9FB4A0056A9F5 /* FirebaseService.swift in Sources */,
 				EBD001D929FD07D900B74C8E /* TimeText.swift in Sources */,
 				EB23D29329FC0A4400F940FB /* BoundingBoxView.swift in Sources */,
 				EB2D551F29E9F60B001657B4 /* RecipeDetectApp.swift in Sources */,
@@ -771,8 +738,6 @@
 				8C564D662C1F2AF00011D532 /* ScannedObject.swift in Sources */,
 				8C564D6E2C1F2AF00011D532 /* DetectedBoundingBox.swift in Sources */,
 				EB23D29F29FC62E000F940FB /* ImageCaptureView.swift in Sources */,
-				EBC28DC729EA97B50056A9F5 /* ARSceneViewController.swift in Sources */,
-				8C4465E92C2A0AA700C222BD /* VolumeFetcher.swift in Sources */,
 				EBC28DC929EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift in Sources */,
 				EB23D29029FC0A1600F940FB /* View+Overlay.swift in Sources */,
 				8C564D4E2C1F2ABE0011D532 /* Scan.swift in Sources */,
@@ -780,9 +745,7 @@
 				EB7A75FA2A0154F20048D12B /* OnboardingView.swift in Sources */,
 				8C86A8322C1F878B004EA0E6 /* SpacialObjectDetectionDelegate.swift in Sources */,
 				8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */,
-				EBD001EA2A0082FB00B74C8E /* Calculator.swift in Sources */,
 				8C564D6A2C1F2AF00011D532 /* PointCloud+CreateVisualization.swift in Sources */,
-				EBD001E82A00805400B74C8E /* IngredientCase.swift in Sources */,
 				F6C5E48F2C29BBDF001ED3F6 /* RecipeListView.swift in Sources */,
 				8C564D522C1F2ABE0011D532 /* ViewController+NavigationBar.swift in Sources */,
 				8C564D6B2C1F2AF00011D532 /* ObjectOrigin.swift in Sources */,
@@ -937,7 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = C6R4M4K6S2;
+				DEVELOPMENT_TEAM = QSMWZSWSZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
@@ -952,7 +915,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.ml.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -974,7 +937,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeDetect/Preview Content\"";
-				DEVELOPMENT_TEAM = C6R4M4K6S2;
+				DEVELOPMENT_TEAM = QSMWZSWSZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeDetect/Info.plist;
@@ -989,7 +952,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.ml.RecipeDetect;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukm.RecipeDetect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
