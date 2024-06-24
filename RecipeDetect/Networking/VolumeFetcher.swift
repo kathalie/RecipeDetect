@@ -24,7 +24,7 @@ func fetchVolume(pointCloud: [simd_float3], completion: @escaping (Result<Volume
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     
-    let bodyDict: [String: String] = ["point_cloud": ""]
+    let bodyDict: [String: String] = ["point_cloud": pointData]
     do {
         let jsonData = try JSONSerialization.data(withJSONObject: bodyDict, options: [])
         request.httpBody = jsonData
