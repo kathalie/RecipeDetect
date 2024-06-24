@@ -84,7 +84,7 @@ extension ViewController {
                 self.setNavigationBarTitle("")
                 instructionsVisible = false
                 showBackButton(false)
-                nextButton.isEnabled = false
+                nextButton.isHidden = true
                 flashlightButton.isHidden = true
                 
                 // Make sure the SCNScene is cleared of any SCNNodes from previous scans.
@@ -101,8 +101,7 @@ extension ViewController {
                 self.setNavigationBarTitle("")
                 flashlightButton.isHidden = true
                 showBackButton(false)
-                nextButton.isEnabled = false
-                nextButton.setTitle("Next", for: [])
+                nextButton.isHidden = true
                 displayInstruction(Message("Please wait for stable tracking"))
                 cancelMaxScanTimeTimer()
             case .detecting:
@@ -111,7 +110,7 @@ extension ViewController {
                 self.setNavigationBarTitle("Detection")
                 flashlightButton.isHidden = false
                 showBackButton(false)
-                nextButton.isEnabled = true
+                nextButton.isHidden = false
                 nextButton.setTitle("Detect", for: [])
                 displayInstruction(Message("Point camera at the product you wish to detect"))
                 cancelMaxScanTimeTimer()
@@ -126,10 +125,7 @@ extension ViewController {
                 startMaxScanTimeTimer()
             case .calculatingVolume:
                 print("State: Calculating Volume")
-                self.setNavigationBarTitle("Calculate Volume")
-                flashlightButton.isHidden = false
-                nextButton.isEnabled = true
-                nextButton.setTitle("Share", for: [])
+                self.setNavigationBarTitle("Volume")
                 calculateVolume()
                 cancelMaxScanTimeTimer()
             }
@@ -181,8 +177,10 @@ extension ViewController {
                 self.nextButton.isEnabled = true
                 self.flashlightButton.isHidden = true
                 self.nextButton.setTitle("Finish", for: [])
+                
                 // Disable plane detection (even if no plane has been found yet at this time) for performance reasons.
                 self.sceneView.stopPlaneDetection()
+                
             case .adjustingOrigin:
                 print("State: Adjusting Origin")
                 self.displayInstruction(Message("Adjust origin using gestures.\n" +
@@ -191,7 +189,7 @@ extension ViewController {
                 self.showBackButton(true)
                 self.nextButton.isEnabled = true
                 self.flashlightButton.isHidden = true
-                self.nextButton.setTitle("Test", for: [])
+                self.nextButton.setTitle("Volume", for: [])
             }
         }
     }
