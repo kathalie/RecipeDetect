@@ -8,9 +8,6 @@
       location = "group:ObjectRecognition/ObjectRecognition.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SpacialObjectsScanner/SpacialObjectsScanner.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:RecipeDetect.xcodeproj">
    </FileRef>
    <FileRef
