@@ -148,7 +148,7 @@ extension ViewController {
                 self.setNavigationBarTitle("Ready to scan")
                 self.showBackButton(false)
                 self.nextButton.setTitle("Next", for: [])
-                self.flashlightButton.isHidden = true
+                self.flashlightButton.isHidden = false
                 if scan.ghostBoundingBoxExists {
                     self.displayInstruction(Message("Tap 'Next' to create an approximate bounding box around the object you want to scan."))
                     self.nextButton.isEnabled = true
@@ -163,7 +163,7 @@ extension ViewController {
                 self.setNavigationBarTitle("Define bounding box")
                 self.showBackButton(true)
                 self.nextButton.isEnabled = scan.boundingBoxExists
-                self.flashlightButton.isHidden = true
+                self.flashlightButton.isHidden = false
                 self.nextButton.setTitle("Scan", for: [])
             case .scanning:
                 self.displayInstruction(Message("Scan the object from all sides that you are " +
@@ -175,7 +175,7 @@ extension ViewController {
                 }
                 self.showBackButton(true)
                 self.nextButton.isEnabled = true
-                self.flashlightButton.isHidden = true
+                self.flashlightButton.isHidden = false
                 self.nextButton.setTitle("Finish", for: [])
                 
                 // Disable plane detection (even if no plane has been found yet at this time) for performance reasons.
@@ -188,7 +188,7 @@ extension ViewController {
                 self.setNavigationBarTitle("Adjust origin")
                 self.showBackButton(true)
                 self.nextButton.isEnabled = true
-                self.flashlightButton.isHidden = true
+                self.flashlightButton.isHidden = false
                 self.nextButton.setTitle("Volume", for: [])
             }
         }
