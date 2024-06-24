@@ -22,16 +22,16 @@ struct RecipeDetailsView: View {
                     .padding(.horizontal)
                 Spacer()
             }
-            KFImage(URL(string: recipe.image))
-                .placeholder {
-                    Image("small_placeholder")
-                        .resizable()
-                        .frame(width: 300, height: 300)
-                }
-                .cancelOnDisappear(true)
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width)
-                .scaledToFit()
+//            KFImage(URL(string: recipe.image))
+//                .placeholder {
+//                    Image("small_placeholder")
+//                        .resizable()
+//                        .frame(width: 300, height: 300)
+//                }
+//                .cancelOnDisappear(true)
+//                .resizable()
+//                .frame(width: UIScreen.main.bounds.width)
+//                .scaledToFit()
             ScrollView {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(recipe.name)
@@ -52,7 +52,15 @@ struct RecipeDetailsView: View {
                     Text("Details:")
                         .font(.title3)
                         .bold()
-                    Text(recipe.details)
+//                    recipe.details.forEach{
+//                        Text($0)
+//                    }
+                    
+                       ForEach(recipe.details, id: \.self) { item in
+                           Text(item)
+                       }
+                   
+                    
                 }
                 .padding(.horizontal)
             }
@@ -78,7 +86,6 @@ struct RecipeDetailsView_Previews: PreviewProvider {
                 .init(name: "egg", unit: "", amount: 3),
             ],
             time: "45 min",
-            details: "mix everything and bake 30 mins",
-            image: "https://www.southernliving.com/thmb/fi3aPea-dRvahcmk42j0M-hoKc4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2589601_mailb_mailbox_apple_pie_003_0_0-2000-de5c23bb4c4e433fb6d5547d19cb3bcd-e219a711b4b94df792dcd2c8fd997d6a.jpg"))
+            details: ["mix everything and bake 30 mins"]))
     }
 }

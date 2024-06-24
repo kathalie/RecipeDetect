@@ -26,7 +26,7 @@ struct DetectionView: View {
                 }
             }
         }
-        .addNextButton(destination: RecipeListView(queries: detections.map { ($0.label, $0.mass) }))
+//        .addNextButton(destination: RecipeListView(queries: detections.map { ($0.label, $0.mass) }))
         .navigationTitle("Detection details")
         .navigationBarTitleDisplayMode(.large)
     }

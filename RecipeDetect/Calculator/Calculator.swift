@@ -68,8 +68,8 @@ struct Calculator {
                 .init(name: $0.name, unit: $0.unit, amount: Double($0.amount) * min)
             },
             time: recipe.time,
-            details: recipe.details,
-            image: recipe.image)
+            details: recipe.details
+            )
     }
 
     /// Returns density for ingredient's name. Fails if such ingredient was not found in densities dictionary

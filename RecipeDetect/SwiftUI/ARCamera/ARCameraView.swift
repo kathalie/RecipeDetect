@@ -12,7 +12,13 @@ struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()
 
     var body: some View {
-        SpacialObjectScanner()
+        ZStack{
+            RecipeListView()
+        }
+        .onAppear{
+            RecipeListView.newRequest = true
+        }
+        //SpacialObjectScanner()
     }
 
     private func screenCenter(_ size: CGSize) -> CGRect {

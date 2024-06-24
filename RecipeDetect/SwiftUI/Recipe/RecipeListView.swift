@@ -8,46 +8,47 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    @State var queries: [(String, Int)]
-    @State private var recipes: [Recipe] = []
-
+    //@State var queries: [(String, Int)]
+    //@State private var recipes: [Recipe] = []
+    @ObservedObject private var firebaseViewModel = FirebaseViewModel()
+    static var newRequest : Bool = false
+    
     var body: some View {
-        VStack {
-            if recipes.isEmpty {
-                ProgressView()
-            } else {
-                List(recipes, id: \.id) { recipe in
-                    NavigationLink(destination: RecipeDetailsView(recipe: recipe)) {
-                        RecipeListItemView(recipe: recipe)
+        NavigationView{
+            VStack {
+                if (firebaseViewModel.response.isEmpty){
+                    ProgressView()
+                } else {
+                    List(firebaseViewModel.response, id: \.id) { recipe in
+                        NavigationLink(destination: RecipeDetailsView(recipe: recipe)) {
+                            RecipeListItemView(recipe: recipe)
+                        }
+                    }
+                    .listStyle(.plain)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: ARCameraView()) {
+                        Image(systemName: "camera")
                     }
                 }
-                .listStyle(.plain)
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: ARCameraView()) {
-                    Image(systemName: "camera")
-                }
-            }
-        }
-        .navigationBarTitle("Recommendation list")
-        .navigationBarTitleDisplayMode(.large)
-        .onAppear {
-            if SessionDataStore.hasRecipes {
-                recipes = SessionDataStore.getRecipes(for: queries)
-            } else {
-                FirebaseService().getRecipes { recipes in
-                    SessionDataStore.addRecipes(recipes)
-                    self.recipes = SessionDataStore.getRecipes(for: queries)
+            .navigationBarTitle("Recommendation list")
+            .navigationBarTitleDisplayMode(.large)
+            .onAppear {
+                if(RecipeListView.newRequest){
+                    print("fetch")
+                    firebaseViewModel.getRecepies()
+                    RecipeListView.newRequest = false
                 }
             }
         }
     }
 }
 
-struct RecipeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeListView(queries: [("orange", 300)])
-    }
-}
+//struct RecipeListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipeListView(queries: [("orange", 300)])
+//    }
+//}
