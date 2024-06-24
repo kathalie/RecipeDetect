@@ -37,7 +37,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     internal var expirationTimeOfLastMessage: TimeInterval?
     
     internal var screenCenter = CGPoint()
-    var arSceneViewModel : ARSceneViewControllerViewModel
+    internal var arSceneViewModel : ARSceneViewControllerViewModel
+    
+    internal var productName: String?
     
     init(
         arSceneViewModel : ARSceneViewControllerViewModel
@@ -152,7 +154,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         if state == .detecting {
             capture()
-        }
+            return
+        } 
         
         switchToNextState()
     }
@@ -370,6 +373,64 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         })
     
         let snapshot = sceneView.snapshot()
-        arSceneViewModel.detect(snapshot: snapshot)
+        arSceneViewModel.detect(snapshot: snapshot) { state, classification in
+            switch state {
+            case .initial:
+                break
+            case .data where (classification?.confidence ?? 0) < 0.9:
+                print("Confidence: \(classification?.confidence ?? 0)")
+                self.showDetectionFailureDialog(failureReson: "System is unconfident about detection result. ")
+            case .error:
+                self.showDetectionFailureDialog(failureReson: "Error occured when detecting object.")
+            case .data:
+                self.showDetectionSucceededDialog(classification)
+            }
+        }
+    }
+    
+    private func showDetectionFailureDialog(failureReson: String) {
+        let tryAgainAction = UIAlertAction(
+            title: "Try again",
+            style: UIAlertAction.Style.default
+        ) { (action) in
+            self.state = .detecting
+        }
+        
+        showAlert(
+            title: "Detection Failure",
+            message: failureReson,
+            actions: [tryAgainAction]
+        )
+    }
+    
+    private func showDetectionSucceededDialog(_ classification: Classification?) {
+        guard
+            let productName = classification?.label,
+            let confidence = classification?.confidence
+        else {
+            print("Something went wrong: classification is nil")
+            return
+        }
+        
+        let calculateVolumeAction = UIAlertAction(
+            title: "Calculate volume",
+            style: UIAlertAction.Style.default
+        ) { (action) in
+            self.state = .scanning
+        }
+        
+        let goToRecipesAction = UIAlertAction(
+            title: "Go to recipes",
+            style: UIAlertAction.Style.default
+        ) { (action) in
+            self.productName = productName
+            self.arSceneViewModel.product = Product(name: productName, volume: nil)
+        }
+        
+        showAlert(
+            title: "Product detected",
+            message: "This is \(productName).\n(Confidence: \(confidence * 100)%)",
+            actions: [calculateVolumeAction, goToRecipesAction]
+        )
     }
 }

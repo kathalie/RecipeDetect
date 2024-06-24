@@ -1,23 +1,23 @@
+////
+////  ARSceneViewControllerWrapper.swift
+////  RecipeDetect
+////
+////  Created by Iryna Zubrytska.
+////
 //
-//  ARSceneViewControllerWrapper.swift
-//  RecipeDetect
+//import SwiftUI
+//import UIKit
 //
-//  Created by Iryna Zubrytska.
+//struct ARSceneViewControllerWrapper: UIViewControllerRepresentable {
 //
-
-import SwiftUI
-import UIKit
-
-struct ARSceneViewControllerWrapper: UIViewControllerRepresentable {
-
-    typealias UIViewControllerType = ARSceneViewController
-    var viewModel: ARSceneViewControllerViewModel
-
-    func makeUIViewController(context: Context) -> ARSceneViewController {
-        ARSceneViewController(viewModel: viewModel)
-    }
-
-    func updateUIViewController(_ uiViewController: ARSceneViewController, context: Context) {
-        // Update the view controller
-    }
-}
+//    typealias UIViewControllerType = ARSceneViewController
+//    var viewModel: ARSceneViewControllerViewModel
+//
+////    func makeUIViewController(context: Context) -> ARSceneViewController {
+//        ARSceneViewController(viewModel: viewModel)
+//    }
+//
+//    func updateUIViewController(_ uiViewController: ARSceneViewController, context: Context) {
+//        // Update the view controller
+//    }
+//}

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import SpacialObjectsScanner
 
 struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()

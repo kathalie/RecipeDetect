@@ -43,45 +43,47 @@ struct SpacialObjectScanner: View {
 //    @StateObject var spacialObjectScannerViewModel: SpacialObjectScannerViewModel = SpacialObjectScannerViewModel()
     @StateObject var arSceneViewModel: ARSceneViewControllerViewModel = ARSceneViewControllerViewModel()
     @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
-    @State private var productName : String = ""
+//    @State private var productName: String?
     
     var body: some View {
-        VStack {
-            ZStack {
+        if arSceneViewModel.product == nil {
+            VStack {
                 SpacialScannerViewControllerWrapper(
-//                    viewModel: spacialObjectScannerViewModel, 
+    //                    viewModel: spacialObjectScannerViewModel,
                     arSceneViewModel: arSceneViewModel
                 )
-                    .onAppear {
-                        coordinator = SpacialScannerViewControllerWrapper(
-//                            viewModel: spacialObjectScannerViewModel,
-                            arSceneViewModel: arSceneViewModel
-                        ).makeCoordinator()
-                    }
-                VStack(spacing: 0) {
-                    Spacer()
-                    Text(productName)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .background(Color.black)
-                    Text(productMessage)
-                        .background(Color.black)
-                    Spacer()
+                .onAppear {
+                    coordinator = SpacialScannerViewControllerWrapper(
+    //                            viewModel: spacialObjectScannerViewModel,
+                        arSceneViewModel: arSceneViewModel
+                    ).makeCoordinator()
                 }
             }
-//            Button(action: {
-//                coordinator?.capture()
-//            }){
-//                Text("Define object")
-//            }
+        }
+        else {
+            Spacer()
+            if let product = arSceneViewModel.product {
+                Text("Product name: ") + Text(product.name)
+                HStack {
+                    Text("Volume: ")
+                    if let volume = product.volume {
+                        Text(String(volume))
+                    }
+                }
+            } else {
+                Text("Something went wrong")
+            }
+            Spacer()
         }
     }
     
-    var productMessage: String {
-        switch(arSceneViewModel.state) {
-        case .initial: return "Init"
-        case .data: return "Detected: \(arSceneViewModel.classification!.label) with confidence: \(arSceneViewModel.classification!.confidence)"
-        case .error: return "Error"
-        }
-    }
+//    var productMessage: String? {
+//        switch(arSceneViewModel.state) {
+//        case .initial: return nil
+//        case .data where arSceneViewModel.classification!.confidence < 90, .error:
+//            return "Failed to detect a product. Please, try again."
+//        case .data:
+//            return "This is \(arSceneViewModel.classification!.label).\nConfidence: \(arSceneViewModel.classification!.confidence)"
+//        }
+//    }
 }

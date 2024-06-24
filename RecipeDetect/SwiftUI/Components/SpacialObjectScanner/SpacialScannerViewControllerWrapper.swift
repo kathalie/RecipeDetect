@@ -15,12 +15,6 @@ struct SpacialScannerViewControllerWrapper: UIViewControllerRepresentable {
 //    var viewModel: SpacialObjectScannerViewModel
     var arSceneViewModel: ARSceneViewControllerViewModel
 
-//    func makeUIViewController(context: Context) -> ViewController {
-//        SpacialScannerViewControllerWrapper.viewController = ViewController(
-//            spacialObjectDetectionDelegate: viewModel,
-//            arSceneViewModel: arSceneViewModel)
-//        return SpacialScannerViewControllerWrapper.viewController
-//    }
     func makeUIViewController(context: Context) -> ViewController {
         let storyBoard = UIStoryboard(
             name: "Main",

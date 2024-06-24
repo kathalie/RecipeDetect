@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import ARKit
+
+struct Product {
+    let name: String
+    let volume: Double?
+}
 
 final class ARSceneViewControllerViewModel: ObservableObject {
 //    enum State {
@@ -20,14 +26,17 @@ final class ARSceneViewControllerViewModel: ObservableObject {
     }
     var onDetectionSuccess: ((Classification) -> Void)?
 
-    @Published private(set) var state: State = .initial
-    @Published private(set) var classification: Classification? = nil
+//    @Published private(set) var state: State = .initial
+//    @Published private(set) var classification: Classification? = nil
+    private(set) var state: State = .initial
+    private(set) var classification: Classification? = nil
+    @Published var product: Product?
 
     private(set) var snapshot: UIImage?
 
     private let detector = ObjectDetector()
     
-    func detect(snapshot: UIImage) {
+    func detect(snapshot: UIImage, completion: @escaping (State, Classification?) -> Void) {
         state = .initial
         self.snapshot = snapshot
 
@@ -53,6 +62,7 @@ final class ARSceneViewControllerViewModel: ObservableObject {
 //                case .failure:
 //                    self.state = .error(.detectionFailed)
 //                }
+                completion(self.state, self.classification)
             }
         }
     }
