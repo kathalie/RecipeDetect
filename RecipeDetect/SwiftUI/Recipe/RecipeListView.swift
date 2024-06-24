@@ -12,6 +12,7 @@ struct RecipeListView: View {
     //@State private var recipes: [Recipe] = []
     @ObservedObject private var firebaseViewModel = FirebaseViewModel()
     static var newRequest : Bool = false
+    @Binding var state : String
     
     var body: some View {
         NavigationView{
@@ -28,11 +29,16 @@ struct RecipeListView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ARCameraView()) {
-                        Image(systemName: "camera")
-                    }
-                }
+                Button(action: {
+                    state = "scanner"
+                }, label: {
+                    Image(systemName: "camera")
+                })
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    NavigationLink(destination: SpacialObjectScanner()) {
+//                        Image(systemName: "camera")
+//                    }
+//                }
             }
             .navigationBarTitle("Recommendation list")
             .navigationBarTitleDisplayMode(.large)

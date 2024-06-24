@@ -10,15 +10,22 @@ import SwiftUI
 
 struct ARCameraView: View {
     @StateObject private var viewModel = ARSceneViewControllerViewModel()
-
+    
+    @State private var state = "recipe"
+    
     var body: some View {
         ZStack{
-            RecipeListView()
+            if(state == "recipe"){
+                RecipeListView(state: $state)
+            }
+            else if(state == "scanner"){
+                SpacialObjectScanner()
+            }
         }
         .onAppear{
             RecipeListView.newRequest = true
         }
-        //SpacialObjectScanner()
+        
     }
 
     private func screenCenter(_ size: CGSize) -> CGRect {
