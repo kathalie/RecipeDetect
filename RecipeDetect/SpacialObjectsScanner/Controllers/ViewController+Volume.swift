@@ -26,22 +26,27 @@ extension ViewController {
                 let pointCloud = object.rawFeaturePoints
                 let points = pointCloud.points
                 
-                var pointData = ""
-                for point in points {
-                    pointData.append("\(point.x) \(point.y) \(point.z)\n")
+                fetchVolume(pointCloud: points) {data in
+                    switch data {
+                    case .success(let volumeData):
+                        if let productName = self.productName {
+                            let volumeValue: Double? = volumeData.volume
+                            self.arSceneViewModel.product = Product(name: productName, volume: volumeValue)
+                        } else {
+                            print("Something went wrong: product name is eventually nil.")
+                        }
+                    case .failure:
+                        print("error")
+                        if let productName = self.productName {
+                            DispatchQueue.main.async {
+                                self.arSceneViewModel.product = Product(name: productName, volume: nil)
+                            }
+                        } else {
+                            print("Something went wrong: product name is eventually nil.")
+                        }
+                    }
                 }
                 
-                print(pointData)
-                
-                //TODO calculate volume based on `pointData`
-                let volume = 0.0
-                
-                guard let productName = self.productName else {
-                    print("Something went wrong: product name is eventually nil.")
-                    return
-                }
-                
-                self.arSceneViewModel.product = Product(name: productName, volume: volume)
                 
             } else {
                 let title = "Scan failed"

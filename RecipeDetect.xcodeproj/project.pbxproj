@@ -11,6 +11,8 @@
 		8C44651F2C2764B200C222BD /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C44651E2C2764B200C222BD /* ViewController+Alert.swift */; };
 		8C4465212C2841A100C222BD /* ViewController+Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465202C2841A100C222BD /* ViewController+Volume.swift */; };
 		8C4465AE2C28A96800C222BD /* libCGALWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4465AD2C28A96800C222BD /* libCGALWrapper.a */; };
+		8C4465E92C2A0AA700C222BD /* VolumeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */; };
+		8C4465EB2C2A0AC100C222BD /* VolumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */; };
 		8C564D382C1F2A8B0011D532 /* ToggleRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */; };
 		8C564D392C1F2A8B0011D532 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D362C1F2A8B0011D532 /* MessageLabel.swift */; };
 		8C564D3A2C1F2A8B0011D532 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */; };
@@ -122,6 +124,8 @@
 		8C4465362C28530000C222BD /* TriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4465552C28584800C222BD /* CTriangularMesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CTriangularMesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4465AD2C28A96800C222BD /* libCGALWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCGALWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeFetcher.swift; sourceTree = "<group>"; };
+		8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeModel.swift; sourceTree = "<group>"; };
 		8C564D352C1F2A8B0011D532 /* ToggleRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleRoundedButton.swift; sourceTree = "<group>"; };
 		8C564D362C1F2A8B0011D532 /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		8C564D372C1F2A8B0011D532 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
@@ -259,6 +263,15 @@
 				8C564CF22C1F1F610011D532 /* Utility Extensions */,
 			);
 			path = SpacialObjectsScanner;
+			sourceTree = "<group>";
+		};
+		8C4465E72C2A0A8900C222BD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8C4465E82C2A0AA700C222BD /* VolumeFetcher.swift */,
+				8C4465EA2C2A0AC100C222BD /* VolumeModel.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		8C564CEF2C1F1F1C0011D532 /* 3D UI and Visualizations  */ = {
@@ -402,6 +415,7 @@
 		EB2D551D29E9F60B001657B4 /* RecipeDetect */ = {
 			isa = PBXGroup;
 			children = (
+				8C4465E72C2A0A8900C222BD /* Networking */,
 				8C564D752C1F4F920011D532 /* Info.plist */,
 				8C1D61982C1E531A006BDECE /* SpacialObjectsScanner */,
 				EB7A76022A0194430048D12B /* DataStore */,
@@ -758,6 +772,7 @@
 				8C564D6E2C1F2AF00011D532 /* DetectedBoundingBox.swift in Sources */,
 				EB23D29F29FC62E000F940FB /* ImageCaptureView.swift in Sources */,
 				EBC28DC729EA97B50056A9F5 /* ARSceneViewController.swift in Sources */,
+				8C4465E92C2A0AA700C222BD /* VolumeFetcher.swift in Sources */,
 				EBC28DC929EAD33B0056A9F5 /* ARSceneViewControllerWrapper.swift in Sources */,
 				EB23D29029FC0A1600F940FB /* View+Overlay.swift in Sources */,
 				8C564D4E2C1F2ABE0011D532 /* Scan.swift in Sources */,
@@ -780,6 +795,7 @@
 				F6C5E48B2C29BBDF001ED3F6 /* Ingredient.swift in Sources */,
 				8C564D3D2C1F2AA70011D532 /* Utilities.swift in Sources */,
 				F6C5E48E2C29BBDF001ED3F6 /* RecipeListItemView.swift in Sources */,
+				8C4465EB2C2A0AC100C222BD /* VolumeModel.swift in Sources */,
 				EB23D2A329FC674100F940FB /* RoundedButton.swift in Sources */,
 				8CB797422C1DA9120090E40E /* SpacialObjectScanner.swift in Sources */,
 				8C564D6C2C1F2AF00011D532 /* Tile.swift in Sources */,
