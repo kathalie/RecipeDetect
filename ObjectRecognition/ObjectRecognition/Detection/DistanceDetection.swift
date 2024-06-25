@@ -18,7 +18,6 @@ struct DistanceDetection: Identifiable, CustomStringConvertible {
     
     var description: String {
 """
-\(emoji) \(label.capitalized)
 Confidence: \(confidence * 100)%
 Distance: \(distance.formatted()) cm
 Radius: \(radius.formatted()) cm
@@ -26,7 +25,4 @@ Mass: \(mass) g
 """
     }
     
-    private var emoji: String {
-        IngredientCase(rawValue: label.lowercased())?.emoji ?? ""
-    }
 }
