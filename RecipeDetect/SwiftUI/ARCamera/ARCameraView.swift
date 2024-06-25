@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct ARCameraView: View {
-    @StateObject private var viewModel = ARSceneViewControllerViewModel()
+//    @StateObject private var viewModel = ARSceneViewControllerViewModel()
     
-    @State private var state = "recipe"
+    @State private var state = "scanner"
+    @State private var product : Product? = nil
     
     var body: some View {
         ZStack{
             if(state == "recipe"){
-                RecipeListView(state: $state)
+                if let product {
+                    RecipeListView(state: $state, product: product)
+                        .onAppear{
+                            RecipeListView.newRequest = true
+                        }
+                }
             }
             else if(state == "scanner"){
-                SpacialObjectScanner()
+                SpacialObjectScanner(state: $state, product: $product)
             }
-        }
-        .onAppear{
-            RecipeListView.newRequest = true
         }
         
     }

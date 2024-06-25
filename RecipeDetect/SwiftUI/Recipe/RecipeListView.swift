@@ -13,6 +13,7 @@ struct RecipeListView: View {
     @ObservedObject private var firebaseViewModel = FirebaseViewModel()
     static var newRequest : Bool = false
     @Binding var state : String
+    let product : Product
     
     var body: some View {
         NavigationView{
@@ -45,7 +46,7 @@ struct RecipeListView: View {
             .onAppear {
                 if(RecipeListView.newRequest){
                     print("fetch")
-                    firebaseViewModel.getRecepies()
+                    firebaseViewModel.getRecepies(product: product)
                     RecipeListView.newRequest = false
                 }
             }

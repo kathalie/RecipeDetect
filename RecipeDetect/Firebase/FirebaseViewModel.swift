@@ -15,11 +15,14 @@ class FirebaseViewModel : ObservableObject{
     @Published var response : [Recipe] = []
     private var isError: Bool = false
     
-    func getRecepies(){
+    func getRecepies(product:Product){
         var ref: DocumentReference? = nil
-
+        var request : String = product.name
+        if let volume = product.volume{
+            request.append(" with volume \(volume)" )
+        }
         ref = db.collection("generate").addDocument(data: [
-            "products": "potatoes 1 kg apple 400 g",
+            "products": request,
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

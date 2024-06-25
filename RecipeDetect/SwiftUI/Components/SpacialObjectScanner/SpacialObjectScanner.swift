@@ -44,6 +44,8 @@ struct SpacialObjectScanner: View {
     @StateObject var arSceneViewModel: ARSceneViewControllerViewModel = ARSceneViewControllerViewModel()
     @State private var coordinator: SpacialScannerViewControllerWrapper.Coordinator? = nil
 //    @State private var productName: String?
+    @Binding var state : String
+    @Binding var product : Product?
     
     var body: some View {
         if arSceneViewModel.product == nil {
@@ -61,19 +63,25 @@ struct SpacialObjectScanner: View {
             }
         }
         else {
-            Spacer()
-            if let product = arSceneViewModel.product {
-                Text("Product name: ") + Text(product.name)
-                HStack {
-                    Text("Volume: ")
-                    if let volume = product.volume {
-                        Text(String(volume))
-                    }
-                }
-            } else {
-                Text("Something went wrong")
+            ZStack{
+                Text("Redirecting to recipes...")
+            }.onAppear{
+                product = arSceneViewModel.product!
+                state = "recipe"
             }
-            Spacer()
+            //            Spacer()
+//            if let product = arSceneViewModel.product {
+//                Text("Product name: ") + Text(product.name)
+//                HStack {
+//                    Text("Volume: ")
+//                    if let volume = product.volume {
+//                        Text(String(volume))
+//                    }
+//                }
+//            } else {
+//                Text("Something went wrong")
+//            }
+//            Spacer()
         }
     }
     
